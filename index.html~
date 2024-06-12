@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22-074 EDC Graphs</title>
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .grid-item {
+            background: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .grid-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            display: block;
+        }
+        .grid-item:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="title">
+	<span id="topoftheline"></span></div>
+        <div class="subtitle">Data shared with
+
+	  <b id="company-name"></b>
+    <script>
+        const companyName1 = ['Syn', 'Dev', 'Rx'].join('');
+        document.getElementById('company-name').innerText = companyName1;
+        const topoftheline2 = ['22-', '074 / ', 'SD', 'X-0102 EDC Graphs'].join('')
+      document.getElementById('topoftheline').innerText = topoftheline2;
+    </script>on 5/31/2024</div>
+        <div class="grid-container">
+
+            <div class="grid-item"> <a href="Albumin,_Serum_240531.html">Albumin, Serum</a></div>
+            <div class="grid-item"> <a href="Albumin_240531.html">Albumin</a></div>
+            <div class="grid-item"> <a href="Alkaline_Phosphatase,_Serum_240531.html">Alkaline Phosphatase, Serum</a></div>
+            <div class="grid-item"> <a href="Alkaline_Phosphatase_240531.html">Alkaline Phosphatase</a></div>
+            <div class="grid-item"> <a href="ALT,_Serum_240531.html">ALT, Serum</a></div>
+            <div class="grid-item"> <a href="ALT_240531.html">ALT</a></div>
+            <div class="grid-item"> <a href="APTT_240531.html">APTT</a></div>
+            <div class="grid-item"> <a href="AST,_Serum_240531.html">AST, Serum</a></div>
+            <div class="grid-item"> <a href="AST_240531.html">AST</a></div>
+            <div class="grid-item"> <a href="Absolute_Basophils_240531.html">Basophils (Abs)</a></div>
+            <div class="grid-item"> <a href="Basophils_240531.html">Basophils (%)</a></div>
+            <div class="grid-item"> <a href="BUN,_Serum_240531.html">BUN, Serum</a></div>
+            <div class="grid-item"> <a href="BUN_240531.html">BUN</a></div>
+            <div class="grid-item"> <a href="Calcium,_Serum_240531.html">Calcium, Serum</a></div>
+            <div class="grid-item"> <a href="Calcium_240531.html">Calcium</a></div>
+            <div class="grid-item"> <a href="Carbon_dioxide,_Serum_240531.html">Carbon Dioxide, Serum</a></div>
+            <div class="grid-item"> <a href="Carbon_dioxide_240531.html">Carbon Dioxide</a></div>
+            <div class="grid-item"> <a href="Chloride,_Serum_240531.html">Chloride, Serum</a></div>
+            <div class="grid-item"> <a href="Chloride_240531.html">Chloride</a></div>
+            <div class="grid-item"> <a href="Creatinine,_Plasma_240531.html">Creatinine, Plasma</a></div>
+            <div class="grid-item"> <a href="Creatinine_240531.html">Creatinine</a></div>
+            <div class="grid-item"> <a href="D-Dimer_240531.html">D-Dimer</a></div>
+            <div class="grid-item"> <a href="Absolute_Eosinophils_240531.html">Eosinophils (Abs)</a></div>
+            <div class="grid-item"> <a href="Eosinophils_240531.html">Eosinophils %</a></div>
+            <div class="grid-item"> <a href="Glucose_240531.html">Glucose</a></div>
+            <div class="grid-item"> <a href="Glucose,_Serum_240531.html">Glucose, Serum</a></div>
+            <div class="grid-item"> <a href="Glucose_6_Hr_240531.html">Glucose (6 hour)</a></div>
+            <div class="grid-item"> <a href="HDL_240531.html">HDL</a></div>
+            <div class="grid-item"> <a href="HOMA-IR_240531.html">HOMA-IR</a></div>
+            <div class="grid-item"> <a href="Hematocrit_240531.html">Hematocrit</a></div>
+            <div class="grid-item"> <a href="Hemoglobin_240531.html">Hemoglobin</a></div>
+            <div class="grid-item"> <a href="INR_240531.html">INR</a></div>
+            <div class="grid-item"> <a href="Insulin_Level_0_Hours_240531.html">Insulin Level (0 Hours)</a></div>
+            <div class="grid-item"> <a href="Insulin_Level_6_Hours_240531.html">Insulin Level (6 Hours)</a></div>
+            <div class="grid-item"> <a href="LDL_240531.html">LDL</a></div>
+            <div class="grid-item"> <a href="Absolute_Lymphocytes_240531.html">Lymphocytes (Abs)</a></div>
+            <div class="grid-item"> <a href="Lymphocytes_240531.html">Lymphocytes (%)</a></div>
+            <div class="grid-item"> <a href="MCHC_240531.html">MCHC</a></div>
+            <div class="grid-item"> <a href="MCH_240531.html">MCH</a></div>
+            <div class="grid-item"> <a href="MCV_240531.html">MCV</a></div>
+            <div class="grid-item"> <a href="Absolute_Monocytes_240531.html">Monocytes (Abs)</a></div>
+            <div class="grid-item"> <a href="Monocytes_240531.html">Monocytes (%)</a></div>
+            <div class="grid-item"> <a href="Absolute_Neutrophils_240531.html">Neutrophils (Abs)</a></div>
+            <div class="grid-item"> <a href="Neutrophils_240531.html">Neutrophils (%)</a></div>
+	    <div class="grid-item"> <a href="Platelet_Count_240531.html">Platelet Count</a></div>
+            <div class="grid-item"> <a href="Potassium,_Serum_240531.html">Potassium, Serum</a></div>
+            <div class="grid-item"> <a href="Potassium_240531.html">Potassium</a></div>
+            <div class="grid-item"> <a href="PT_240531.html">PT</a></div>
+            <div class="grid-item"> <a href="RBC_240531.html">RBC</a></div>
+            <div class="grid-item"> <a href="RDW_240531.html">RDW</a></div>
+            <div class="grid-item"> <a href="Sodium,_Serum_240531.html">Sodium, Serum</a></div>
+            <div class="grid-item"> <a href="Sodium_240531.html">Sodium</a></div>
+            <div class="grid-item"> <a href="Total_Bilirubin,_Serum_240531.html">Total Bilirubin, Serum</a></div>
+            <div class="grid-item"> <a href="Total_Bilirubin_240531.html">Total Bilirubin</a></div>
+            <div class="grid-item"> <a href="Total_Protein,_Serum_240531.html">Total Protein, Serum</a></div>
+            <div class="grid-item"> <a href="Total_Protein_240531.html">Total Protein</a></div>
+            <div class="grid-item"> <a href="Triglycerides_240531.html">Triglycerides</a></div>
+            <div class="grid-item"> <a href="WBC_240531.html">WBC</a></div>
+        </div>
+    </div>
+</body>
+</html>
