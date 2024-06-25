@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDX-0103 Amelia-1 EDC Graphs</title>
+  <style>
+    body {
+        background-color: skyblue;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    .container {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 1000px;
+        width: 100%;
+        text-align: center;
+    }
+    .title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .grid-item {
+        background: #f0f0f0;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease;
+    }
+    .grid-item a {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+        display: block;
+    }
+    .grid-item:hover {
+        background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title"><span id="topoftheline">SDX-0103 Amelia-1 EDC Graphs</span></div>
+    <div class="subtitle">EDC Data of 6/25/24 </div>
+    <div class="grid-container">
+      <div class="grid-item"> <a href="Albumin.html">Albumin</a></div>
+      <div class="grid-item"> <a href="Alkaline_Phosphatase.html">Alkaline Phosphatase</a></div>
+      <div class="grid-item"> <a href="ALT_-_Alanine_aminotransferase.html">ALT</a></div>
+      <div class="grid-item"> <a href="Amylase.html">Amylase</a></div>
+      <div class="grid-item"> <a href="aPTT_-_Activated_Partial_Thromboplastin_Time.html">aPTT</a></div>
+      <div class="grid-item"> <a href="AST_-_Aspartate_Aminotransferase.html">AST</a></div>
+      <div class="grid-item"> <a href="Basophils_(absolute).html">Basophils (abs)</a></div>
+      <div class="grid-item"> <a href="Basophils_(percent).html">Basophils (%)</a></div>
+      <div class="grid-item"> <a href="Bicarbonate.html">Bicarbonate</a></div>
+      <div class="grid-item"> <a href="Bilirubin,_Direct.html">Bilirubin, Direct</a></div>
+      <div class="grid-item"> <a href="Bilirubin,_Indirect.html">Bilirubin, Indirect</a></div>
+      <div class="grid-item"> <a href="Bilirubin,_Total.html">Bilirubin, Total</a></div>
+    </div>
+  </div>
+</body>
+</html>
