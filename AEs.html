@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amelia-1 Adverse Events</title>
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+            z-index: 1000;
+        }
+        .header h1 {
+            display: inline;
+        }
+        .header label {
+            margin-right: 10px;
+        }
+        .table-container {
+            overflow-y: auto;
+            height: 80vh;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        .no-rows {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* New CSS rule to prevent line breaks in the Subject column */
+        td.subject-cell {
+            white-space: nowrap;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = [
+		{ "Subject": "102-001", "AETERM": "CHILLS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/11/2023", "DaysSinceC1D1Start": "20", "dAENDDAT": "07/12/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Chills", "AETERM_LLT": "Chills" },
+{ "Subject": "102-001", "AETERM": "HEADACHE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/11/2023", "DaysSinceC1D1Start": "20", "dAENDDAT": "07/12/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Headache", "AETERM_LLT": "Headache" },
+{ "Subject": "102-001", "AETERM": "SORE THROAT", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/11/2023", "DaysSinceC1D1Start": "20", "dAENDDAT": "07/12/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Oropharyngeal pain", "AETERM_LLT": "Sore throat" },
+{ "Subject": "102-001", "AETERM": "HEADACHE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/17/2023", "DaysSinceC1D1Start": "26", "dAENDDAT": "07/18/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Headache", "AETERM_LLT": "Headache" },
+{ "Subject": "102-001", "AETERM": "ECZEMA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "08/02/2023", "DaysSinceC1D1Start": "42", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Eczema", "AETERM_LLT": "Eczema" },
+{ "Subject": "102-001", "AETERM": "DRY SKIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "08/16/2023", "DaysSinceC1D1Start": "56", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Dry skin", "AETERM_LLT": "Dry skin" },
+{ "Subject": "102-001", "AETERM": "PRURITUS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "08/16/2023", "DaysSinceC1D1Start": "56", "dAENDDAT": "08/16/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Pruritus", "AETERM_LLT": "Pruritus" },
+{ "Subject": "102-001", "AETERM": "HEADACHE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "08/30/2023", "DaysSinceC1D1Start": "70", "dAENDDAT": "08/30/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Headache", "AETERM_LLT": "Headache" },
+{ "Subject": "102-001", "AETERM": "ELEVATED ALT", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/13/2023", "DaysSinceC1D1Start": "84", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Alanine aminotransferase increased", "AETERM_LLT": "Alanine aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "ELEVATED AST", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/13/2023", "DaysSinceC1D1Start": "84", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Aspartate aminotransferase increased", "AETERM_LLT": "Aspartate aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "ALT ELEVATED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "10/25/2023", "DaysSinceC1D1Start": "126", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Alanine aminotransferase increased", "AETERM_LLT": "Alanine aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "AST ELEVATED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "10/25/2023", "DaysSinceC1D1Start": "126", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Aspartate aminotransferase increased", "AETERM_LLT": "Aspartate aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "ALT ELEVATED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/08/2023", "DaysSinceC1D1Start": "140", "dAENDDAT": "01/18/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Alanine aminotransferase increased", "AETERM_LLT": "Alanine aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "AST ELEVATED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/08/2023", "DaysSinceC1D1Start": "140", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Aspartate aminotransferase increased", "AETERM_LLT": "Aspartate aminotransferase increased" },
+{ "Subject": "102-001", "AETERM": "HYPOKALEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/06/2023", "DaysSinceC1D1Start": "168", "dAENDDAT": "12/20/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Hypokalaemia", "AETERM_LLT": "Hypokalemia" },
+{ "Subject": "102-006", "AETERM": "LEFT SIDE UPPER ABDOMINAL PAIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "02/21/2024", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Abdominal pain upper", "AETERM_LLT": "Upper abdominal pain" },
+{ "Subject": "102-006", "AETERM": "ABDOMINAL PAIN", "CTCAE.Grade": "3", "AESER": "Yes", "dAESTDAT": "03/09/2024", "DaysSinceC1D1Start": "45", "dAENDDAT": "03/12/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Abdominal pain", "AETERM_LLT": "Abdominal pain" },
+{ "Subject": "102-008", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/26/2024", "DaysSinceC1D1Start": "0", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "102-008", "AETERM": "HYPERGLYCEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/17/2024", "DaysSinceC1D1Start": "21", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Hyperglycaemia", "AETERM_LLT": "Hyperglycemia" },
+{ "Subject": "102-008", "AETERM": "RASH", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/19/2024", "DaysSinceC1D1Start": "23", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Rash", "AETERM_LLT": "Rash" },
+{ "Subject": "102-008", "AETERM": "ALKALINE PHOSPHATASE INCREASE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/24/2024", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Blood alkaline phosphatase increased", "AETERM_LLT": "Alkaline phosphatase increased" },
+{ "Subject": "102-008", "AETERM": "HYPONATREMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/24/2024", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Hyponatraemia", "AETERM_LLT": "Hyponatremia" },
+{ "Subject": "102-008", "AETERM": "PLATELET COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/24/2024", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Platelet count decreased", "AETERM_LLT": "Platelet count decreased" },
+{ "Subject": "105-001", "AETERM": "ANEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/11/2023", "DaysSinceC1D1Start": "0", "dAENDDAT": "10/16/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Anaemia", "AETERM_LLT": "Anemia" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/18/2023", "DaysSinceC1D1Start": "7", "dAENDDAT": "10/09/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-001", "AETERM": "CHOLESTEROL HIGH", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/25/2023", "DaysSinceC1D1Start": "14", "dAENDDAT": "10/09/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Blood cholesterol increased", "AETERM_LLT": "Cholesterol high" },
+{ "Subject": "105-001", "AETERM": "BLOOD LACTATE DEHYDROGENASE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/25/2023", "DaysSinceC1D1Start": "14", "dAENDDAT": "10/02/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase increased", "AETERM_LLT": "Blood lactate dehydrogenase increased" },
+{ "Subject": "105-001", "AETERM": "WHITE BLOOD CELL DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "09/25/2023", "DaysSinceC1D1Start": "14", "dAENDDAT": "10/09/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "White blood cell count decreased", "AETERM_LLT": "White blood cell decreased" },
+{ "Subject": "105-001", "AETERM": "HOT FLASHES", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "10/02/2023", "DaysSinceC1D1Start": "21", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Hot flush", "AETERM_LLT": "Hot flashes" },
+{ "Subject": "105-001", "AETERM": "ANOREXIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/03/2023", "DaysSinceC1D1Start": "22", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Related", "AETERM_PT": "Decreased appetite", "AETERM_LLT": "Anorexia" },
+{ "Subject": "105-001", "AETERM": "NAUSEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/03/2023", "DaysSinceC1D1Start": "22", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Nausea", "AETERM_LLT": "Nausea" },
+{ "Subject": "105-001", "AETERM": "BRUXISM", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/04/2023", "DaysSinceC1D1Start": "23", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Bruxism", "AETERM_LLT": "Bruxism" },
+{ "Subject": "105-001", "AETERM": "HYPERHIDROSIS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/04/2023", "DaysSinceC1D1Start": "23", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Hyperhidrosis", "AETERM_LLT": "Hyperhidrosis" },
+{ "Subject": "105-001", "AETERM": "CREATININE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/09/2023", "DaysSinceC1D1Start": "28", "dAENDDAT": "10/16/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Blood creatinine increased", "AETERM_LLT": "Creatinine increased" },
+{ "Subject": "105-001", "AETERM": "RASH ACNEIFORM", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/09/2023", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Dermatitis acneiform", "AETERM_LLT": "Rash acneiform" },
+{ "Subject": "105-001", "AETERM": "CONSTIPATION", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/10/2023", "DaysSinceC1D1Start": "29", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Constipation", "AETERM_LLT": "Constipation" },
+{ "Subject": "105-001", "AETERM": "STOMACH PAIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/11/2023", "DaysSinceC1D1Start": "30", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Abdominal pain upper", "AETERM_LLT": "Stomach pain" },
+{ "Subject": "105-001", "AETERM": "BLOOD LACTATE DEHYDROGENASES INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/16/2023", "DaysSinceC1D1Start": "35", "dAENDDAT": "11/06/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase increased", "AETERM_LLT": "Blood lactate dehydrogenase increased" },
+{ "Subject": "105-001", "AETERM": "LYMPHOCYTE COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/16/2023", "DaysSinceC1D1Start": "35", "dAENDDAT": "10/23/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Lymphocyte count decreased", "AETERM_LLT": "Lymphocyte count decreased" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/16/2023", "DaysSinceC1D1Start": "35", "dAENDDAT": "12/04/2023", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/16/2023", "DaysSinceC1D1Start": "35", "dAENDDAT": "12/04/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-001", "AETERM": "WHITE BLOOD CELL DECREASE", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "10/16/2023", "DaysSinceC1D1Start": "35", "dAENDDAT": "10/23/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "White blood cell count decreased", "AETERM_LLT": "White blood cell count decreased" },
+{ "Subject": "105-001", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/20/2023", "DaysSinceC1D1Start": "39", "dAENDDAT": "10/22/2023", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "105-001", "AETERM": "ANEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/23/2023", "DaysSinceC1D1Start": "42", "dAENDDAT": "04/15/2024", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Anaemia", "AETERM_LLT": "Anemia" },
+{ "Subject": "105-001", "AETERM": "PERIPHERAL SENSORY NEUROPATHY", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "10/31/2023", "DaysSinceC1D1Start": "50", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Peripheral sensory neuropathy", "AETERM_LLT": "Peripheral sensory neuropathy" },
+{ "Subject": "105-001", "AETERM": "WHITE BLOOD CELL DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/06/2023", "DaysSinceC1D1Start": "56", "dAENDDAT": "12/04/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "White blood cell count decreased", "AETERM_LLT": "White blood cell decreased" },
+{ "Subject": "105-001", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/09/2023", "DaysSinceC1D1Start": "59", "dAENDDAT": "11/10/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "105-001", "AETERM": "RASH MACULO-PAULAR", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/10/2023", "DaysSinceC1D1Start": "60", "dAENDDAT": "11/14/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Rash maculo-papular", "AETERM_LLT": "Maculopapular rash" },
+{ "Subject": "105-001", "AETERM": "RHINITIS INFECTIVE", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "11/10/2023", "DaysSinceC1D1Start": "60", "dAENDDAT": "11/14/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Rhinitis", "AETERM_LLT": "Rhinitis infective" },
+{ "Subject": "105-001", "AETERM": "MUSCOSITIS ORAL", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/12/2023", "DaysSinceC1D1Start": "62", "dAENDDAT": "11/21/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Mucosal inflammation", "AETERM_LLT": "Mucositis" },
+{ "Subject": "105-001", "AETERM": "BLOOD LACTATE DEHYDROGENASE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/04/2023", "DaysSinceC1D1Start": "84", "dAENDDAT": "01/02/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase increased", "AETERM_LLT": "Blood lactate dehydrogenase increased" },
+{ "Subject": "105-001", "AETERM": "VOMITING", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/22/2023", "DaysSinceC1D1Start": "102", "dAENDDAT": "12/22/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Vomiting", "AETERM_LLT": "Vomiting" },
+{ "Subject": "105-001", "AETERM": "BLOOD LACTATE DEHYDROGENASE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "01/22/2024", "DaysSinceC1D1Start": "133", "dAENDDAT": "02/05/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase", "AETERM_LLT": "Blood lactate dehydrogenase" },
+{ "Subject": "105-001", "AETERM": "WEIGHT GAIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "02/19/2024", "DaysSinceC1D1Start": "161", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Weight increased", "AETERM_LLT": "Weight gain" },
+{ "Subject": "105-001", "AETERM": "WHITE BLOOD CELL DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "03/04/2024", "DaysSinceC1D1Start": "175", "dAENDDAT": "05/28/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "White blood cell count decreased", "AETERM_LLT": "White blood cell decreased" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "03/04/2024", "DaysSinceC1D1Start": "175", "dAENDDAT": "04/15/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-001", "AETERM": "PAIN IN EXTREMITY", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "04/29/2024", "DaysSinceC1D1Start": "231", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Pain in extremity", "AETERM_LLT": "Pain in extremity" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "05/13/2024", "DaysSinceC1D1Start": "245", "dAENDDAT": "05/28/2024", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-001", "AETERM": "NON CARDIAC CHEST PAIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/08/2024", "DaysSinceC1D1Start": "271", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Non-cardiac chest pain", "AETERM_LLT": "Non-cardiac chest pain" },
+{ "Subject": "105-001", "AETERM": "BLOOD LACTATE DEHYDROGENASE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/10/2024", "DaysSinceC1D1Start": "273", "dAENDDAT": "06/24/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase increased", "AETERM_LLT": "Blood lactate dehydrogenase increased" },
+{ "Subject": "105-001", "AETERM": "WHITE BLOOD CEL DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/10/2024", "DaysSinceC1D1Start": "273", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "White blood cell count decreased", "AETERM_LLT": "White blood cell decreased" },
+{ "Subject": "105-001", "AETERM": "NEUTROPHIL COUNT DECREASED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "06/24/2024", "DaysSinceC1D1Start": "287", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Neutrophil count decreased", "AETERM_LLT": "Neutrophil count decreased" },
+{ "Subject": "105-003", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/10/2023", "DaysSinceC1D1Start": "18", "dAENDDAT": "11/11/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "105-003", "AETERM": "BLOOD LACTATE DEHYDROGENASE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/13/2023", "DaysSinceC1D1Start": "21", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Blood lactate dehydrogenase", "AETERM_LLT": "Blood lactate dehydrogenase" },
+{ "Subject": "105-003", "AETERM": "STOMACH PAIN", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/18/2023", "DaysSinceC1D1Start": "26", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Abdominal pain upper", "AETERM_LLT": "Stomach pain" },
+{ "Subject": "105-003", "AETERM": "WATERING EYES", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/18/2023", "DaysSinceC1D1Start": "26", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Lacrimation increased", "AETERM_LLT": "Watering eyes" },
+{ "Subject": "105-003", "AETERM": "MUCOSITIS ORAL", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/18/2023", "DaysSinceC1D1Start": "26", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Stomatitis", "AETERM_LLT": "Mucositis oral" },
+{ "Subject": "105-003", "AETERM": "RASH MACULO-PAPULAR", "CTCAE.Grade": "3", "AESER": "No", "dAESTDAT": "11/18/2023", "DaysSinceC1D1Start": "26", "dAENDDAT": "12/01/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Rash maculo-papular", "AETERM_LLT": "Rash maculo-papular" },
+{ "Subject": "105-003", "AETERM": "ANEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/20/2023", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Anaemia", "AETERM_LLT": "Anemia" },
+{ "Subject": "105-003", "AETERM": "LYMPHOCYTE COUNT DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "11/20/2023", "DaysSinceC1D1Start": "28", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Lymphocyte count decreased", "AETERM_LLT": "Lymphocyte count decreased" },
+{ "Subject": "105-003", "AETERM": "PLATELET COUNT DECREASED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "11/20/2023", "DaysSinceC1D1Start": "28", "dAENDDAT": "11/28/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Platelet count decreased", "AETERM_LLT": "Platelet count decreased" },
+{ "Subject": "105-003", "AETERM": "EDEMA FACE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/01/2023", "DaysSinceC1D1Start": "39", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Face oedema", "AETERM_LLT": "Edema face" },
+{ "Subject": "105-003", "AETERM": "VOMITING", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/01/2023", "DaysSinceC1D1Start": "39", "dAENDDAT": "12/01/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Vomiting", "AETERM_LLT": "Vomiting" },
+{ "Subject": "105-003", "AETERM": "ALP DECREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "12/04/2023", "DaysSinceC1D1Start": "42", "dAENDDAT": "12/30/2023", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Blood alkaline phosphatase decreased", "AETERM_LLT": "Bone alkaline phosphatase decreased" },
+{ "Subject": "106-002", "AETERM": "INJECTION SITE PAIN, RUQ AND LUQ BUTTOCKS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "05/29/2024", "DaysSinceC1D1Start": "0", "dAENDDAT": "06/13/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Injection site pain", "AETERM_LLT": "Injection site pain" },
+{ "Subject": "106-002", "AETERM": "ALANINE AMINOTRANSFERASE INCREASED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "06/12/2024", "DaysSinceC1D1Start": "14", "dAENDDAT": "NA", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Alanine aminotransferase increased", "AETERM_LLT": "Alanine aminotransferase increased" },
+{ "Subject": "106-002", "AETERM": "ASPARTATE AMINOTRANSFERASE INCREASED", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "06/12/2024", "DaysSinceC1D1Start": "14", "dAENDDAT": "NA", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Aspartate aminotransferase increased", "AETERM_LLT": "Aspartate aminotransferase increased" },
+{ "Subject": "106-002", "AETERM": "DIARRHEA, INTERMITTENT", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/13/2024", "DaysSinceC1D1Start": "15", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "106-002", "AETERM": "ITCHING AT INJECTION SITE, LEFT BUTTOCKS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/13/2024", "DaysSinceC1D1Start": "15", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Injection site pruritus", "AETERM_LLT": "Injection site itching" },
+{ "Subject": "106-002", "AETERM": "HEADACHE", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "06/16/2024", "DaysSinceC1D1Start": "18", "dAENDDAT": "NA", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Headache", "AETERM_LLT": "Headache" },
+{ "Subject": "106-002", "AETERM": "ALANINE AMINOTRANSFERASE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/19/2024", "DaysSinceC1D1Start": "21", "dAENDDAT": "NA", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Alanine aminotransferase increased", "AETERM_LLT": "Alanine aminotransferase increased" },
+{ "Subject": "106-002", "AETERM": "ASPARTATE AMINOTRANSFERASE INCREASED", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/19/2024", "DaysSinceC1D1Start": "21", "dAENDDAT": "NA", "AEREL": "Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Related", "AETERM_PT": "Aspartate aminotransferase increased", "AETERM_LLT": "Aspartate aminotransferase increased" },
+{ "Subject": "106-002", "AETERM": "RASH", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/22/2024", "DaysSinceC1D1Start": "24", "dAENDDAT": "06/24/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Rash", "AETERM_LLT": "Rash" },
+{ "Subject": "106-002", "AETERM": "SORE THROAT", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/23/2024", "DaysSinceC1D1Start": "25", "dAENDDAT": "06/28/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Oropharyngeal pain", "AETERM_LLT": "Sore throat" },
+{ "Subject": "106-002", "AETERM": "DRY MOUTH", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/24/2024", "DaysSinceC1D1Start": "26", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Dry mouth", "AETERM_LLT": "Dry mouth" },
+{ "Subject": "106-002", "AETERM": "FEVER", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/24/2024", "DaysSinceC1D1Start": "26", "dAENDDAT": "06/24/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Pyrexia", "AETERM_LLT": "Fever" },
+{ "Subject": "106-002", "AETERM": "ORAL MUCOSITIS", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/24/2024", "DaysSinceC1D1Start": "26", "dAENDDAT": "06/30/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Stomatitis", "AETERM_LLT": "Mucositis oral" },
+{ "Subject": "106-002", "AETERM": "RASH", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "06/24/2024", "DaysSinceC1D1Start": "26", "dAENDDAT": "06/25/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Rash", "AETERM_LLT": "Rash" },
+{ "Subject": "106-002", "AETERM": "RASH", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "06/25/2024", "DaysSinceC1D1Start": "27", "dAENDDAT": "06/30/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Rash", "AETERM_LLT": "Rash" },
+{ "Subject": "106-002", "AETERM": "PARASTHESIA TONGUE", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/10/2024", "DaysSinceC1D1Start": "42", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Paraesthesia oral", "AETERM_LLT": "Paresthesia tongue" },
+{ "Subject": "109-002", "AETERM": "CONFUSION", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/01/2024", "DaysSinceC1D1Start": "14", "dAENDDAT": "07/01/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "", "AERELFU": "Not Related", "AETERM_PT": "Confusional state", "AETERM_LLT": "Confusion" },
+{ "Subject": "109-002", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/03/2024", "DaysSinceC1D1Start": "16", "dAENDDAT": "07/07/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "109-002", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/10/2024", "DaysSinceC1D1Start": "23", "dAENDDAT": "07/10/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "109-002", "AETERM": "PRURITUS/ITCHING", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/10/2024", "DaysSinceC1D1Start": "23", "dAENDDAT": "07/10/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Pruritus", "AETERM_LLT": "Pruritus" },
+{ "Subject": "109-002", "AETERM": "HYPERGLYCEMIA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/16/2024", "DaysSinceC1D1Start": "29", "dAENDDAT": "NA", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Hyperglycaemia", "AETERM_LLT": "Hyperglycemia" },
+{ "Subject": "109-002", "AETERM": "DIARRHEA", "CTCAE.Grade": "2", "AESER": "No", "dAESTDAT": "07/16/2024", "DaysSinceC1D1Start": "29", "dAENDDAT": "07/20/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+{ "Subject": "109-002", "AETERM": "DIARRHEA", "CTCAE.Grade": "1", "AESER": "No", "dAESTDAT": "07/23/2024", "DaysSinceC1D1Start": "36", "dAENDDAT": "07/26/2024", "AEREL": "Not Related", "AERELCA": "NA", "AERELAL": "Not Related", "AERELFU": "Not Related", "AETERM_PT": "Diarrhoea", "AETERM_LLT": "Diarrhea" },
+
+
+                // Add more data as needed
+            ];
+
+            const saeOnlyCheckbox = document.getElementById('saeOnly');
+            const gradeCheckboxes = [
+                document.getElementById('grade1'),
+                document.getElementById('grade2'),
+                document.getElementById('grade3'),
+                document.getElementById('grade4')
+            ];
+            const noRowsMessage = document.getElementById('no-rows');
+            const table = document.getElementById('aeTable');
+            const tbody = table.getElementsByTagName('tbody')[0];
+
+            function populateTable() {
+                tbody.innerHTML = ''; // Clear existing rows
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.setAttribute('data-sae', item.AESER);
+                    row.setAttribute('data-grade', item['CTCAE.Grade']);
+
+                    row.innerHTML = `
+                        <td class="subject-cell">${item.Subject}</td>
+                        <td>${item.AETERM}</td>
+                        <td>${item['CTCAE.Grade']}</td>
+                        <td>${item.AESER}</td>
+                        <td>${item.AEREL}</td>
+                        <td>${item.AERELCA}</td>
+                        <td>${item.AERELAL}</td>
+                        <td>${item.AERELFU}</td>
+                        <td>${item.dAESTDAT}</td>
+                        <td>${item.DaysSinceC1D1Start}</td>
+                        <td>${item.dAENDDAT}</td>
+                        <td>${item.AETERM_PT}</td>
+                        <td>${item.AETERM_LLT}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+
+            function filterRows() {
+                let visibleRows = 0;
+                const rows = Array.from(tbody.getElementsByTagName('tr'));
+                rows.forEach(row => {
+                    const sae = row.getAttribute('data-sae');
+                    const grade = row.getAttribute('data-grade');
+
+                    const showSAE = !saeOnlyCheckbox.checked || sae === 'Yes';
+                    const showGrade = gradeCheckboxes.some(checkbox => checkbox.checked && checkbox.value == grade);
+
+                    if (showSAE && showGrade) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                noRowsMessage.style.display = visibleRows === 0 ? 'block' : 'none';
+            }
+
+            saeOnlyCheckbox.addEventListener('change', filterRows);
+            gradeCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterRows));
+
+            populateTable();
+            filterRows();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Amelia-1 AEs</h1>
+            <label><input type="checkbox" id="saeOnly"> SAE Only</label>
+            <label><input type="checkbox" id="grade1" value="1" checked> Show Grade 1</label>
+            <label><input type="checkbox" id="grade2" value="2" checked> Show Grade 2</label>
+            <label><input type="checkbox" id="grade3" value="3" checked> Show Grade 3</label>
+            <label><input type="checkbox" id="grade4" value="4" checked> Show Grade 4</label>
+        </div>
+        <div class="table-container">
+            <table id="aeTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>AE Term</th>
+                        <th>Grade</th>
+                        <th>SAE</th>
+                        <th>SDX-7320 Related</th>
+                        <th>Capivasertib Related</th>
+			<th>Alpelisib Related</th>
+			<th>Fulvestrant Related</th>
+                        <th>Start Date</th>
+                        <th>Start Date Since C1D1</th>
+                        <th>End Date</th>
+                        <th>AE Preferred Term</th>
+                        <th>AE Lowest Level Term</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be populated here -->
+                </tbody>
+            </table>
+            <div id="no-rows" class="no-rows">No rows match</div>
+        </div>
+    </div>
+</body>
+</html>

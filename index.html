@@ -3,120 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDX-0103 Amelia-1 EDC Graphs</title><link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    <title>Amelia-1 EDC Data</title>
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
     <style>
         body {
-            background-color: skyblue;
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .top-area {
+            background-color: #8ac300;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            height: 160px; /* Adjust the height as needed */
+        }
+        .top-area .upper {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            box-sizing: border-box;
-        }
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 1000px;
-            width: 100%;
-            text-align: center;
-        }
-        .title {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-        .grid-item {
-            background: #f0f0f0;
-            border-radius: 5px;
             padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease;
+            height: 50%;
+            background-color: #8ac300;
         }
-        .grid-item a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            display: block;
+        .top-area .upper img {
+            max-height: 100%;
         }
-        .grid-item:hover {
-            background: #e0e0e0;
+        .top-area .upper h1 {
+            margin: 0;
+            color: black;
+            text-align: center;
+            flex-grow: 1;
         }
+        .top-area .middle {
+            background-color: steelblue;
+            height: 25%;
+        }
+        .top-area .lower {
+            display: flex;
+            justify-content: space-around;
+            background-color: #8ac310;
+            height: 25%;
+        }
+        .top-area .lower div {
+            flex-grow: 1;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            color: black;
+        }
+        .top-area .lower div:hover {
+            background-color: #7cb300;
+        }
+        .top-area .lower .active {
+            background-color: #777777;
+        }
+        .content {
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 200px); /* Adjust to match the height of the top area */
+        }
+        .content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Add meta tags for cache control */
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
     </style>
+    <script>
+        function showContent(file, tabId) {
+            document.getElementById('content-frame').src = file;
+            // Remove active class from all tabs
+            document.querySelectorAll('.top-area .lower div').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Add active class to the selected tab
+            document.getElementById(tabId).classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default content
+            showContent('LabValues.html', 'tab-lab-values');
+            // Add event listeners to tabs
+            document.getElementById('tab-lab-values').addEventListener('click', function() {
+                showContent('LabValues.html', 'tab-lab-values');
+            });
+            document.getElementById('tab-aes').addEventListener('click', function() {
+                showContent('AEs.html', 'tab-aes');
+            });
+            document.getElementById('tab-tba-pct').addEventListener('click', function() {
+                showContent('103_tba_pct.html', 'tab-tba-pct');
+            });
+            document.getElementById('tab-tba-abs').addEventListener('click', function() {
+                showContent('103_tba_abs.html', 'tab-tba-abs');
+            });
+        });
+    </script>
 </head>
 <body>
-    <div class="container">
-      <div class="title">
-	<span id="topoftheline"></span></div>
-        <div class="subtitle">EDC Data of 8/06/24 
-    <script>
-      const topoftheline2 = ['SD', 'X-0', '10', '3 Amel', 'ia-1', ' ED', 'C Gra', 'phs'].join('')
-      document.getElementById('topoftheline').innerText = topoftheline2;
-    </script></div>
-        <div class="grid-container">
-	  <div class="grid-item"> <a href="Albumin.html">Albumin</a></div>
-	  <div class="grid-item"> <a href="Alkaline_Phosphatase.html">Alkaline Phosphatase</a></div>
-	  <div class="grid-item"> <a href="ALT_-_Alanine_aminotransferase.html">ALT</a></div>
-	  <div class="grid-item"> <a href="Amylase.html">Amylase</a></div>
-	  <div class="grid-item"> <a href="aPTT_-_Activated_Partial_Thromboplastin_Time.html">aPTT</a></div>
-	  <div class="grid-item"> <a href="AST_-_Aspartate_Aminotransferase.html">AST</a></div>
-	  <div class="grid-item"> <a href="Basophils_(absolute).html">Basophils (abs)</a></div>
-	  <div class="grid-item"> <a href="Basophils_(percent).html">Basophils (%)</a></div>
-	  <div class="grid-item"> <a href="Bicarbonate.html">Bicarbonate</a></div>
-	  <div class="grid-item"> <a href="Bilirubin,_Direct.html">Bilirubin, Direct</a></div>
-	  <div class="grid-item"> <a href="Bilirubin,_Indirect.html">Bilirubin, Indirect</a></div>
-	  <div class="grid-item"> <a href="Bilirubin,_Total.html">Bilirubin, Total</a></div>
-	  <div class="grid-item"> <a href="BMI.html">BMI</a></div>
-	  <div class="grid-item"> <a href="BUN_-_Blood_Urea_Nitrogen.html">BUN</a></div>
-	  <div class="grid-item"> <a href="Calcium,_Total.html">Calcium, Total</a></div>
-	  <div class="grid-item"> <a href="Calcium.html">Calcium</a></div>
-	  <div class="grid-item"> <a href="Chloride.html">Chloride</a></div>
-	  <div class="grid-item"> <a href="Creatine_Kinase.html">Creatine Kinase</a></div>
-	  <div class="grid-item"> <a href="Creatinine.html">Creatinine</a></div>
-	  <div class="grid-item"> <a href="Eosinophils_(absolute).html">Eosinophils (abs)</a></div>
-	  <div class="grid-item"> <a href="Eosinophils_(percent).html">Eosinophils (%)</a></div>
-	  <div class="grid-item"> <a href="GGT_-_Gamma_Glutamyl_Transferase.html">GGT</a></div>
-	  <div class="grid-item"> <a href="Glucose.html">Glucose</a></div>
-	  <div class="grid-item"> <a href="HbA1c.html">HbA1c</a></div>
-	  <div class="grid-item"> <a href="HDL_Cholesterol.html">HDL Cholesterol</a></div>
-	  <div class="grid-item"> <a href="Hematocrit.html">Hematocrit</a></div>
-	  <div class="grid-item"> <a href="Hemoglobin.html">Hemoglobin</a></div>
-	  <div class="grid-item"> <a href="INR_-_International_Normalized_Ratio.html">INR</a></div>
-	  <div class="grid-item"> <a href="LDH_-_Lactate_dehydrogenase.html">LDH</a></div>
-	  <div class="grid-item"> <a href="LDL_Cholesterol.html">LDL Cholesterol</a></div>
-	  <div class="grid-item"> <a href="Lipase.html">Lipase</a></div>
-	  <div class="grid-item"> <a href="Lymphocytes_(absolute).html">Lymphocytes (abs)</a></div>
-	  <div class="grid-item"> <a href="Lymphocytes_(percent).html">Lymphocytes (%)</a></div>
-	  <div class="grid-item"> <a href="Magnesium.html">Magnesium</a></div>
-	  <div class="grid-item"> <a href="Monocytes_(absolute).html">Monocytes (abs)</a></div>
-	  <div class="grid-item"> <a href="Monocytes_(percent).html">Monocytes (%)</a></div>
-	  <div class="grid-item"> <a href="Neutrophils_(absolute_count).html">Neutrophils (abs)</a></div>
-	  <div class="grid-item"> <a href="Neutrophils_(percent).html">Neutrophils (%)</a></div>
-	  <div class="grid-item"> <a href="Platelet_Count.html">Platelet Count</a></div>
-	  <div class="grid-item"> <a href="Potassium.html">Potassium</a></div>
-	  <div class="grid-item"> <a href="RBC_(Erythrocytes).html">RBC</a></div>
-	  <div class="grid-item"> <a href="Sodium.html">Sodium</a></div>
-	  <div class="grid-item"> <a href="Total_Cholesterol.html">Total Cholesterol</a></div>
-	  <div class="grid-item"> <a href="Total_Protein.html">Total Protein</a></div>
-	  <div class="grid-item"> <a href="Triglycerides.html">Triglycerides</a></div>
-	  <div class="grid-item"> <a href="Urea.html">Urea</a></div>
-	  <div class="grid-item"> <a href="Uric_acid.html">Uric Acid</a></div>
-	  <div class="grid-item"> <a href="WBC_(Leukocytes).html">WBC</a></div>
+    <div class="top-area">
+        <div class="upper">
+            <h1>Amelia-1 EDC Data of 8/10/24</h1>
+            <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
         </div>
+        <div class="middle"></div>
+        <div class="lower">
+            <div id="tab-lab-values" class="active">Lab Values</div>
+            <div id="tab-aes">Adverse Events</div>
+            <div id="tab-tba-pct">FU Tumor Burden Assessment (Percent Change)</div>
+            <div id="tab-tba-abs">FU Tumor Burden Assessment (Absolute Values)</div>
+        </div>
+    </div>
+    <div class="content">
+        <iframe id="content-frame" src=""></iframe>
     </div>
 </body>
 </html>
