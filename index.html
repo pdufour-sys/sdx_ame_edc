@@ -91,6 +91,9 @@
             document.getElementById('tab-aes').addEventListener('click', function() {
                 showContent('AEs.html', 'tab-aes');
             });
+            document.getElementById('tab-exposure').addEventListener('click', function() {
+                showContent('Exposure_SDX_7539.html', 'tab-exposure');
+            });
             document.getElementById('tab-tba-pct').addEventListener('click', function() {
                 showContent('103_tba_pct.html', 'tab-tba-pct');
             });
@@ -110,8 +113,9 @@
         <div class="lower">
             <div id="tab-lab-values" class="active">Lab Values</div>
             <div id="tab-aes">Adverse Events</div>
-            <div id="tab-tba-pct">FU Tumor Burden Assessment (Percent Change)</div>
-            <div id="tab-tba-abs">FU Tumor Burden Assessment (Absolute Values)</div>
+            <div id="tab-exposure">Exposure</div>
+            <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
+            <div id="tab-tba-abs">FU Tumor Burden Assessment (Absolute)</div>
         </div>
     </div>
     <div class="content">
