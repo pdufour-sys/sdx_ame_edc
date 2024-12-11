@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,8 +42,6 @@
             justify-content: space-around;
             background-color: #8ac310;
             height: 25%;
-            align-items: center; /* Ensure vertical centering of elements */
-            position: relative; /* So we can place select absolutely if needed */
         }
         .top-area .lower div {
             flex-grow: 1;
@@ -58,14 +56,6 @@
         .top-area .lower .active {
             background-color: #777777;
         }
-
-        /* Style the select if desired */
-        #labValuesSelect {
-            display: none; /* Hidden by default */
-            margin-left: 10px; /* Some spacing if needed */
-            font-size: 16px;
-        }
-
         .content {
             padding: 20px;
             overflow-y: auto;
@@ -89,55 +79,26 @@
                 tab.classList.remove('active');
             });
             // Add active class to the selected tab
-            if (tabId) {
-                document.getElementById(tabId).classList.add('active');
-            }
+            document.getElementById(tabId).classList.add('active');
         }
-
         document.addEventListener('DOMContentLoaded', function() {
             // Set default content
             showContent('LabValues.html', 'tab-lab-values');
-
-            const labValuesTab = document.getElementById('tab-lab-values');
-            const labValuesSelect = document.getElementById('labValuesSelect');
-
-            // Replace the direct showContent() call with toggle of select
-            labValuesTab.addEventListener('click', function() {
-                // Toggle the display of the select
-                if (labValuesSelect.style.display === 'none' || labValuesSelect.style.display === '') {
-                    labValuesSelect.style.display = 'inline-block';
-                } else {
-                    labValuesSelect.style.display = 'none';
-                }
-            });
-
-            // When user chooses a patient in the select
-            labValuesSelect.addEventListener('change', function() {
-                const selectedValue = labValuesSelect.value;
-                if (selectedValue) {
-                    showContent(selectedValue, 'tab-lab-values');
-                }
-            });
-
-            document.getElementById('tab-lab-values-all').addEventListener('click', function() {
+            // Add event listeners to tabs
+            document.getElementById('tab-lab-values').addEventListener('click', function() {
                 showContent('LabValues.html', 'tab-lab-values');
-                labValuesSelect.style.display = 'none'; // Hide the select if visible
             });
             document.getElementById('tab-aes').addEventListener('click', function() {
                 showContent('AEs.html', 'tab-aes');
-                labValuesSelect.style.display = 'none'; // Hide the select if visible
             });
             document.getElementById('tab-exposure').addEventListener('click', function() {
                 showContent('Exposure_toplevel.html', 'tab-exposure');
-                labValuesSelect.style.display = 'none';
             });
             document.getElementById('tab-tba-pct').addEventListener('click', function() {
                 showContent('103_tba_pct.html', 'tab-tba-pct');
-                labValuesSelect.style.display = 'none';
             });
             document.getElementById('tab-tba-abs').addEventListener('click', function() {
                 showContent('103_tba_abs.html', 'tab-tba-abs');
-                labValuesSelect.style.display = 'none';
             });
         });
     </script>
@@ -145,31 +106,12 @@
 <body>
     <div class="top-area">
         <div class="upper">
-          <h1>Amelia-1 EDC Data of 12/10/24 1 am ET</h1>
+          <h1>Amelia-1 EDC Data of 12/09/24 1 am ET</h1>
           <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
         </div>
         <div class="middle"></div>
         <div class="lower">
-            <div id="tab-lab-values-all" class="active">Lab Values</div>
-            <div id="tab-lab-values" class="active">Lab Values (Select Patient)</div>
-            <select id="labValuesSelect">
-                <option value="">Select Patient</option>
-                <option value="pp/103_pp_102-001.html">102-001.html</option>
-                <option value="pp/103_pp_102-006.html">102-006.html</option>
-                <option value="pp/103_pp_102-007.html">102-007.html</option>
-                <option value="pp/103_pp_102-008.html">102-008.html</option>
-                <option value="pp/103_pp_102-009.html">102-009.html</option>
-                <option value="pp/103_pp_104-001.html">104-001.html</option>
-                <option value="pp/103_pp_105-001.html">105-001.html</option>
-                <option value="pp/103_pp_105-003.html">105-003.html</option>
-                <option value="pp/103_pp_105-005.html">105-005.html</option>
-                <option value="pp/103_pp_105-006.html">105-006.html</option>
-                <option value="pp/103_pp_106-002.html">106-002.html</option>
-                <option value="pp/103_pp_109-002.html">109-002.html</option>
-                <option value="pp/103_pp_111-001.html">111-001.html</option>
-                <option value="pp/103_pp_111-002.html">111-002.html</option>
-                <option value="pp/103_pp_111-002.html">111-003.html</option>
-            </select>
+            <div id="tab-lab-values" class="active">Lab Values</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
             <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
