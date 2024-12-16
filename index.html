@@ -1,4 +1,7 @@
-<!DOCTYPE html>
++
+
+<+
+  !DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +58,7 @@
             flex-grow: 1;
             text-align: center;
             padding: 15px; /* added 11:38 for exposure mystery; had been 15 px */
->            cursor: pointer;
+            cursor: pointer;
             color: black;
         }
         .top-area .lower div:hover {
@@ -101,7 +104,7 @@
                 document.getElementById(tabId).classList.add('active');
             }
         }
-
+        /* begin block 4 */ 
         document.addEventListener('DOMContentLoaded', function() {
             // Set default content (which tab is selected when we first load the page
             showContent('LabValues.html', 'tab-lab-values-all');
@@ -172,6 +175,7 @@
                 console.log('LOC 17');
             });
         });
+        /* end block 4 */ 
     </script>
 </head>
 <body>
@@ -186,21 +190,21 @@
             <div id="tab-lab-values-single">Lab Values (Select Patient)</div>
             <select class="select-list-style" id="labValuesSelect">
                 <option value="">Select Patient</option>
-                <option value="pp/103_pp_102-001.html">102-001.html</option>
-                <option value="pp/103_pp_102-006.html">102-006.html</option>
-                <option value="pp/103_pp_102-007.html">102-007.html</option>
-                <option value="pp/103_pp_102-008.html">102-008.html</option>
-                <option value="pp/103_pp_102-009.html">102-009.html</option>
-                <option value="pp/103_pp_104-001.html">104-001.html</option>
-                <option value="pp/103_pp_105-001.html">105-001.html</option>
-                <option value="pp/103_pp_105-003.html">105-003.html</option>
-                <option value="pp/103_pp_105-005.html">105-005.html</option>
-                <option value="pp/103_pp_105-006.html">105-006.html</option>
-                <option value="pp/103_pp_106-002.html">106-002.html</option>
-                <option value="pp/103_pp_109-002.html">109-002.html</option>
-                <option value="pp/103_pp_111-001.html">111-001.html</option>
-                <option value="pp/103_pp_111-002.html">111-002.html</option>
-                <option value="pp/103_pp_111-002.html">111-003.html</option>
+                <option value="pp/103_pp_102-001.html">102-001</option>
+                <option value="pp/103_pp_102-006.html">102-006</option>
+                <option value="pp/103_pp_102-007.html">102-007</option>
+                <option value="pp/103_pp_102-008.html">102-008</option>
+                <option value="pp/103_pp_102-009.html">102-009</option>
+                <option value="pp/103_pp_104-001.html">104-001</option>
+                <option value="pp/103_pp_105-001.html">105-001</option>
+                <option value="pp/103_pp_105-003.html">105-003</option>
+                <option value="pp/103_pp_105-005.html">105-005</option>
+                <option value="pp/103_pp_105-006.html">105-006</option>
+                <option value="pp/103_pp_106-002.html">106-002</option>
+                <option value="pp/103_pp_109-002.html">109-002</option>
+                <option value="pp/103_pp_111-001.html">111-001</option>
+                <option value="pp/103_pp_111-002.html">111-002</option>
+                <option value="pp/103_pp_111-002.html">111-003</option>
             </select>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
