@@ -104,7 +104,8 @@
         /* begin block 4 */ 
         document.addEventListener('DOMContentLoaded', function() {
             // Set default content (which tab is selected when we first load the page
-            showContent('LabValues.html', 'tab-lab-values-all');
+            showContent('LabValues.html', 'tab-lab-values-all-abs');
+            showContent('LabValuesPct.html', 'tab-lab-values-all-pct');
             console.log('LOC 01')
 
             const labValuesTab = document.getElementById('tab-lab-values-single');
@@ -128,8 +129,13 @@
                 }
             });
 
-            document.getElementById('tab-lab-values-all').addEventListener('click', function() {
-                showContent('LabValues.html', 'tab-lab-values-all');
+            document.getElementById('tab-lab-values-all-abs').addEventListener('click', function() {
+                showContent('LabValues.html', 'tab-lab-values-all-abs');
+                labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 11');
+            });
+            document.getElementById('tab-lab-values-all-pct').addEventListener('click', function() {
+                showContent('LabValuesPct.html', 'tab-lab-values-all-pct');
                 labValuesSelect.style.display = 'none'; // Hide the select if visible
                 console.log('LOC 11');
             });
@@ -183,7 +189,9 @@
         </div>
         <div class="lower">
 	    <!-- -the next 2 div used to be marked class='active' . Did that accomplish anything? -->
-            <div id="tab-lab-values-all">Lab Values</div>
+            <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
+            <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
+          <div hidden>
             <div id="tab-lab-values-single">Lab Values (Select Patient)</div>
             <select class="select-list-style" id="labValuesSelect">
                 <option value="">Select Patient</option>
@@ -203,6 +211,7 @@
                 <option value="pp/103_pp_111-002.html">111-002</option>
                 <option value="pp/103_pp_111-003.html">111-003</option>
             </select>
+          </div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
             <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
