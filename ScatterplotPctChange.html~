@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Image Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <label for="dropdown1">Select X axis parameter: </label>
+    <select id="dropdown1">
+<option value="PctChange_Absolute_Basophils">% Change Absolute Basophils</option> 
+<option value="PctChange_Absolute_Eosinphils">% Change Absolute Eosinphils</option> 
+<option value="PctChange_Absolute_Lymphocytes">% Change Absolute Lymphocytes</option> 
+<option value="PctChange_Absolute_Monocytes">% Change Absolute Monocytes</option> 
+<option value="PctChange_Absolute_Neutrophils">% Change Absolute Neutrophils</option> 
+<option value="PctChange_Albumin">% Change Albumin</option> 
+<option value="PctChange_Alkaline_Phosphatase">% Change Alkaline Phosphatase</option> 
+<option value="PctChange_ALT">% Change ALT</option> 
+<option value="PctChange_aPTT">% Change aPTT</option> 
+<option value="PctChange_AST">% Change AST</option> 
+<option value="PctChange_BMI">% Change BMI</option> 
+<option value="PctChange_BUN">% Change BUN</option> 
+<option value="PctChange_Calcium">% Change Calcium</option> 
+<option value="PctChange_Carbon_Dioxide">% Change Carbon Dioxide</option> 
+<option value="PctChange_Chloride">% Change Chloride</option> 
+<option value="PctChange_Creatinine">% Change Creatinine</option> 
+<option value="PctChange_D-Dimer">% Change D-Dimer</option> 
+<option value="PctChange_Fasting_Glucose">% Change Fasting Glucose</option> 
+<option value="PctChange_Fasting_Insulin">% Change Fasting Insulin</option> 
+<option value="PctChange_Glucose">% Change Glucose</option> 
+<option value="PctChange_HDL">% Change HDL</option> 
+<option value="PctChange_Height">% Change Height</option> 
+<option value="PctChange_Height_(not_standard)">% Change Height (not standard)</option> 
+<option value="PctChange_Hematocrit">% Change Hematocrit</option> 
+<option value="PctChange_Hemoglobin">% Change Hemoglobin</option> 
+<option value="PctChange_LDL">% Change LDL</option> 
+<option value="PctChange_MCH">% Change MCH</option> 
+<option value="PctChange_MCHC">% Change MCHC</option> 
+<option value="PctChange_MCV">% Change MCV</option> 
+<option value="PctChange_Platelet_Count">% Change Platelet Count</option> 
+<option value="PctChange_Potassium">% Change Potassium</option> 
+<option value="PctChange_PT">% Change PT</option> 
+<option value="PctChange_PT_inr">% Change PT inr</option> 
+<option value="PctChange_RBC">% Change RBC</option> 
+<option value="PctChange_RDW">% Change RDW</option> 
+<option value="PctChange_Sodium">% Change Sodium</option> 
+<option value="PctChange_Temperature">% Change Temperature</option> 
+<option value="PctChange_Temperature_(non-standard)">% Change Temperature (non-standard)</option> 
+<option value="PctChange_Total_Bilirubin">% Change Total Bilirubin</option> 
+<option value="PctChange_Total_Protein">% Change Total Protein</option> 
+<option value="PctChange_Triglyceride">% Change Triglyceride</option> 
+<option value="PctChange_WBC">% Change WBC</option> 
+<option value="PctChange_Weight">% Change Weight</option> 
+<option value="PctChange_Weight_(non-standard)">% Change Weight (non-standard)</option> 
+
+
+    </select>
+
+    <label for="dropdown2">Select Y axis parameter: </label>
+    <select id="dropdown2">
+
+<option value="PctChange_Absolute_Basophils">% Change Absolute Basophils</option> 
+<option value="PctChange_Absolute_Eosinphils">% Change Absolute Eosinphils</option> 
+<option value="PctChange_Absolute_Lymphocytes">% Change Absolute Lymphocytes</option> 
+<option value="PctChange_Absolute_Monocytes">% Change Absolute Monocytes</option> 
+<option value="PctChange_Absolute_Neutrophils">% Change Absolute Neutrophils</option> 
+<option value="PctChange_Albumin">% Change Albumin</option> 
+<option value="PctChange_Alkaline_Phosphatase">% Change Alkaline Phosphatase</option> 
+<option value="PctChange_ALT">% Change ALT</option> 
+<option value="PctChange_aPTT">% Change aPTT</option> 
+<option value="PctChange_AST">% Change AST</option> 
+<option value="PctChange_BMI">% Change BMI</option> 
+<option value="PctChange_BUN">% Change BUN</option> 
+<option value="PctChange_Calcium">% Change Calcium</option> 
+<option value="PctChange_Carbon_Dioxide">% Change Carbon Dioxide</option> 
+<option value="PctChange_Chloride">% Change Chloride</option> 
+<option value="PctChange_Creatinine">% Change Creatinine</option> 
+<option value="PctChange_D-Dimer">% Change D-Dimer</option> 
+<option value="PctChange_Fasting_Glucose">% Change Fasting Glucose</option> 
+<option value="PctChange_Fasting_Insulin">% Change Fasting Insulin</option> 
+<option value="PctChange_Glucose">% Change Glucose</option> 
+<option value="PctChange_HDL">% Change HDL</option> 
+<option value="PctChange_Height">% Change Height</option> 
+<option value="PctChange_Height_(not_standard)">% Change Height (not standard)</option> 
+<option value="PctChange_Hematocrit">% Change Hematocrit</option> 
+<option value="PctChange_Hemoglobin">% Change Hemoglobin</option> 
+<option value="PctChange_LDL">% Change LDL</option> 
+<option value="PctChange_MCH">% Change MCH</option> 
+<option value="PctChange_MCHC">% Change MCHC</option> 
+<option value="PctChange_MCV">% Change MCV</option> 
+<option value="PctChange_Platelet_Count">% Change Platelet Count</option> 
+<option value="PctChange_Potassium">% Change Potassium</option> 
+<option value="PctChange_PT">% Change PT</option> 
+<option value="PctChange_PT_inr">% Change PT inr</option> 
+<option value="PctChange_RBC">% Change RBC</option> 
+<option value="PctChange_RDW">% Change RDW</option> 
+<option value="PctChange_Sodium">% Change Sodium</option> 
+<option value="PctChange_Temperature">% Change Temperature</option> 
+<option value="PctChange_Temperature_(non-standard)">% Change Temperature (non-standard)</option> 
+<option value="PctChange_Total_Bilirubin">% Change Total Bilirubin</option> 
+<option value="PctChange_Total_Protein">% Change Total Protein</option> 
+<option value="PctChange_Triglyceride">% Change Triglyceride</option> 
+<option value="PctChange_WBC">% Change WBC</option> 
+<option value="PctChange_Weight">% Change Weight</option> 
+<option value="PctChange_Weight_(non-standard)">% Change Weight (non-standard)</option> 
+
+
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+      const value1 = dropdown1.value;
+    const value2 = dropdown2.value;
+      console.log('LOC 01')
+      const newImageSrc = `${value1}_${value2}.jpg`;
+      console.log('LOC 02: '+newImageSrc);
+      newImageSrcWithDir = 'scatterplotpct/scatter_' + newImageSrc;
+      console.log('LOC 03: '+newImageSrcWithDir);
+      displayImage.src = newImageSrcWithDir;
+      displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>

@@ -151,11 +151,14 @@
                 if (selectedValue) {
                     showContent(selectedValue, 'tab-lab-values-single');
                 }
-                console.log('LOC 13');
+                console.log('LOC 13.1');
             });
 
-
-
+            document.getElementById('tab-scatter').addEventListener('click', function() {
+                showContent('ScatterplotPctChange.html', 'tab-scatter');
+                labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.2');
+            });
             document.getElementById('tab-aes').addEventListener('click', function() {
                 showContent('AEs.html', 'tab-aes');
                 labValuesSelect.style.display = 'none'; // Hide the select if visible
@@ -211,6 +214,7 @@
                 <option value="pp/103_pp_111-003.html">111-003</option>
             </select>
           </div>
+            <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
             <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
