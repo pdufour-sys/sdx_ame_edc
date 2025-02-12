@@ -18,6 +18,14 @@
 	  white-space: normal; /* Allow text wrapping */
       }
       
+      /* Make the table header sticky */
+      #eventsTable thead {
+	  position: sticky;
+	  top: 0;
+	  background-color: #4CAF50; /* Keep background so text remains visible */
+	  z-index: 100; /* Ensure it stays above other elements */
+      }
+
       /* Style table rows */
       #eventsTable td {
 	  padding: 10px;
