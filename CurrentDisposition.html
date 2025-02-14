@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Trial Patients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            flex-grow: 1;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .patient-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .patient-card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter-container">
+        <div class="filter-options">
+            <label><input type="radio" name="type" value="type1" checked> 6 Evaluable Capivasertib </label>
+            <label><input type="radio" name="type" value="type2"> All Capivartib</label>
+            <label><input type="radio" name="type" value="type3"> All Alpelisib</label>
+            <label><input type="radio" name="type" value="all"> All</label>
+
+        </div>
+    </div>
+    <div class="container">
+        <h1>Clinical Trial Patients</h1>
+        <div id="patient-list" class="patient-list"></div>
+    </div>
+
+    <script>
+        const patients = [
+	{ id: "102-001", age: 38, c1d1_date: "2023-06-21", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "102-006", age: 51, c1d1_date: "2024-01-24", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "102-007", age: 72, c1d1_date: "2024-05-15", disposition: "Active", type1: 0, type2: 0, type3: 1 },
+	    { id: "102-008", age: 66, c1d1_date: "2024-06-26", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "102-009", age: 54, c1d1_date: "2024-10-29", disposition: "Off Study", type1: 1, type2: 1, type3: 0 },
+	    { id: "102-010", age: 52, c1d1_date: "2025-01-07", disposition: "Active", type1: 0, type2: 1, type3: 0 },
+	    { id: "104-001", age: 67, c1d1_date: "2024-10-30", disposition: "Active", type1: 1, type2: 1, type3: 0 },
+	    { id: "104-002", age: 55, c1d1_date: "2025-01-08", disposition: "Active", type1: 0, type2: 1, type3: 0 },
+	    { id: "105-001", age: 41, c1d1_date: "2023-09-11", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "105-003", age: 60, c1d1_date: "2023-10-23", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "105-005", age: 72, c1d1_date: "2024-09-09", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "105-006", age: 59, c1d1_date: "2024-09-17", disposition: "Active", type1: 0, type2: 0, type3: 1 },
+	    { id: "106-002", age: 39, c1d1_date: "2024-05-29", disposition: "Off Study", type1: 1, type2: 1, type3: 0 },
+	    { id: "109-002", age: 82, c1d1_date: "2024-06-17", disposition: "Off Study", type1: 1, type2: 1, type3: 0 },
+	    { id: "110-001", age: 55, c1d1_date: "2024-12-18", disposition: "Active Study", type1: 1, type2: 1, type3: 0 },
+	    { id: "111-001", age: 53, c1d1_date: "2024-09-16", disposition: "Off Study", type1: 0, type2: 1, type3: 0 },
+	    { id: "111-002", age: 76, c1d1_date: "2024-09-24", disposition: "Off Study", type1: 0, type2: 0, type3: 1 },
+	    { id: "111-003", age: 55, c1d1_date: "2024-09-25", disposition: "Active", type1: 1, type2: 1, type3: 0 },
+	    { id: "111-004", age: 40, c1d1_date: "2024-12-30", disposition: "Active", type1: 0, type2: 0, type3: 1 },
+
+        ];
+        
+        function displayPatients(filter) {
+            const container = document.getElementById("patient-list");
+            container.innerHTML = "";
+            
+            patients.forEach(patient => {
+                if (filter === "all" || patient[filter] === 1) {
+                    const card = document.createElement("div");
+                    card.className = "patient-card";
+                    card.innerHTML = `
+                        <strong>ID:</strong> ${patient.id} <br>
+                        <strong>Age:</strong> ${patient.age} <br>
+                        <strong>C1D1 Date:</strong> ${patient.c1d1_date} <br>
+                        <strong>Disposition:</strong> ${patient.disposition}
+                    `;
+                    container.appendChild(card);
+                }
+            });
+        }
+        
+        document.querySelectorAll("input[name='type']").forEach(radio => {
+            radio.addEventListener("change", event => {
+                let filter = event.target.value;
+                filter = filter === "all" ? "all" : `type${filter.charAt(filter.length - 1)}`;
+                displayPatients(filter);
+            });
+        });
+        
+        displayPatients("all");
+    </script>
+</body>
+</html>

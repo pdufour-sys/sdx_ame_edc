@@ -167,7 +167,12 @@
             document.getElementById('tab-exposure').addEventListener('click', function() {
                 showContent('Exposure_toplevel.html', 'tab-exposure');
                 labValuesSelect.style.display = 'none';
-                console.log('LOC 15');
+                console.log('LOC 15.1');
+            });
+            document.getElementById('tab-patient-disposition').addEventListener('click', function() {
+                showContent('CurrentDisposition.html', 'tab-patient-disposition');
+                labValuesSelect.style.display = 'none';
+                console.log('LOC 15.2');
             });
             document.getElementById('tab-tba-pct').addEventListener('click', function() {
                 showContent('103_tba_pct.html', 'tab-tba-pct');
@@ -217,6 +222,7 @@
             <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
+            <div id="tab-patient-disposition">Patient Disposition</div>
             <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
             <div id="tab-tba-abs">FU Tumor Burden Assessment (Abs)</div>
         </div>
