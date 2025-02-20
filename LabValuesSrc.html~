@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  remember this string os recomputed in javascript -->
+    <title>SDX-0103 Amelia-1 EDC and Biomarker Graphs (Percent Change from baseline)</title>
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    <style>
+        body {
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            box-sizing: border-box;
+            overflow-y: auto; /* Allow scrolling */
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 20px; /* Add some margin at the top */
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .grid-item {
+            background: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .grid-item a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-item:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="title">
+	<span id="topoftheline"></span>
+    <script>
+      const topoftheline2 = ['SD', 'X-0', '10', '3 Amel', 'ia-1', ' ED', 'C and Bi', 'omarker Gra', 'phs (','Pct Change)'].join('')
+      document.getElementById('topoftheline').innerText = topoftheline2;
+    </script></div>
+        <div class="grid-container">
+	  <div class="grid-item"> <a href="pct\pct_Adiponectin.html">Adiponectin</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Albumin.html">Albumin</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Alkaline_Phosphatase.html">Alkaline Phosphatase</a></div>
+	  <div class="grid-item"> <a href="pct\pct_ALT_-_Alanine_aminotransferase.html">ALT</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Amylase.html">Amylase</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Apelin.html">Apelin</a></div>
+	  <div class="grid-item"> <a href="pct\pct_aPTT_-_Activated_Partial_Thromboplastin_Time.html">aPTT</a></div>
+	  <div class="grid-item"> <a href="pct\pct_AST_-_Aspartate_Aminotransferase.html">AST</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Basophils_(absolute).html">Basophils (abs)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Basophils_(percent).html">Basophils (%)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Bicarbonate.html">Bicarbonate</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Bilirubin,_Direct.html">Bilirubin, Direct</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Bilirubin,_Indirect.html">Bilirubin, Indirect</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Bilirubin,_Total.html">Bilirubin, Total</a></div>
+	  <div class="grid-item"> <a href="pct\pct_BMI.html">BMI</a></div>
+	  <div class="grid-item"> <a href="pct\pct_BUN_-_Blood_Urea_Nitrogen.html">BUN</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Calcium,_Total.html">Calcium, Total</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Calcium.html">Calcium</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Chloride.html">Chloride</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Creatine_Kinase.html">Creatine Kinase</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Creatinine.html">Creatinine</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Eosinophils_(absolute).html">Eosinophils (abs)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Eosinophils_(percent).html">Eosinophils (%)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_FGF-21.html">FGF-21</a></div>
+	  <div class="grid-item"> <a href="pct\pct_GGT_-_Gamma_Glutamyl_Transferase.html">GGT</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Glucose.html">Glucose</a></div>
+	  <div class="grid-item"> <a href="pct\pct_GM-SCF.html">GM-SCF</a></div>
+	  <div class="grid-item"> <a href="pct\pct_HbA1c.html">HbA1c</a></div>
+	  <div class="grid-item"> <a href="pct\pct_HDL_Cholesterol.html">HDL Cholesterol</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Hematocrit.html">Hematocrit</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Hemoglobin.html">Hemoglobin</a></div>
+	  <div class="grid-item"> <a href="pct\pct_IGF-1.html">IGF-1</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Il-5.html">IL-5</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Il-10.html">IL-10</a></div>
+	  <div class="grid-item"> <a href="pct\pct_INR_-_International_Normalized_Ratio.html">INR</a></div>
+	  <div class="grid-item"> <a href="pct\pct_LDH_-_Lactate_dehydrogenase.html">LDH</a></div>
+	  <div class="grid-item"> <a href="pct\pct_LDL_Cholesterol.html">LDL Cholesterol</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Leptin.html">Leptin</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Lipase.html">Lipase</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Lymphocytes_(absolute).html">Lymphocytes (abs)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Lymphocytes_(percent).html">Lymphocytes (%)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Magnesium.html">Magnesium</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Monocytes_(absolute).html">Monocytes (abs)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Monocytes_(percent).html">Monocytes (%)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Neutrophils_(absolute_count).html">Neutrophils (abs)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Neutrophils_(percent).html">Neutrophils (%)</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Platelet_Count.html">Platelet Count</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Potassium.html">Potassium</a></div>
+	  <div class="grid-item"> <a href="pct\pct_RBC_(Erythrocytes).html">RBC</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Sodium.html">Sodium</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Total_Cholesterol.html">Total Cholesterol</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Total_Protein.html">Total Protein</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Triglycerides.html">Triglycerides</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Urea.html">Urea</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Uric_acid.html">Uric Acid</a></div>
+	  <div class="grid-item"> <a href="pct\pct_VEGF-C.html">VEGF-C</a></div>
+	  <div class="grid-item"> <a href="pct\pct_WBC_(Leukocytes).html">WBC</a></div>
+	  <div class="grid-item"> <a href="pct\pct_Weight.html">Weight</a></div>
+        </div>
+    </div>
+</body>
+</html>

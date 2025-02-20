@@ -138,6 +138,11 @@
                 labValuesSelect.style.display = 'none'; // Hide the select if visible
                 console.log('LOC 11');
             });
+            document.getElementById('tab-lab-values-src').addEventListener('click', function() {
+                showContent('LabValuesSrc.html', 'tab-lab-values-src');
+                labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 11');
+            });
             document.getElementById('tab-lab-values-single').addEventListener('click', function() {
                 showContent('PleaseSelectPatient.html', 'tab-lab-values-single');
                 // labValuesSelect.style.display = 'none'; // Hide the select if visible
@@ -198,6 +203,7 @@
 	    <!-- -the next 2 div used to be marked class='active' . Did that accomplish anything? -->
             <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
             <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
+            <div id="tab-lab-values-src">Lab Values (Safety Review Committee)</div>
           <div hidden>
             <div id="tab-lab-values-single">Lab Values (Select Patient)</div>
             <select class="select-list-style" id="labValuesSelect">
