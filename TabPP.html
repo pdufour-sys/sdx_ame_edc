@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Image Selector</title>
+  <style>
+    .dropdown-container {
+	display: flex;
+	gap: 20px; /* Adds space between columns */
+	align-items: flex-start; /* Align dropdowns to the top */
+    }
+    
+    .dropdown-column {
+	flex: 1; /* Each column takes equal space */
+	display: flex;
+	flex-direction: column;
+    }
+    
+    .dropdown-column-button {
+	border-radius: 50px;
+	font-size: 24px; /* Large text */
+	color: black;
+	padding: 8px 16px; /* was 15 32 */ 
+	margin: 0px 20px; /* was 4 2*/ 
+	background-color: green;
+    }
+    
+    .analyte-selector-off {
+	border-radius: 50px;
+	font-size: 14px; /* Large text */
+	color: black;
+	padding: 8px 16px; /* was 15 32 */ 
+	margin: 0px 20px; /* was 4 2*/ 
+	background-color: green;
+    }
+
+    .analyte-selector-on {
+	border-radius: 50px;
+	font-size: 14px; /* Large text */
+	color: grey;
+	padding: 8px 16px; /* was 15 32 */ 
+	margin: 0px 20px; /* was 4 2*/ 
+	background-color: #00ff00;
+    }
+    
+    /* Add a thin green vertical bar */
+    .dropdown-column:nth-child(2) {
+	border-left: 2px solid green; /* Thin green vertical bar */
+	padding-left: 20px; /* Adds space so text doesn’t touch the border */
+    }
+    .or-separator {
+	font-size: 24px; /* Large text */
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+    }
+
+    .image-container-class {
+	/* width='70%'; */
+	width: 700px;
+    }
+
+    body {
+      background-color: skyblue;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .lhs-highlight-expression {
+	font-family: Arial, sans-serif;
+	font-size: 25px;
+	
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+    #  <!-- max-width: 600px; -->
+    #      <!-- max-height: 400px; -->
+    #  <!-- width: 600px;  /* Set width */ -->
+    #  <!--  height: auto;  /* Maintain aspect ratio */ -->
+    #<!--   max-width: 100%;  /* Ensure responsiveness */ -->
+    #  <!--  max-height: 600px; /* Limit height */ -->
+    #<!--   border: 1px solid #ccc; /* Optional: Add a border */						      -->
+    #}
+  </style>
+</head>
+<body>
+<script>
+  // the default chosen for "predictor characteristics" is pct
+  let theside = 'left'
+  let ewchecked = false;
+  let variation1 = 'PctC2D1/'
+  let variation2 = 'PctChange'
+
+  function onClickLink (thename) {
+      console.log('onClickLink()');
+  }
+
+  // theside can be either left or right
+  function setPredictorSide(p_theside) {
+      console.log("********** setPredictorSide("+p_theside+")")
+      weightLightBold(p_theside);
+      theside = p_theside;
+  }
+  function setVariationFromDropdownAndSetLeft () {
+      console.log("********* setVariationFromDropdownAndSetLeft()")
+      setVariationFromDropdown();
+      setPredictorSide('left');
+  }
+    function setVariation(newvar) {
+	if (newvar=='pct') {
+	    variation1 = 'PctC2D1/';
+	    variation2 = 'PctChange';
+	} else if (newvar=='max') {
+	    variation1 = 'MaxEver/';
+	    variation2 = 'MaxValueEver';
+	} else if (newvar=='min') {
+	    variation1 = 'MinEver/';
+	    variation2 = 'MinValueEver';
+	} else {
+	    variation1 = 'SET21';
+	    variation2 = 'SET22';
+	}
+	console.log('setVaraation with '+newvar);
+        variation = newvar;
+	console.log('now its '+variation);
+    }
+
+</script>
+
+  <div class="menu">
+    <div class="lhs-highlight-expression">Select Patient<br><b></div><br>
+
+    <select id="dropdown_patient" onchange='updateImage()'>
+      <option value="102-001">102-001</option>
+      <option value="102-006">102-006</option>
+      <option value="102-007">102-007</option>
+      <option value="102-008">102-008</option>
+      <option value="102-009">102-009</option>
+      <option value="102-010">102-010</option>
+      <option value="102-011">102-011</option>
+      <option value="104-001">104-001</option>
+      <option value="104-002">104-002</option>
+      <option value="105-001">105-001</option>
+      <option value="105-003">105-003</option>
+      <option value="105-005">105-005</option>
+      <option value="105-006">105-006</option>
+      <option value="106-002">106-002</option>
+      <option value="109-002">109-002</option>
+      <option value="110-001">110-001</option>
+      <option value="110-002">110-002</option>
+      <option value="111-001">111-001</option>
+      <option value="111-002">111-002</option>
+      <option value="111-003">111-003</option>
+      <option value="111-004">111-004</option>
+     </select><br><br><br><br>
+
+    <select id="dropdown_analyte" onchange='updateImage()'>
+      <option value="Adiponectin">Adiponectin</option>
+      <option value="Albumin"                                     
+      <option value="Alkaline Phosphatase">Alkaline Phosphatase</option>
+      <option value="ALT - Alanine aminotransferase">ALT - Alanine aminotransferase</option>
+      <option value="Amylase">Amylase</option>
+      <option value="Apelin">Apelin</option>
+      <option value="aPTT - Activated Partial Thromboplastin Time">aPTT - Activated Partial Thromboplastin Time</option>
+      <option value="AST - Aspartate Aminotransferase">AST - Aspartate Aminotransferase</option>
+      <option value="Basophils (absolute)">Basophils (absolute)</option>
+      <option value="Basophils (percent)">Basophils (percent)</option>
+      <option value="Bicarbonate">Bicarbonate</option>
+      <option value="Bilirubin, Direct">Bilirubin, Direct</option>
+      <option value="Bilirubin, Indirect">Bilirubin, Indirect</option>
+      <option value="Bilirubin, Total">Bilirubin, Total</option>
+      <option value="BMI">BMI</option>
+      <option value="BUN - Blood Urea Nitrogen">BUN - Blood Urea Nitrogen</option>
+      <option value="Calcium, Total">Calcium, Total</option>
+      <option value="Chloride">Chloride</option>
+      <option value="Creatine Kinase">Creatine Kinase</option>
+      <option value="Creatinine">Creatinine</option>
+      <option value="Eosinophils (absolute)">Eosinophils (absolute)</option>
+      <option value="Eosinophils (percent)">Eosinophils (percent)</option>
+      <option value="FGF-21">FGF-21</option>
+      <option value="GGT - Gamma Glutamyl Transferase">GGT - Gamma Glutamyl Transferase</option>
+      <option value="Glucose">Glucose</option>
+      <option value="GM-SCF">GM-SCF</option>
+      <option value="HbA1c">HbA1c</option>
+      <option value="HDL Cholesterol">HDL Cholesterol</option>
+      <option value="Hematocrit">Hematocrit</option>
+      <option value="Hemoglobin">Hemoglobin</option>
+      <option value="IGF-1">IGF-1</option>
+      <option value="IL-10">IL-10</option>
+      <option value="IL-5">IL-5</option>
+      <option value="INR - International Normalized Ratio">INR - International Normalized Ratio</option>
+      <option value="LDH - Lactate dehydrogenase">LDH - Lactate dehydrogenase</option>
+      <option value="LDL Cholesterol">LDL Cholesterol</option>
+      <option value="Leptin">Leptin</option>
+      <option value="Lipase">Lipase</option>
+      <option value="Lymphocytes (absolute)">Lymphocytes (absolute)</option>
+      <option value="Lymphocytes (percent)">Lymphocytes (percent)</option>
+      <option value="Magnesium">Magnesium</option>
+      <option value="Monocytes (absolute)">Monocytes (absolute)</option>
+      <option value="Monocytes (percent)">Monocytes (percent)</option>
+      <option value="Neutrophils (absolute count)">Neutrophils (absolute count)</option>
+      <option value="Neutrophils (percent)">Neutrophils (percent)</option>
+      <option value="Platelet Count">Platelet Count</option>
+      <option value="Potassium">Potassium</option>
+      <option value="RBC (Erythrocytes)">RBC (Erythrocytes)</option>
+      <option value="Sodium">Sodium</option>
+      <option value="Total Cholesterol">Total Cholesterol</option>
+      <option value="Total Protein">Total Protein</option>
+      <option value="Triglycerides">Triglycerides</option>
+      <option value="Urea">Urea</option>
+      <option value="Uric acid">Uric acid</option>
+      <option value="VEGF-C">VEGF-C</option>
+      <option value="WBC (Leukocytes)">WBC (Leukocytes)</option>
+      <option value="Weight">Weight</option>
+     </select><br><br><br><br>
+
+
+  </div>
+
+  <div id="image-container" class="image-container-class">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const dropdown3 = document.getElementById('dropdown3');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+	console.log('updateImage LOC 00')
+        const patient = dropdown_patient.value;
+        const analyte = dropdown_analyte.value;
+
+        // change commas, spacees, open and close parens to "_"
+	console.log('updateImage LOC 01 '+analyte);
+
+        let analyte_to_ul = analyte.replace(/ /g, "_");
+	console.log('updateImage LOC 02 '+analyte_to_ul);
+
+        analyte_to_ul = analyte_to_ul.replace(/,/g, "_");
+	console.log('updateImage LOC 03 '+analyte_to_ul);
+        analyte_to_ul = analyte_to_ul.replace(/\(/g, "_");
+	console.log('updateImage LOC 04 '+analyte_to_ul);
+        analyte_to_ul = analyte_to_ul.replace(/\)/g, "_");
+	console.log('updateImage LOC 05 '+analyte_to_ul);
+
+        solution2 = 'ppa/ppa_'+analyte_to_ul+'_'+patient+'.jpg';
+	console.log('updateImage LOC 06 '+analyte_to_ul);
+	// ppa/ppa_ALT_-_Alanine_aminotransferase_111-004.jpg
+	    
+	displayImage.src = solution2;
+	displayImage.alt = `Patient ${patient} has no measurement for ${analyte}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown_patient.addEventListener('change', updateImage);
+    dropdown_analyte.addEventListener('change', updateImage);
+
+    updateImage();    
+  </script>
+</body>
+</html>

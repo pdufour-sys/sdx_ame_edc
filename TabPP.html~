@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Image Selector</title>
+  <style>
+    .dropdown-container {
+	display: flex;
+	gap: 20px; /* Adds space between columns */
+	align-items: flex-start; /* Align dropdowns to the top */
+    }
+    
+    .dropdown-column {
+	flex: 1; /* Each column takes equal space */
+	display: flex;
+	flex-direction: column;
+    }
+    
+    .dropdown-column-button {
+	border-radius: 50px;
+	font-size: 24px; /* Large text */
+	color: black;
+	padding: 8px 16px; /* was 15 32 */ 
+	margin: 0px 20px; /* was 4 2*/ 
+	background-color: green;
+    }
+    
+    /* Add a thin green vertical bar */
+    .dropdown-column:nth-child(2) {
+	border-left: 2px solid green; /* Thin green vertical bar */
+	padding-left: 20px; /* Adds space so text doesn’t touch the border */
+    }
+    .or-separator {
+	font-size: 24px; /* Large text */
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+    }
+    
+    body {
+      background-color: skyblue;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .lhs-highlight-expression {
+	font-family: Arial, sans-serif;
+	font-size: 25px;
+	
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 600px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 600px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+<script>
+  // the default chosen for "predictor characteristics" is pct
+  let theside = 'left'
+  let ewchecked = false;
+  let variation1 = 'PctC2D1/'
+  let variation2 = 'PctChange'
+
+  functino onClickLink (
+  function checkboxchange() {
+      let id1 = document.getElementById('idisew');
+      ewchecked = id1.checked;
+  }
+
+  function onClickExposure() {
+      console.log('onClickExposure LOC OCE 01');
+      //weightLightBold('right');
+      setPredictorSide('right')
+      updateImage();    
+  }
+
+  function onClickEdcLabs() {
+      console.log('onClickEdcLabs')
+      setPredictorSide('left')
+      updateImage();    
+  }
+
+  // pWhich is either 'left' or 'right'
+  function weightLightBold(pWhich) {
+      let labelDropdown2 = document.getElementById('label-dropdown2');
+      let labelDropdown3 = document.getElementById('label-dropdown3');
+      let labelDropdown4 = document.getElementById('label-dropdown4');
+      let buttonleft = document.getElementById('buttonleft');
+      let buttonright = document.getElementById('buttonright');
+
+      if (pWhich=='left') {
+	  labelDropdown2.style.fontWeight = "700"; // Make text bold
+	  labelDropdown3.style.fontWeight = "700"; // Make text bold
+	  labelDropdown4.style.fontWeight = "150"; // Make text bold
+	  buttonleft.style.fontWeight = "700"; // Make text bold
+	  buttonright.style.fontWeight = "150"; // Make text bold
+      } else {
+	  labelDropdown2.style.fontWeight = "150"; // Make text bold
+	  labelDropdown3.style.fontWeight = "150"; // Make text bold
+	  labelDropdown4.style.fontWeight = "700"; // Make text bold
+	  buttonleft.style.fontWeight = "150"; // Make text bold
+	  buttonright.style.fontWeight = "700"; // Make text bold
+      }
+      console.log('onClickExposure LOC OCE 02'+labelDropdown4);
+      console.log('onClickExposure LOC OCE 03');
+  }
+    
+    function setVariationFromDropdown () {
+	let dropdown3Value = document.getElementById('dropdown3').value;
+	console.log('svfd() LOC 01 with '+dropdown3Value);
+        
+	if (dropdown3Value=='pct') {
+	    console.log('svfd() LOC 02')
+	    variation1 = 'PctC2D1/';
+	    variation2 = 'PctChange';
+	} else if (dropdown3Value=='max') {
+	    console.log('svfd() LOC 03')
+	    variation1 = 'MaxEver/';
+	    variation2 = 'MaxValueEver';
+	} else if (dropdown3Value=='min') {
+	    console.log('svfd() LOC 04')
+	    variation1 = 'MinEver/';
+	    variation2 = 'MinValueEver';
+	} else if (dropdown3Value=='c1d1') {
+	    console.log('svfd() LOC 05')
+	    variation1 = 'C1D1/';
+	    variation2 = 'C1D1';
+	} else if (dropdown3Value=='c2d1') {
+	    console.log('svfd() LOC 07')
+	    variation1 = 'C2D1/';
+	    variation2 = 'C2D1';
+	} else {
+	    console.log('svfd() LOC 07')
+	    variation1 = 'SET21';
+	    variation2 = 'SET22';
+	}
+	console.log('svfd() LOC 08')
+    }
+
+
+  // theside can be either left or right
+  function setPredictorSide(p_theside) {
+      console.log("********** setPredictorSide("+p_theside+")")
+      weightLightBold(p_theside);
+      theside = p_theside;
+  }
+  function setVariationFromDropdownAndSetLeft () {
+      console.log("********* setVariationFromDropdownAndSetLeft()")
+      setVariationFromDropdown();
+      setPredictorSide('left');
+  }
+    function setVariation(newvar) {
+	if (newvar=='pct') {
+	    variation1 = 'PctC2D1/';
+	    variation2 = 'PctChange';
+	} else if (newvar=='max') {
+	    variation1 = 'MaxEver/';
+	    variation2 = 'MaxValueEver';
+	} else if (newvar=='min') {
+	    variation1 = 'MinEver/';
+	    variation2 = 'MinValueEver';
+	} else {
+	    variation1 = 'SET21';
+	    variation2 = 'SET22';
+	}
+	console.log('setVaraation with '+newvar);
+        variation = newvar;
+	console.log('now its '+variation);
+    }
+
+</script>
+
+  <div class="menu">
+    <div class="lhs-highlight-expression">Select Patient<br><b></div><br>
+
+    <!-- label for="dropdown1" id="label-dropdown1" > Select Efficiency/Safety Parameter to Predict < /label -->
+    <select id="dropdown1" onchange='setVariationFromDropdown()'>
+      <option value="102-001">102-001</option>
+      <option value="102-006">102-006</option>
+      <option value="102-007">102-007</option>
+      <option value="102-008">102-008</option>
+      <option value="102-009">102-009</option>
+      <option value="102-010">102-010</option>
+      <option value="102-011">102-011</option>
+      <option value="104-001">104-001</option>
+      <option value="104-002">104-002</option>
+      <option value="105-001">105-001</option>
+      <option value="105-003">105-003</option>
+      <option value="105-005">105-005</option>
+      <option value="105-006">105-006</option>
+      <option value="106-002">106-002</option>
+      <option value="109-002">109-002</option>
+      <option value="110-001">110-001</option>
+      <option value="110-002">110-002</option>
+      <option value="111-001">111-001</option>
+      <option value="111-002">111-002</option>
+      <option value="111-003">111-003</option>
+      <option value="111-004">111-004</option>
+     </select><br><br><br><br>
+
+    <div class="new-select-analyte">
+      <link onclick="onClickLink('1')">Link 1 </link>
+      <link onclick="onClickLink('2')">Link 1 </link>
+    </div class="new-select-analyte">
+
+
+    <div class="dropdown-container">
+      <!-- Left Column -->
+      <div class="dropdown-column">
+        <button id="buttonleft" class="dropdown-column-button" type="button" onclick="onClickEdcLabs()">EDC / Labs</button><br><br>
+        <label for="dropdown2" id="label-dropdown2">Potential Predictor from EDC/Labs</label>
+        <select id="dropdown2" onchange="setPredictorSide('left')">
+	  <option value="Adiponectin">Adiponectin</option> 
+	  <option value="Albumin">Albumin</option> 
+	  <option value="Alkaline_Phosphatase">Alkaline_Phosphatase</option> 
+	  <option value="ALT_(SGPT)">ALT (SGPT)</option> 
+	  <option value="AST_(SGOT)">AST (SGOT)</option> 
+	  <option value="Basophils">Basophils</option> 
+	  <option value="bFGF">bFGF</option> 
+	  <option value="bFGF_Strat_GT_3.5">bFGF (Stratified >= 3.5 pm/ml)</option> 
+	  <option value="Bicarbonate">Bicarbonate</option> 
+	  <option value="Calcium">Calcium</option> 
+	  <option value="Chloride">Chloride</option> 
+	  <option value="Creatine_Kinase">Creatine Kinase</option> 
+	  <option value="CRP">CRP</option> 
+	  <option value="Direct_Bilirubin">Direct Bilirubin</option> 
+	  <option value="Eosinophils">Eosinophils</option> 
+	  <option value="Free_Fatty_acids">Free Fatty Acids</option> 
+	  <option value="Glucose">Glucose</option> 
+	  <option value="HbA1c">HbA1c</option> 
+	  <option value="HDL_Cholesterol_(Direct)">HDL Cholesterol (Direct)</option> 
+	  <option value="Hematocrit">Hematocrit</option> 
+	  <option value="Hemoglobin">Hemoglobin</option> 
+	  <option value="IGF_1">IGF-1</option> 
+	  <option value="IL_6">IL-6</option> 
+	  <option value="Indirect_Bilirubin">Indirect Bilirubin</option> 
+	  <option value="INR">INR</option> 
+	  <option value="Insulin">Insulin</option> 
+	  <option value="Insulin_Strat_GT_20">Insulin (Stratified >= 20 uU/mL)</option>
+	  <option value="LAR">LAR</option> 
+	  <option value="LDL_Cholesterol_(Direct)">LDL Cholesterol (Direct)</option> 
+	  <option value="Leptin">Leptin</option> 
+	  <option value="Lymphocytes">Lymphocytes</option> 
+	  <option value="Magnesium">Magnesium</option> 
+	  <option value="MCP_1">MCP-1</option> 
+	  <option value="Monocytes">Monocytes</option> 
+	  <option value="Neutrophils">Neutrophils</option> 
+	  <option value="Phosphorous">Phosphorous</option> 
+	  <option value="Platelet_Count">Platelet Count</option> 
+	  <option value="Potassium">Potassium</option> 
+	  <option value="PT(prothrombin_time)">PT(Prothrombin Time)</option> 
+	  <option value="PTT">PTT</option> 
+	  <option value="RBC_Count">RBC Count</option> 
+	  <option value="Serum_Creatinine">Serum Creatinine</option> 
+	  <option value="Sodium">Sodium</option> 
+	  <option value="T3">T3</option> 
+	  <option value="T4">T4</option> 
+	  <option value="TNF_Alpha">TNF-Alpha</option> 
+	  <option value="Total_Bilirubin">Total Bilirubin</option> 
+	  <option value="Total_Cholesterol">Total Cholesterol</option> 
+	  <option value="Total_Protein">Total Protein</option> 
+	  <option value="Triglycerides">Triglycerides</option> 
+	  <option value="TSH">TSH</option> 
+	  <option value="Urea_Nitrogen_(BUN)">Urea Nitrogen (BUN)</option> 
+	  <option value="Uric_Acid">Uric Acid</option> 
+	  <option value="VEGF_A">VEGF-A</option> 
+	  <option value="VEGF_C">VEGF-C</option> 
+	  <option value="VEGF_D">VEGF-D</option> 
+	  <option value="VLDL_(Direct)">VLDL (Direct)</option> 
+	  <option value="VSWT">Weight</option> 
+	  <option value="WBC_Count">WBC Count</option> 
+        </select><br><br>
+	
+        <label for="dropdown3" id="label-dropdown3">Select Predictor Characteristics:</label>
+        <select id="dropdown3" onchange='setVariationFromDropdownAndSetLeft()'>
+          <option value="pct">Percent Change from C1D1 to C2D1</option>
+          <option value="max">Highest Value Ever</option>
+          <option value="min">Lowest Value Ever</option>
+          <option value="c1d1">Value at C1D1</option>
+          <option value="c2d1">Value at C2D1</option>
+        </select>
+      </div>
+      
+      <!-- OR separator -->
+      <div class="or-separator">OR</div>
+
+      <!-- Right Column -->
+      <div class="dropdown-column">
+        <button id="buttonright" class="dropdown-column-button" type="button"onclick="onClickExposure()">Exposure</button><br><br>
+        <label for="dropdown4" id="label-dropdown4">Potential Predictor from Exposure</label>
+        <select id="dropdown4" onchange="setPredictorSide('right')">
+          <option value="cmax7320">CMax 7320 (Cycle 1)</option>
+          <option value="cmax7539">CMax 7539 (Cycle 1)</option>
+          <option value="cmax9729">CMax 9729 (Cycle 1)</option>
+          <option value="cmax9731">CMax 9731 (Cycle 1)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const dropdown3 = document.getElementById('dropdown3');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+        const value1 = dropdown1.value;
+        const value2 = dropdown2.value;
+        const value3 = dropdown3.value;
+        const value4 = dropdown4.value;
+
+	const w1 = variation1;
+	const w2 = variation1;
+	const w3 = value1;
+	const w4 = value2
+	let w5 = 'noew_';
+	if (ewchecked) {
+	    w5 = 'ew_';
+	}
+
+	const solution1 = `safetyefficacy/${w1}${w2}_v_${w2}.jpg`;
+	solution2 = `safetyefficacy/${variation1}${w5}${value1}_v_${variation2}_${value2}.jpg`;
+
+	//console.log('LOC 00.0.1 value1 = '+value1);
+	//console.log('LOC 00.0.2 value2 = '+value2);
+	//console.log('LOC 00.0.3 variation1 = '+variation1);
+	//console.log('LOC 00.0.4 variation2 = '+variation2);
+	//console.log('LOC 00.0.5 value1 = '+value1);
+	//console.log('LOC 00.0.6 value2 = '+value2);
+	//console.log('LOC 00.0.7 value3 = '+value3);
+	//console.log('LOC 00.0.8 value4 = '+value4);
+	//console.log('LOC 00.0.9 theside = '+theside);
+
+	//console.log('LOC 00.1.1 w1 = '+w1);
+	//console.log('LOC 00.1.2 w2 = '+w2);
+	//console.log('LOC 00.1.3 w3 = '+w3);
+	//console.log('LOC 00.1.4 solution1 = '+solution1);
+	console.log('LOC 00.1.4 solution2 = '+solution2);
+
+        if ('right' == theside) {
+            console.log('LOC 100.1!')
+	    // solution2 = `safetyefficacy/exposure/${value1}_v_${value4}.jpg`;
+	    solution2 = `safetyefficacy/exposure/${w5}${value1}_v_${value4}.jpg`;
+	    //solution2 = `safetyefficacy/exposure/${w5}${value1}_v_${variation2}_${value2}.jpg`;
+            console.log('LOC 100.2: '+solution2)
+	}
+
+	//console.log('LOC 01');
+	//onst newImageSrc = `safetyefficacy/${variation1}${value1}_v__${variation2}__${value2}.jpg`;
+	//const newImageSrc2 = `safetyefficacy/${variation1}${value1}_v_${variation2}__${value2}.jpg`;
+	//const newImageSrc3 = `safetyefficacy/${variation1}${value1}_v_${value2}.jpg`;
+	//console.log('LOC 02.1: '+newImageSrc);
+	//console.log('LOC 02.2: '+newImageSrc2);
+	//console.log('LOC 02.3: '+newImageSrc3);
+	
+	//newImageSrcWithDir = newImageSrc3
+	//console.log('LOC 03: '+newImageSrcWithDir);
+	console.log('LOC 03: '+solution2);
+	displayImage.src = solution2;
+	displayImage.alt = `Graph for ${solution2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+    dropdown3.addEventListener('change', updateImage);
+    dropdown4.addEventListener('change', updateImage);
+    buttonleft.addEventListener('change', updateImage);
+    buttonright.addEventListener('change', updateImage);
+    idisew.addEventListener('change', updateImage);
+
+    updateImage();    
+    setPredictorSide('left')
+  </script>
+</body>
+</html>
