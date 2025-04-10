@@ -178,18 +178,22 @@
                 //labValuesSelect.style.display = 'none';
                 console.log('LOC 15.1');
             });
-            document.getElementById('tab-patient-disposition').addEventListener('click', function() {
-                showContent('CurrentDisposition.html', 'tab-patient-disposition');
-                console.log('LOC 15.2');
-            });
-            document.getElementById('tab-tba-pct').addEventListener('click', function() {
-                showContent('103_tba_pct.html', 'tab-tba-pct');
+            document.getElementById('tab-tba').addEventListener('click', function() {
+                showContent('TBA_toplevel.html', 'tab-tba');
                 console.log('LOC 16');
             });
-            document.getElementById('tab-tba-abs').addEventListener('click', function() {
-                showContent('103_tba_abs.html', 'tab-tba-abs');
-                console.log('LOC 17');
-            });
+            //document.getElementById('tab-patient-disposition').addEventListener('click', function() {
+            //    showContent('CurrentDisposition.html', 'tab-patient-disposition');
+            //    console.log('LOC 15.2');
+            //});
+            //document.getElementById('tab-tba-pct').addEventListener('click', function() {
+            //    showContent('103_tba_pct.html', 'tab-tba-pct');
+            //    console.log('LOC 16');
+            //});
+            //document.getElementById('tab-tba-abs').addEventListener('click', function() {
+            //    showContent('103_tba_abs.html', 'tab-tba-abs');
+            //    console.log('LOC 17');
+            //});
         });
         /* end block 4 */ 
     </script>
@@ -205,12 +209,10 @@
             <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
             <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
             <div id="tab-pp">Lab Values (Per Patient)</div>
+            <div id="tab-tba">Tumor Assessments and Time on Trial</div>
             <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
-            <div id="tab-patient-disposition">Patient Disposition</div>
-            <div id="tab-tba-pct">FU Tumor Burden Assessment (% Change)</div>
-            <div id="tab-tba-abs">FU Tumor Burden Assessment (Abs)</div>
         </div>
     </div>
     <div class="content">
