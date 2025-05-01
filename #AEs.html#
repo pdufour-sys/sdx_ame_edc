@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amelia-1 Adverse Events</title>
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    <style>
+        /* Existing CSS here */
+	/* Style the header row for better visual appeal */
+      #eventsTable th {
+	  background-color: #4CAF50; /* A pleasant green background color */
+	  color: white; /* White text color for contrast */
+	  padding: 12px; /* More padding for a larger header */
+	  text-align: center;
+	  font-weight: bold;
+	  border: 1px solid #ddd;
+	  white-space: normal; /* Allow text wrapping */
+      }
+      
+      /* Make the table header sticky */
+      #eventsTable thead {
+	  position: sticky;
+	  top: 0;
+	  background-color: #4CAF50; /* Keep background so text remains visible */
+	  z-index: 100; /* Ensure it stays above other elements */
+      }
+
+      /* Style table rows */
+      #eventsTable td {
+	  padding: 10px;
+	  border: 1px solid #ddd;
+	  text-align: center;
+	  white-space: normal; /* Allow text wrapping */
+	  word-wrap: break-word;
+      }
+
+      /* Add a hover effect for table rows */
+      #eventsTable tr:hover {
+	  background-color: #f1f1f1; /* Light gray background on hover */
+      }
+      
+      /* Optional: Set table layout to fixed for consistent column widths */
+      #eventsTable {
+	  table-layout: auto;
+	  width: 100%;
+      }
+      
+      /* Style the container for the table for better spacing and aesthetics */
+      .table-container {
+	  overflow-y: auto;
+	  height: 80vh;
+	  border: 1px solid #ddd;
+	  border-radius: 5px;
+	  margin-top: 20px;
+      }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Amelia-1 Adverse Events</h1>
+        <label><input type="checkbox" id="saeOnly" onclick="filterData()"> SAEs Only</label>
+        <label><input type="checkbox" id="dltOnly" onclick="filterData()"> DLTs Only</label>
+        <label><input type="checkbox" id="grade1" onclick="filterData()"> Grade 1</label>
+        <label><input type="checkbox" id="grade2" onclick="filterData()"> Grade 2</label>
+        <label><input type="checkbox" id="grade3" onclick="filterData()"> Grade 3</label>
+        <label><input type="checkbox" id="grade4" onclick="filterData()"> Grade 4</label>
+        <label><input type="checkbox" id="selectPatient" onclick="toggleDropdown(); filterData()"> Select Patient</label>
+        <select id="patientDropdown" style="display: none;" onchange="filterData()">
+
+<option value="">-- Select Patient --</option>
+<option value="102-001">102-001</option> 
+<option value="102-006">102-006</option> 
+<option value="102-007">102-007</option> 
+<option value="102-008">102-008</option> 
+<option value="102-009">102-009</option> 
+<option value="102-010">102-010</option> 
+<option value="102-011">102-011</option> 
+<option value="102-012">102-012</option> 
+<option value="102-014">102-014</option> 
+<option value="104-001">104-001</option> 
+<option value="104-002">104-002</option> 
+<option value="105-001">105-001</option> 
+<option value="105-003">105-003</option> 
+<option value="105-005">105-005</option> 
+<option value="105-006">105-006</option> 
+<option value="106-002">106-002</option> 
+<option value="109-002">109-002</option> 
+<option value="110-001">110-001</option> 
+<option value="110-002">110-002</option> 
+<option value="111-001">111-001</option> 
+<option value="111-002">111-002</option> 
+<option value="111-003">111-003</option> 
+<option value="111-004">111-004</option> 
+<option value="114-001">114-001</option> 
+        </select>
+    </div>
+    
+    <div class="table-container">
+        <table id="eventsTable">
+            <!-- Table headers and body populated here based on your data format -->
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>AE Term</th>
+                        <th>Grade</th>
+                        <th>SAE</th>
+                        <th>DLT?</th>
+                        <th>Drug Relatedness</th>
+                        <th>Start Date</th>
+                        <th>Start Date Since C1D1</th>
+                        <th>End Date</th>
+                        <th>AE Preferred Term</th>
+                        <th>AE Lowest Level Term</th>
+                    </tr>
+                </thead>
+                <!-- tbody has about 400 -->
+                <tbody>
+
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>DECREASED HEMATOCRIT</td><td>1</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib</td><td>03/10/2025</td><td>70</td><td>03/24/2025</td><td>Haematocrit decreased</td><td>Hematocrit decreased</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>DECREASED HEMOGLOBIN</td><td>1</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib</td><td>03/10/2025</td><td>70</td><td>03/24/2025</td><td>Haemoglobin decreased</td><td>Decreased hemoglobin</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="Not Graded" data-subject="111-004"><td>111-004</td><td>LEUKOCYTES URINE (1+)</td><td>Not Graded</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib, Fulvestrant</td><td>03/10/2025</td><td>70</td><td>03/24/2025</td><td>White blood cell disorder</td><td>Leukocytes abnormal (NOS)</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="Not Graded" data-subject="111-004"><td>111-004</td><td>WBC URINE (21-60)</td><td>Not Graded</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib, Fulvestrant</td><td>03/10/2025</td><td>70</td><td>03/24/2025</td><td>White blood cells urine positive</td><td>Urine WBC increased</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>LEFT EYE PAIN</td><td>1</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib</td><td>04/03/2025</td><td>94</td><td>NA</td><td>Eye pain</td><td>Eye pain</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>JAW PAIN (LEFT SIDE)</td><td>1</td><td>No</td><td>No</td><td>None</td><td>04/03/2025</td><td>94</td><td>NA</td><td>Pain in jaw</td><td>Jaw pain</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="2" data-subject="111-004"><td>111-004</td><td>HYPERGLYCEMIA</td><td>2</td><td>No</td><td>No</td><td>Alpelisib</td><td>04/04/2025</td><td>95</td><td>NA</td><td>Hyperglycaemia</td><td>Hyperglycemia</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>LEFT EYE IRITIS</td><td>1</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib</td><td>04/07/2025</td><td>98</td><td>NA</td><td>Iritis</td><td>Iritis</td></tr> 
+<tr data-aeser="No" data-aedlt="No" data-grade="1" data-subject="111-004"><td>111-004</td><td>DECREASED MCV</td><td>1</td><td>No</td><td>No</td><td>Evexomostat, Alpelisib, Fulvestrant</td><td>04/07/2025</td><td>98</td><td>NA</td><td>Mean cell volume decreased</td><td>Mean corpuscular volume decreased</td></tr> 
+
+
+        </tbody>
+        </table>
+    </div>
+
+    <script>
+
+
+            // Show or hide the patient dropdown based on checkbox state
+        function toggleDropdown() {
+            const checkbox = document.getElementById("selectPatient");
+            const dropdown = document.getElementById("patientDropdown");
+            dropdown.style.display = checkbox.checked ? "inline" : "none";
+        }
+
+        // Function to filter data based on selected checkboxes and dropdown
+        function filterData() {
+	    console.log('LOC 001.0 enter filterData()');
+            const saeOnly = document.getElementById("saeOnly").checked;
+            const dltOnly = document.getElementById("dltOnly").checked;
+            const grade1 = document.getElementById("grade1").checked;
+            const grade2 = document.getElementById("grade2").checked;
+            const grade3 = document.getElementById("grade3").checked;
+            const grade4 = document.getElementById("grade4").checked;
+            const selectPatient = document.getElementById("selectPatient").checked;
+            const selectedPatient = document.getElementById("patientDropdown").value;
+
+            const table = document.getElementById("eventsTable");
+            const rows = table.getElementsByTagName("tr");
+
+	    console.log('LOC 001.1 enter filterData()');
+            for (let i = 1; i < rows.length; i++) { // Start from 1 to skip table header row
+                const row = rows[i];
+                const aeser = row.getAttribute("data-aeser");
+                const aedlt = row.getAttribute("data-aedlt");
+                const grade = row.getAttribute("data-grade");
+                const subject = row.getAttribute("data-subject");
+
+                let showRow = true;
+
+                // Apply SAE Only filter
+                if (saeOnly && aeser !== "Yes") {
+                    showRow = false;
+                }
+
+                console.log('LOC 101 aeser == '+aeser)
+                console.log('LOC 102 aedlt == '+aedlt)
+                console.log('LOC 103 grades == '+grade1+', '+grade2+', '+grade3+', '+grade4)
+		if (dltOnly && aedlt !== "Yes") {
+                    showRow = false;
+		}
+
+                // Apply Grade filter
+                if (showRow && (grade1 || grade2 || grade3 || grade4)) {
+                    const gradeFilter = (
+                        (grade1 && grade === "1") ||
+                        (grade2 && grade === "2") ||
+                        (grade3 && grade === "3") ||
+                        (grade4 && grade === "4")
+                    );
+                    showRow = gradeFilter;
+                }
+
+                // Apply Select Patient filter
+                if (showRow && selectPatient && selectedPatient) {
+                    showRow = subject === selectedPatient;
+                }
+
+                // Show or hide the row based on filter conditions
+                row.style.display = showRow ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
