@@ -178,6 +178,11 @@
                 //labValuesSelect.style.display = 'none';
                 console.log('LOC 15.1');
             });
+            document.getElementById('tab-misc').addEventListener('click', function() {
+                showContent('Misc_toplevel.html', 'tab-misc');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
             document.getElementById('tab-tba').addEventListener('click', function() {
                 showContent('TBA_toplevel.html', 'tab-tba');
                 console.log('LOC 16');
@@ -201,7 +206,7 @@
 <body>
     <div class="top-area">
         <div class="upper">  
-          <h1>Amelia-1 EDC Data of 11/10/25 1:00 am ET</h1>
+          <h1>Amelia-1 EDC Data of 11/17/25 1:00 am ET</h1>
           <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
         </div>
         <div class="lower">
@@ -213,6 +218,7 @@
             <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
+            <div id="tab-misc">Misc (Beta)</div>
         </div>
     </div>
     <div class="content">

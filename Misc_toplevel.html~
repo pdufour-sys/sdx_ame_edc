@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDX-0103 Amelia-1 Misc Graphs</title>
+  <link rel="stylesheet" href="toplevel.css">
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+      <div class="title">
+	<span id="topoftheline"></span>
+    <script>
+      const topoftheline2 = ['SD', 'X-0', '10', '3 Amel', 'ia-1', ' Ex', 'posur', 'e Gra', 'phs'].join('')
+      document.getElementById('topoftheline').innerText = topoftheline2;
+    </script></div>
+        <div class="grid-container">
+	  <div class="grid-item"> <a href="Exposure_SDX_0103_SDX_7320.html">SDX-7320</a></div>
+	  <div class="grid-item"> <a href="Exposure_SDX_0103_SDX_7539.html">SDX-7539</a></div>
+	  <div class="grid-item"> <a href="Exposure_SDX_0103_SDX_11558.html">SDX-11558</a></div>
+        </div>
+    </div>
+</body>
+</html>
