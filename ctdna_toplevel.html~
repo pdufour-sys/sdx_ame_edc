@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDX-0103 Amelia-1 Misc Graphs</title>
+  <link rel="stylesheet" href="toplevel.css">
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+      <div class="title">
+	<span id="topoftheline"></span>
+    <script>
+      const topoftheline2 = ['SD', 'X-0', '10', '3 Amel', 'ia-1', ' Mis', 'c', ' Gra', 'phs'].join('')
+      document.getElementById('topoftheline').innerText = topoftheline2;
+    </script></div>
+        <div class="grid-container">
+	  <div class="grid-item"> <a href="ctdna\vaf.html">VAF</a></div>
+	  <div class="grid-item"> <a href="ctdna\pik3ca.html">PIK3CA</a></div>
+	  <div class="grid-item"> <a href="ctdna\esr1.html">ESR1</a></div>
+	  <div class="grid-item"> <a href="ctdna\tp53.html">TP53</a></div>
+	  <div class="grid-item"> <a href="ctdna\rb1.html">RB1</a></div>
+	  <div class="grid-item"> <a href="ctdna\dnmt3a.html">DNMT3A</a></div>
+        </div>
+    </div>
+</body>
+</html>

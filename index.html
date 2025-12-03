@@ -178,14 +178,19 @@
                 //labValuesSelect.style.display = 'none';
                 console.log('LOC 15.1');
             });
-            document.getElementById('tab-misc').addEventListener('click', function() {
-                showContent('Misc_toplevel.html', 'tab-misc');
-                //labValuesSelect.style.display = 'none';
-                console.log('LOC 15.1.2');
-            });
             document.getElementById('tab-tba').addEventListener('click', function() {
                 showContent('TBA_toplevel.html', 'tab-tba');
                 console.log('LOC 16');
+            });
+            document.getElementById('tab-ctdna').addEventListener('click', function() {
+                showContent('ctdna_toplevel.html', 'tab-ctdna');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
+            document.getElementById('tab-tlf').addEventListener('click', function() {
+                showContent('relational_toplevel.html', 'tab-tlf');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
             });
             //document.getElementById('tab-patient-disposition').addEventListener('click', function() {
             //    showContent('CurrentDisposition.html', 'tab-patient-disposition');
@@ -218,7 +223,8 @@
             <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
-            <div id="tab-misc">ctDNA</div>
+            <div id="tab-ctdna">ctDNA</div>
+            <div id="tab-tlf">Tables & Listings</div>
         </div>
     </div>
     <div class="content">

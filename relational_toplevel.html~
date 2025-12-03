@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDX-0103 Amelia-1 Tables & Listings</title>
+    <link rel="stylesheet" href="toplevel.css">
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+      <div class="title">
+	<span id="topoftheline"></span>
+    <script>
+      const topoftheline2 = ['SD', 'X-0', '10', '3 Areth', 'a-1', ' ED', 'C Gra', 'phs'].join('')
+      document.getElementById('topoftheline').innerText = topoftheline2;
+    </script></div>
+        <div class="grid-container">
+	  <div class="grid-item"> <a href="csv/aretha.1.predict.response.csv">Predict Response</a></div>
+	  <div class="grid-item"> <a href="csv/aretha.1.predict.response.sherry.csv">Predict Response (columns from poster only)</a></div>
+        </div>
+    </div>
+</body>
+</html>
