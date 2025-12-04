@@ -1,0 +1,4 @@
+Subject,Location_1,Location_2,Dose,DoseUnit,Response,Start_YYYY,Start_MM,Start_DD,End_YYYY,End_MM,End_DD
+102-006,Other,C-SPINE INTO THE RIGHT HIP,2000,Centigray,Unknown,2022,2,15,2022,,
+105-001,Breast,,5000,Gray,Unknown,2018,11,18,2018,12,31
+105-003,Other,CHEST WALL,UNK,Unknown,CR (Complete Response),1997,4,14,1997,6,16
