@@ -39,10 +39,13 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 102-007,2025-08-06,448,2025-08-20,1,HYPERURICEMIA,Hyperuricaemia,Purine and pyrimidine metabolism disorders,Disorders of purine metabolism,Hyperuricemia,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,2025-08-06,448,2025-08-20,1,HYPOGLYCEMIA,Hypoglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hypoglycaemic conditions NEC,Hypoglycemia,0,No,Related,No,Not Related,No,Not Related,No,,
 102-007,2025-10-15,518,2025-11-12,1,CREATININE INCREASED,Blood creatinine increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,Creatinine increased,0,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,2025-11-26,560,,1,CREATININE INCREASED,Blood creatinine increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,Creatinine increased,1,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,2025-11-26,560,,1,HYPERURICEMIA,Hyperuricaemia,Purine and pyrimidine metabolism disorders,Disorders of purine metabolism,Hyperuricemia,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,EPISTAXIS,Epistaxis,Upper respiratory tract disorders (excl infections),Nasal disorders NEC,Epistaxis,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,2025-03-05,1,NAIL INFECTION,Nail infection,Infections - pathogen unspecified,Skin structures and soft tissue infections,Nail infection,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,NAIL INFECTION,Nail infection,Infections - pathogen unspecified,Skin structures and soft tissue infections,Nail infection,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,SKIN AND SUBCUTANEOUS TISSUE  DISORDERS - OTHER: ONYCHORRHEXIS,Onychoclasis,Skin appendage conditions,Nail and nail bed conditions (excl infections and infestations),Onychorrhexis,1,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,,,,2,PAIN IN EXTREMITY (LEFT LEG),,,,,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-008,2024-06-26,0,,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Related,No,Not Related,No
 102-008,2024-07-17,21,2024-07-24,2,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,0,No,Not Related,No,Not Related,No,Related,No,Not Related,No
 102-008,2024-07-19,23,,1,RASH,Rash,Epidermal and dermal conditions,Rashes, eruptions and exanthems NEC,Rash,0,No,Not Related,No,Not Related,No,Related,No,Not Related,No
@@ -124,8 +127,7 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 102-014,2025-09-17,141,,2,ANOREXIA,Decreased appetite,Appetite and general nutritional disorders,Appetite disorders,Anorexia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 102-014,2025-09-17,141,,2,WEIGHT LOSS,Weight decreased,Physical examination and organ system status topics,Physical examination procedures and organ system status,Weight loss,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 102-014,2025-09-30,154,,1,ASPARTATE AMINOTRANSFERASE INCREASED,Aspartate aminotransferase increased,Hepatobiliary investigations,Hepatobiliary function diagnostic procedures,Aspartate aminotransferase increased,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-102-014,2025-09-30,154,2025-10-02,2,PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-102-014,2025-09-30,154,2025-10-02,2,PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+102-014,2025-09-30,154,2025-10-15,2,PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 102-014,2025-09-30,154,2025-10-02,3,PAIN,Pain,General system disorders NEC,Pain and discomfort NEC,Pain,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 102-014,2025-10-15,169,,1,PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 102-014,2025-10-31,185,,1,ALANINE AMINOTRANSFERASE INCREASED,Alanine aminotransferase increased,Hepatobiliary investigations,Hepatobiliary function diagnostic procedures,Alanine aminotransferase increased,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
@@ -393,31 +395,32 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 106-002,2024-10-30,154,,1,PRURITUS,Pruritus,Epidermal and dermal conditions,Pruritus NEC,Pruritus,1,No,Related,No,Related,Yes,Not Related,No,,
 106-002,2024-11-20,175,,1,CONSTIPATION,Constipation,Gastrointestinal motility and defaecation conditions,Gastrointestinal atonic and hypomotility disorders NEC,Constipation,1,No,Not Related,No,Not Related,No,Not Related,No,,
 106-002,2024-11-20,175,,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,1,No,Not Related,No,Not Related,No,Not Related,No,,
-106-003,2025-09-24,0,2025-09-24,1,ACHINESS,Pain,General system disorders NEC,Pain and discomfort NEC,Generalized aching,0,No,Related,No,Related,No,Not Related,No,Not Related,No
-106-003,2025-09-24,0,,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Related,No,Related,No,Not Related,No,Not Related,No
+106-003,2025-09-24,0,2025-09-25,1,ACHINESS,Pain,General system disorders NEC,Pain and discomfort NEC,Generalized aching,0,No,Related,No,Related,No,Not Related,No,Not Related,No
+106-003,2025-09-24,0,2025-10-18,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,0,No,Related,No,Related,No,Not Related,No,Not Related,No
 106-003,2025-09-26,2,2025-09-28,1,AGITATION,Agitation,Anxiety disorders and symptoms,Anxiety symptoms,Agitation,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-106-003,2025-09-26,2,,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,1,No,Related,No,Related,No,Not Related,No,Not Related,No
+106-003,2025-09-26,2,2025-10-26,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,0,No,Related,No,Related,No,Not Related,No,Not Related,No
 106-003,2025-10-18,24,2025-10-29,1,MYALGIA,Myalgia,Muscle disorders,Muscle pains,Myalgia,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-10-18,24,2025-10-29,2,WORSENED DYSPNEA,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Dyspnea exacerbated,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
-106-003,2025-10-18,24,,2,WORSENING FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Related,No,Not Related,No,Not Related,No,Not Related,No
+106-003,2025-10-18,24,2025-10-29,2,WORSENING FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-10-22,28,2025-10-29,1,KIDNEY PAIN (BILATERAL),Renal pain,Urinary tract signs and symptoms,Urinary tract signs and symptoms NEC,Kidney pain,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-10-22,28,2025-10-24,1,PAIN AT INJECTION,Injection site pain,Administration site reactions,Injection site reactions,Pain during injection,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-10-22,28,2025-10-29,1,VOMITING,Vomiting,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Vomiting,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-10-22,28,2025-10-29,2,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-10-22,28,2025-10-26,2,NEUTROPENIA COUNT DECREASED,Neutrophil count decreased,Haematology investigations (incl blood groups),White blood cell analyses,Blood neutrophil count decreased,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
-106-003,2025-10-26,32,2025-11-12,2,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,0,No,Related,No,,No,,No,,No
+106-003,2025-10-26,32,2025-11-12,2,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-10-30,36,2025-11-05,2,ACUTE CYSTITIS WITH HEMATURIA,Cystitis,Infections - pathogen unspecified,Urinary tract infections,Acute cystitis,0,No,Related,No,Not Related,No,Not Related,No,Related,No
-106-003,2025-10-30,36,2025-11-12,2,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,,No,,No,,No,,No
-106-003,2025-10-30,36,2025-11-12,2,VOMITING,Vomiting,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Vomiting,0,No,,No,,No,,No,,No
+106-003,2025-10-30,36,2025-11-12,2,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-10-30,36,2025-11-12,2,VOMITING,Vomiting,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Vomiting,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-11-05,42,2025-11-07,3,THROMBOCYTOPENIA,Thrombocytopenia,Platelet disorders,Thrombocytopenias,Thrombocytopenia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-11-07,44,2025-11-12,2,THROMBOCYTOPENIA,Thrombocytopenia,Platelet disorders,Thrombocytopenias,Thrombocytopenia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
-106-003,2025-11-07,44,2025-11-09,3,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,,No,,No,,No,,No
-106-003,2025-11-07,44,2025-11-09,3,NEUTROPHIL COUNT DECREASED,Neutrophil count decreased,Haematology investigations (incl blood groups),White blood cell analyses,Neutrophil count decreased,0,No,,No,,No,,No,,No
+106-003,2025-11-07,44,2025-11-09,3,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-11-07,44,2025-11-09,3,NEUTROPHIL COUNT DECREASED,Neutrophil count decreased,Haematology investigations (incl blood groups),White blood cell analyses,Neutrophil count decreased,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 106-003,2025-11-12,49,,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,1,No,Not Related,No,Not Related,No,Not Related,No,Related,No
-106-003,2025-11-19,56,,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,1,No,,No,,No,,No,,No
-106-003,2025-11-19,56,2025-11-19,2,SHORTNESS OF BREATH,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Shortness of breath,0,No,,No,,No,,No,,No
-106-003,2025-11-19,56,2025-11-19,2,TIGHTNESS IN STERNUM,,,,,0,No,,No,,No,,No,,No
+106-003,2025-11-19,56,2025-11-26,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-11-19,56,2025-11-19,2,SHORTNESS OF BREATH,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Shortness of breath,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+106-003,2025-11-19,56,2025-11-19,2,TIGHTNESS IN STERNUM,,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-11-24,61,,1,ABDOMINAL TENDERNESS,Abdominal tenderness,Gastrointestinal signs and symptoms,Gastrointestinal and abdominal pains (excl oral and throat),Abdominal tenderness,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+106-003,2025-12-03,70,2025-12-10,2,THROMBOCYTOPENIA,Thrombocytopenia,Platelet disorders,Thrombocytopenias,Thrombocytopenia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 109-002,2024-07-01,14,2024-07-01,1,CONFUSION,Confusional state,Deliria (incl confusion),Confusion and disorientation,Confusion,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 109-002,2024-07-03,16,2024-07-07,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 109-002,2024-07-10,23,2024-07-10,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
@@ -612,8 +615,8 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 114-001,2025-06-17,55,,1,TACHYCARDIA,Tachycardia,Cardiac arrhythmias,Rate and rhythm disorders NEC,Tachycardia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-06-17,55,,1,WEIGHT LOSS,Weight decreased,Physical examination and organ system status topics,Physical examination procedures and organ system status,Weight loss,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 114-001,2025-06-17,55,,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,1,No,Related,No,Related,No,Not Related,No,Not Related,No
-114-001,2025-06-17,55,2025-06-24,3,DYSPNEA,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Dyspnea,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-06-17,55,2025-06-18,3,MALIGNANT LEFT SIDED PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+114-001,2025-06-19,57,2025-06-24,3,DYSPNEA,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Dyspnea,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,ALKALINE PHOSPHATASE ELEVATED,Blood alkaline phosphatase increased,Enzyme investigations NEC,Tissue enzyme analyses NEC,Alkaline phosphatase increased,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
@@ -667,6 +670,8 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 116-001,2025-10-28,70,,1,ALOPECIA,Alopecia,Skin appendage conditions,Alopecias,Alopecia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-10-28,70,2025-11-03,2,PLATELET COUNT DECREASED,Platelet count decreased,Haematology investigations (incl blood groups),Platelet analyses,Platelet count decreased,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-11-03,76,2025-11-11,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2025-11-30,103,2025-12-02,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2025-12-07,110,2025-12-07,1,FALL,Fall,Injuries NEC,Non-site specific injuries NEC,Fall,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-10-21,-13,2025-10-21,1,ABNORMALLY LONG CORRECTED QT  INTERVAL (SCREENING),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-03,0,2025-11-03,1,ABNORMALLY LONG CORRECTED QT INTERVAL (PRE DOSE C1D1),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-04,1,2025-11-05,1,ARTHRALGIA,Arthralgia,Joint disorders,Joint related signs and symptoms,Arthralgia,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
