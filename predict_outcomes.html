@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div>Show outcomes as a function of metabolic and other parameters</div><br><br>
+    <label for="dropdown1">Select X axis parameter (Metabolic, etc): </label>
+    <select id="dropdown1">
+      <option value="AdipPctCh">Adiponectin % Change at C2D1</option> 
+      <option value="GlucosePctCh">Glucose % Change at C2D1</option> 
+      <option value="HbA1cPctCh">HbA1c % Change at C2D1</option>
+      <option value="LeptinPctCh">Leptin % Change at C2D1</option>
+      <option value="WeightPctCh">Weight % Change at C2D1</option>
+
+    </select><br><br><br>
+
+    <label for="dropdown2">Select Y axis parameter (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="LargestAbsValueDiamPctChange">Largest % Change, target lesion diameters</option> 
+      <option value="LowestDiamPctCh">Lowest % Change, target lesion diameters</option> 
+      <option value="LowestResponseOrder">Best Response</option> 
+      <option value="SwimmersDurationWeeks_OffTrial">Swimmer's plot duration (patient off trial only)</option> 
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+	const value1 = dropdown1.value;
+	const value2 = dropdown2.value;
+	console.log('LOC 01')
+	const newImageSrc = `${value1}_${value2}.jpg`;
+	console.log('LOC 02: '+newImageSrc);
+	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc;
+	console.log('LOC 03: '+newImageSrcWithDir);
+	displayImage.src = newImageSrcWithDir;
+	displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>
