@@ -40,10 +40,11 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 102-007,2025-08-06,448,2025-08-20,1,HYPOGLYCEMIA,Hypoglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hypoglycaemic conditions NEC,Hypoglycemia,0,No,Related,No,Not Related,No,Not Related,No,,
 102-007,2025-10-15,518,2025-11-12,1,CREATININE INCREASED,Blood creatinine increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,Creatinine increased,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,2025-11-26,560,,1,CREATININE INCREASED,Blood creatinine increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,Creatinine increased,1,No,Not Related,No,Not Related,No,Not Related,No,,
-102-007,2025-11-26,560,,1,HYPERURICEMIA,Hyperuricaemia,Purine and pyrimidine metabolism disorders,Disorders of purine metabolism,Hyperuricemia,1,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,2025-11-26,560,2025-12-10,1,HYPERURICEMIA,Hyperuricaemia,Purine and pyrimidine metabolism disorders,Disorders of purine metabolism,Hyperuricemia,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,EPISTAXIS,Epistaxis,Upper respiratory tract disorders (excl infections),Nasal disorders NEC,Epistaxis,0,No,Not Related,No,Not Related,No,Not Related,No,,
-102-007,,,2025-03-05,1,NAIL INFECTION,Nail infection,Infections - pathogen unspecified,Skin structures and soft tissue infections,Nail infection,0,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,,,,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,NAIL INFECTION,Nail infection,Infections - pathogen unspecified,Skin structures and soft tissue infections,Nail infection,1,No,Not Related,No,Not Related,No,Not Related,No,,
+102-007,,,2025-03-05,1,NAIL INFECTION,Nail infection,Infections - pathogen unspecified,Skin structures and soft tissue infections,Nail infection,0,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,1,SKIN AND SUBCUTANEOUS TISSUE  DISORDERS - OTHER: ONYCHORRHEXIS,Onychoclasis,Skin appendage conditions,Nail and nail bed conditions (excl infections and infestations),Onychorrhexis,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-007,,,,2,PAIN IN EXTREMITY (LEFT LEG),,,,,1,No,Not Related,No,Not Related,No,Not Related,No,,
 102-008,2024-06-26,0,,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Related,No,Not Related,No
@@ -338,6 +339,7 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 105-006,2024-10-04,17,2024-10-08,1,DIZZINESS,Dizziness,Neurological disorders NEC,Neurological signs and symptoms NEC,Dizziness,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2024-10-04,17,2024-10-08,1,DRY MOUTH,Dry mouth,Salivary gland conditions,Oral dryness and saliva altered,Dry mouth,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2024-10-04,17,2024-10-08,1,URINARY FREQUENCY,Pollakiuria,Urinary tract signs and symptoms,Bladder and urethral symptoms,Urinary frequency,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+105-006,2024-10-07,20,,1,FRACTURE,Fracture,Bone and joint injuries,Fractures and dislocations NEC,Fracture,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2024-10-07,20,2024-10-10,1,GLUCOSURIA,Glycosuria,Urinary tract signs and symptoms,Urinary abnormalities,Glucosuria,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2024-10-07,20,,2,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,1,No,Not Related,No,Not Related,No,Related,No,Not Related,No
 105-006,2024-10-07,20,2024-10-09,3,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,0,Yes,Not Related,No,Not Related,No,Related,No,Not Related,No
@@ -371,6 +373,7 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 105-006,2025-02-12,148,2025-02-18,1,ELEVATED BUM,Blood urea increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,BUN increased,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2025-02-12,148,,2,LYMPHOCYTE INCREASED,Lymphocyte count increased,Haematology investigations (incl blood groups),White blood cell analyses,Lymphocyte count increased,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2025-02-19,155,,1,HYPERURICEMIA,Hyperuricaemia,Purine and pyrimidine metabolism disorders,Disorders of purine metabolism,Hyperuricemia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+105-006,2025-02-27,163,2025-04-10,2,CREATININE INCREASED,Blood creatinine increased,Renal and urinary tract investigations and urinalyses,Renal function analyses,Creatinine increased,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 105-006,2025-03-05,169,,2,URINARY TRACT INFECTION,Urinary tract infection,Infections - pathogen unspecified,Urinary tract infections,Urinary tract infection,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 106-002,2024-05-29,0,2024-06-13,1,INJECTION SITE PAIN, RUQ AND LUQ BUTTOCKS,Injection site pain,Administration site reactions,Injection site reactions,Injection site pain,0,No,Not Related,No,Related,No,Not Related,No,,
 106-002,2024-06-12,14,2024-06-19,2,ALANINE AMINOTRANSFERASE INCREASED,Alanine aminotransferase increased,Hepatobiliary investigations,Hepatobiliary function diagnostic procedures,Alanine aminotransferase increased,0,No,Related,No,Related,No,Not Related,No,,
@@ -421,6 +424,9 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 106-003,2025-11-19,56,2025-11-19,2,TIGHTNESS IN STERNUM,,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-11-24,61,,1,ABDOMINAL TENDERNESS,Abdominal tenderness,Gastrointestinal signs and symptoms,Gastrointestinal and abdominal pains (excl oral and throat),Abdominal tenderness,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 106-003,2025-12-03,70,2025-12-10,2,THROMBOCYTOPENIA,Thrombocytopenia,Platelet disorders,Thrombocytopenias,Thrombocytopenia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-12-17,84,2025-12-17,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-12-25,92,2025-12-25,1,VOMITING,Vomiting,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Vomiting,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+106-003,2025-12-30,97,2025-12-30,2,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 109-002,2024-07-01,14,2024-07-01,1,CONFUSION,Confusional state,Deliria (incl confusion),Confusion and disorientation,Confusion,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 109-002,2024-07-03,16,2024-07-07,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 109-002,2024-07-10,23,2024-07-10,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
@@ -484,6 +490,7 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 111-001,2024-10-16,30,,1,INJECTION SITE REACTION (LEFT),Injection site reaction,Administration site reactions,Injection site reactions,Injection site reaction,1,No,Related,No,Not Related,No,Not Related,No,,
 111-001,2024-10-23,37,,2,URINARY TRACT INFECTION,Urinary tract infection,Infections - pathogen unspecified,Urinary tract infections,Urinary tract infection,1,No,Not Related,No,Not Related,No,Not Related,No,,
 111-001,2024-10-30,44,,2,INJECTION SITE REACTION RIGHT THIGH,Injection site reaction,Administration site reactions,Injection site reactions,Injection site reaction,1,No,Related,No,Not Related,No,Not Related,No,,
+111-001,2024-11-05,50,,2,SKIN INFECTION RIGHT THIGH,,,,,1,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 111-002,2024-09-25,1,2024-10-01,1,L HAND BRUISE,Contusion,Injuries NEC,Skin injuries NEC,Bruising of hand,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-002,2024-09-26,2,,1,L FOREARM BRUISE,Contusion,Injuries NEC,Skin injuries NEC,Contusion of forearm,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-002,2024-10-10,16,,2,ANOREXIA (LOSS OF APPETITE),Decreased appetite,Appetite and general nutritional disorders,Appetite disorders,Anorexia,1,No,Related,No,Not Related,No,Related,No,Not Related,No
@@ -586,12 +593,14 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 111-004,2025-09-12,256,2025-09-26,1,RASH GLUTEAL CLEFT,Rash,Epidermal and dermal conditions,Rashes, eruptions and exanthems NEC,Rash,0,No,Related,No,Not Related,No,Related,No,Not Related,No
 111-004,2025-09-27,271,2025-10-07,1,COUGH,Cough,Respiratory disorders NEC,Coughing and associated symptoms,Cough,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-004,2025-09-27,271,2025-10-07,2,SHORTNESS OF BREATH,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Shortness of breath,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-111-004,2025-10-01,275,,4,CARDIAC TAMPONADE,Cardiac tamponade,Pericardial disorders,Pericardial disorders NEC,Cardiac tamponade,1,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-111-004,2025-10-01,275,,4,PERICARDIAL EFFUSION,Pericardial effusion,Pericardial disorders,Pericardial disorders NEC,Pericardial effusion,1,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-004,2025-10-04,278,2025-10-07,2,ABDOMINAL PAIN,Abdominal pain,Gastrointestinal signs and symptoms,Gastrointestinal and abdominal pains (excl oral and throat),Abdominal pain,0,No,Not Related,No,Not Related,No,Related,No,Not Related,No
 111-004,2025-10-04,278,2025-10-07,2,CHEST PAIN,Chest pain,General system disorders NEC,Pain and discomfort NEC,Chest pain,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-004,2025-10-04,278,2025-10-09,2,CHEST TIGHTNESS,Chest discomfort,General system disorders NEC,Pain and discomfort NEC,Chest tightness,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 111-004,2025-10-04,278,2025-10-04,3,HYPOXEMIC RESPIRATORY FAILURE,Respiratory failure,Respiratory disorders NEC,Respiratory failures (excl neonatal),Hypoxic respiratory failure,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+111-004,2025-10-04,278,2025-10-07,4,CARDIAC TAMPONADE,Cardiac tamponade,Pericardial disorders,Pericardial disorders NEC,Cardiac tamponade,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+111-004,2025-10-04,278,2025-10-07,4,PERICARDIAL EFFUSION,Pericardial effusion,Pericardial disorders,Pericardial disorders NEC,Pericardial effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+111-004,2025-10-16,290,,1,INCREASED ALT,,,,,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+111-004,2025-10-16,290,,1,INCREASED AST,,,,,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-04-24,1,2025-05-21,2,HYPERTENSION,Hypertension,Vascular hypertensive disorders,Vascular hypertensive disorders NEC,Hypertension,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-04-30,7,2025-05-07,1,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-04-30,7,2025-06-24,2,ANOREXIA,Decreased appetite,Appetite and general nutritional disorders,Appetite disorders,Anorexia,0,No,Related,No,Related,No,Not Related,No,Not Related,No
@@ -615,8 +624,7 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 114-001,2025-06-17,55,,1,TACHYCARDIA,Tachycardia,Cardiac arrhythmias,Rate and rhythm disorders NEC,Tachycardia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-001,2025-06-17,55,,1,WEIGHT LOSS,Weight decreased,Physical examination and organ system status topics,Physical examination procedures and organ system status,Weight loss,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 114-001,2025-06-17,55,,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,1,No,Related,No,Related,No,Not Related,No,Not Related,No
-114-001,2025-06-17,55,2025-06-18,3,MALIGNANT LEFT SIDED PLEURAL EFFUSION,Pleural effusion,Pleural disorders,Pneumothorax and pleural effusions NEC,Pleural effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-114-001,2025-06-19,57,2025-06-24,3,DYSPNEA,Dyspnoea,Respiratory disorders NEC,Breathing abnormalities,Dyspnea,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+114-001,2025-06-17,55,2025-06-18,3,MALIGNANT LEFT SIDED PLEURAL EFFUSION,Malignant pleural effusion,Neoplasm related morbidities,Oncologic complications and emergencies,Malignant pleural effusion,0,Yes,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,ALKALINE PHOSPHATASE ELEVATED,Blood alkaline phosphatase increased,Enzyme investigations NEC,Tissue enzyme analyses NEC,Alkaline phosphatase increased,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 114-002,2025-06-25,0,,1,HYPERGLYCEMIA,Hyperglycaemia,Glucose metabolism disorders (incl diabetes mellitus),Hyperglycaemic conditions NEC,Hyperglycemia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
@@ -641,21 +649,27 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 114-002,2025-07-23,28,2025-07-26,3,MYALGIA,Myalgia,Muscle disorders,Muscle pains,Myalgia,0,No,Not Related,No,Related,No,Not Related,No,Not Related,No
 114-002,2025-08-06,42,,1,MYALGIA,Myalgia,Muscle disorders,Muscle pains,Myalgia,1,No,Not Related,No,Related,No,Not Related,No,Not Related,No
 114-002,2025-08-06,42,,2,BLADDER INFECTION,Cystitis,Infections - pathogen unspecified,Urinary tract infections,Bladder infection,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+115-003,2025-09-25,-18,,1,FEVER,Pyrexia,Body temperature conditions,Febrile disorders,Fever,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 115-003,2025-10-13,0,,1,PALPITATIONS,Palpitations,Cardiac disorders, signs and symptoms NEC,Cardiac signs and symptoms NEC,Palpitations,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 115-003,2025-10-17,4,,2,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 115-003,2025-10-27,14,,1,ASPARTATE AMINOTRANSFERASE INCREASED  (54),,,,,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 115-003,2025-10-27,14,,1,DRY MOUTH,Dry mouth,Salivary gland conditions,Oral dryness and saliva altered,Dry mouth,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 115-003,2025-10-27,14,,1,LIPASE INCREASED (62),,,,,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 115-003,2025-10-27,14,,1,PLATELET COUNT DECREASED (136),,,,,1,No,Related,No,Related,No,Related,No,Not Related,No
-115-003,2025-11-02,20,,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,1,No,Related,No,Related,No,Related,No,Not Related,No
+115-003,2025-12-02,50,,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,1,No,Related,No,Related,No,Related,No,Not Related,No
+115-003,2025-12-18,66,2025-12-20,1,DYSURIA,Dysuria,Urinary tract signs and symptoms,Bladder and urethral symptoms,Dysuria,0,No,Not Related,No,Related,,Not Related,No,Related,No
 115-003,,,2020-02-10,1,GLUCOSE INTOLERANCE (IMPAIRED GLUCOSE METABOLISM),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 115-003,,,,1,SINUSITIS, CHRONIC,,,,,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 115-003,,,,2,HTN,,,,,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+115-104,2025-12-04,1,2025-12-10,1,INJECTION SITE REACTION,Injection site reaction,Administration site reactions,Injection site reactions,Injection site reaction,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
+115-104,2025-12-08,5,2025-12-08,1,ARTHRALGIA, THORAX (HEAVINESS),,,,,0,No,Related,No,Related,No,Not Related,No,Not Related,No
+115-104,2025-12-10,7,,1,FATIGUE,Fatigue,General system disorders NEC,Asthenic conditions,Fatigue,1,No,Related,No,Related,No,Not Related,No,Not Related,No
+115-104,2025-12-10,7,,1,NAUSEA,Nausea,Gastrointestinal signs and symptoms,Nausea and vomiting symptoms,Nausea,1,No,Related,No,Related,No,Not Related,No,Not Related,No
 116-001,2025-08-20,1,2025-08-21,1,INJECTION SITE REACTION,Injection site reaction,Administration site reactions,Injection site reactions,Injection site reaction,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-08-22,3,2025-08-23,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-08-27,8,2025-09-09,2,CONTACT DERMATITIS: POISON IVY,Exposure to toxic agent,Exposures, chemical injuries and poisoning,Exposures to agents or circumstances NEC,Exposure to poison ivy,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-09-01,13,2025-09-11,2,DYSPEPSIA,Dyspepsia,Gastrointestinal signs and symptoms,Dyspeptic signs and symptoms,Dyspepsia,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-116-001,2025-09-09,21,,1,DIZZINESS,Dizziness,Neurological disorders NEC,Neurological signs and symptoms NEC,Dizziness,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+116-001,2025-09-09,21,2025-12-23,1,DIZZINESS,Dizziness,Neurological disorders NEC,Neurological signs and symptoms NEC,Dizziness,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-09-16,28,2025-09-22,1,INJECTION SITE REACTION,Injection site reaction,Administration site reactions,Injection site reactions,Injection site reaction,0,No,Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-09-17,29,2025-09-21,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-09-23,35,2025-10-02,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
@@ -668,12 +682,21 @@ Subject,StartDate,StartDateDaysSinceC1D1,EndDate,CTCAE_Grade,AETERM,AETERM_PT,AE
 116-001,2025-10-27,69,2025-11-03,1,SKIN DISORDER: DERMATITIS - DIAPER RASH,Dermatitis diaper,Epidermal and dermal conditions,Dermatitis and eczema,Dermatitis diaper,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-10-27,69,2025-10-29,1,VERTIGO,Vertigo,Inner ear and VIIIth cranial nerve disorders,Inner ear signs and symptoms,Vertigo,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 116-001,2025-10-28,70,,1,ALOPECIA,Alopecia,Skin appendage conditions,Alopecias,Alopecia,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
-116-001,2025-10-28,70,2025-11-03,2,PLATELET COUNT DECREASED,Platelet count decreased,Haematology investigations (incl blood groups),Platelet analyses,Platelet count decreased,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2025-10-28,70,2025-11-03,2,PLATELET COUNT DECREASED,Platelet count decreased,Haematology investigations (incl blood groups),Platelet analyses,Platelet count decreased,0,No,Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-11-03,76,2025-11-11,2,ANEMIA,Anaemia,Anaemias nonhaemolytic and marrow depression,Anaemias NEC,Anemia,0,No,Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-11-30,103,2025-12-02,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 116-001,2025-12-07,110,2025-12-07,1,FALL,Fall,Injuries NEC,Non-site specific injuries NEC,Fall,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+116-001,2025-12-10,113,2025-12-25,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2025-12-26,129,2025-12-29,2,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2025-12-30,133,,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,1,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+116-001,2026-01-06,140,,1,HYPOKALEMIA,Hypokalaemia,Electrolyte and fluid balance conditions,Potassium imbalance,Hypokalemia,1,No,Not Related,No,Not Related,No,Not Related,No,Related,No
 117-001,2025-10-21,-13,2025-10-21,1,ABNORMALLY LONG CORRECTED QT  INTERVAL (SCREENING),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-03,0,2025-11-03,1,ABNORMALLY LONG CORRECTED QT INTERVAL (PRE DOSE C1D1),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-04,1,2025-11-05,1,ARTHRALGIA,Arthralgia,Joint disorders,Joint related signs and symptoms,Arthralgia,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-17,14,2025-11-17,1,ABNORMALLY LONG CORRECTED QT INTERVAL (C1D15),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
 117-001,2025-11-18,15,2025-11-18,1,ABNORMALLY LONG CORRECTED QT INTERVAL (C1D16),,,,,0,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+117-001,2025-12-03,30,2025-12-04,1,DIARRHEA,Diarrhoea,Gastrointestinal motility and defaecation conditions,Diarrhoea (excl infective),Diarrhea,0,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+117-001,2025-12-12,39,,2,RASH,Rash,Epidermal and dermal conditions,Rashes, eruptions and exanthems NEC,Rash,1,No,Not Related,No,Not Related,No,Not Related,No,Related,Yes
+117-002,2025-12-20,40,,1,RASH,Rash,Epidermal and dermal conditions,Rashes, eruptions and exanthems NEC,Rash,1,No,Not Related,No,Not Related,No,Not Related,No,Related,No
+117-003,2025-12-10,1,,2,BACK PAIN,Back pain,Musculoskeletal and connective tissue disorders NEC,Musculoskeletal and connective tissue pain and discomfort,Back pain,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
+117-003,2025-12-22,13,,1,PLATELET COUNT DECREASED (93K/UL),,,,,1,No,Not Related,No,Not Related,No,Not Related,No,Not Related,No
