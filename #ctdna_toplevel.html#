@@ -60,22 +60,13 @@
             </div>
 
             <div class="section">
-                <div class="section-title">Genes</div>
-                <ul class="link-list">
-	  <div class="grid-item"> <a href="ctdna\akt1.html">AKT1</a></div>
-	  <div class="grid-item"> <a href="ctdna\arid1a.html">ARID1A</a></div>
-
-	  <div class="grid-item"> <a href="ctdna\esr1.html">ESR1</a></div>
-
-	  <div class="grid-item"> <a href="ctdna\dnmt3a.html">DNMT3A</a></div>
-
+                <div class="section-title">Genes <i>(Stale Data)</i></div>
+h                <ul class="link-list">
 	  <div class="grid-item"> <a href="ctdna\pik3ca.html">PIK3CA</a></div>
-	  <div class="grid-item"> <a href="ctdna\pten.html">PTEN</a></div>
-
-	  <div class="grid-item"> <a href="ctdna\rb1.html">RB1</a></div>
-
+	  <div class="grid-item"> <a href="ctdna\esr1.html">ESR1</a></div>
 	  <div class="grid-item"> <a href="ctdna\tp53.html">TP53</a></div>
-
+	  <div class="grid-item"> <a href="ctdna\rb1.html">RB1</a></div>
+	  <div class="grid-item"> <a href="ctdna\dnmt3a.html">DNMT3A</a></div>
                 </ul>
             </div>
         </div>
