@@ -1,0 +1,26 @@
+"Subject","BoneOnly","TargetLesionLocations","NoTargetLesionLocations"
+"102-001",FALSE,"Chest Wall, Liver","Bone, Lymph Node"
+"102-006",FALSE,"Liver","Liver"
+"102-007",FALSE,"Other","Lymph Node"
+"102-009",FALSE,"Other","Other"
+"102-010",TRUE,,"Bone"
+"102-012",FALSE,"Breast","Bone, Breast"
+"102-014",FALSE,"Other","Bone, Breast"
+"104-001",TRUE,,
+"104-002",TRUE,,
+"105-001",FALSE,"Chest Wall, Liver, Other",
+"105-003",FALSE,"Liver, Uterus","Bone"
+"105-005",FALSE,"Bone, Liver","Bone, Liver"
+"105-006",TRUE,,"Bone"
+"106-002",FALSE,"Breast","Lymph Node"
+"106-003",TRUE,,"Bone"
+"109-002",FALSE,"Liver","Kidney, Other"
+"110-001",FALSE,,"Other"
+"110-002",FALSE,"Other","Lymph Node"
+"111-003",FALSE,"Lymph Node","Lung, Lymph Node, Other"
+"111-004",FALSE,"Lung, Pelvis","Lung"
+"114-002",FALSE,,"Bone, Breast, Lymph Node"
+"115-003",FALSE,"Liver","Liver"
+"116-001",FALSE,"Lymph Node, Retroperitoneum","Lymph Node"
+"117-001",TRUE,,"Bone"
+"117-002",FALSE,"Liver, Pelvis",
