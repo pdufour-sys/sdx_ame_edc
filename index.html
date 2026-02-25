@@ -187,11 +187,17 @@
                 //labValuesSelect.style.display = 'none';
                 console.log('LOC 15.1.2');
             });
+            document.getElementById('tab-predout-current').addEventListener('click', function() {
+                showContent('predict_outcomes_current.html', 'tab-predout');
+                //labValuesSelect.style.display = 'none';
+
+                console.log('LOC 15.1.2.1');
+            });
             document.getElementById('tab-predout').addEventListener('click', function() {
                 showContent('predict_outcomes.html', 'tab-predout');
                 //labValuesSelect.style.display = 'none';
 
-                console.log('LOC 15.1.2');
+                console.log('LOC 15.1.2.2');
             });
             document.getElementById('tab-tlf').addEventListener('click', function() {
                 showContent('relational_toplevel.html', 'tab-tlf');
@@ -230,7 +236,8 @@
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
             <div id="tab-ctdna">ctDNA</div>
-            <div id="tab-predout">Correlate With Outcomes</div>
+            <div id="tab-predout-current">(Current) Correlate With Outcomes</div>
+            <div id="tab-predout">(Earlier) Correlate With Outcomes</div>
             <div id="tab-tlf">Tables & Listings</div>
         </div>
     </div>

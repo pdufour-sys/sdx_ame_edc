@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div>Show outcomes as a function of metabolic and other parameters</div><br><br>
+    <label for="dropdown1">Select X axis parameter (Metabolic, etc): </label>
+    <select id="dropdown1">
+      <option value="AdipC1D1">Adiponectin (C1D1)</option> 
+      <option value="AdipPctCh">Adiponectin % Change at C2D1</option> 
+
+      <option value="AlkPhosC1D1">Alk Phos (C1D1)</option> 
+      <option value="AlkPhosC1D1_OUTL">Alk Phos  (C1D1) minus outlier(s)</option> 
+      <option value="AlkPhosPctCh">Alk Phos % Change at C2D1</option> 
+
+      <option value="AmylaseC1D1">Amylase (C1D1)</option> 
+      <option value="AmylaseC1D1_OUTL">Amylase (C1D1) minus outlier(s)</option> 
+      <option value="AmylasePctCh">Amylase  % Change at C2D1</option> 
+
+      <option value="CreatinineC1D1">Creatinine (C1D1)</option> 
+      <option value="CreatinineC1D1_OUTL">Creatinine (C1D1) minus outlier(s)</option> 
+      <option value="CreatininePctCh">Creatinine  % Change at C2D1</option> 
+
+      <option value="GlucoseC1D1">Glucose (C1D1)</option> 
+      <option value="GlucosePctCh">Glucose % Change at C2D1</option> 
+      <option value="HbA1cC1D1">HbA1c (C1D1)</option>
+      <option value="HbA1cPctCh">HbA1c % Change at C2D1</option>
+
+      <option value="HDLC1D1">HDL (C1D1)</option>
+      <option value="HDLC1D1_OUTL">HDL (C1D1) minus outlier(s)</option>
+      <option value="HDLPctCh">HDL % Change at C2D1</option>
+
+      <option value="IL5C1D1">IL-5 (C1D1)</option>
+      <option value="IL5C1D1_OUTL">IL-5 (C1D1) minus outlier(s)</option>
+      <option value="IL5PctCh">IL-5 % Change at C2D1</option>
+
+      <option value="IL10C1D1">IL-10 (C1D1)</option>
+      <option value="IL10C1D1_OUTL">IL-10 (C1D1) minus outlier(s)</option>
+      <option value="IL10PctCh">IL-10 % Change at C2D1</option>
+
+
+      <option value="LARC1D1">LAR (C1D1)</option>
+      <option value="LARC1D1_OUTL">LAR (C1D1) minus outlier(s)</option>
+      <option value="LARPctCh">LAR % Change at C2D1</option>
+
+      <option value="LDLC1D1">LDL (C1D1)</option>
+      <option value="LDLPctCh">LDL % Change at C2D1</option>
+      <option value="LeptinC1D1">Leptin (C1D1)</option>
+      <option value="LeptinPctCh">Leptin % Change at C2D1</option>
+      <option value="TotCholC1D1">Total Cholesterol (C1D1)</option>
+      <option value="TotCholPctCh">Total Cholesterol % Change at C2D1</option>
+      <option value="TrigC1D1">Triglycerides (C1D1)</option>
+      <option value="TrigC1D1_OUTL">Triglycerides (C1D1) minus outlier(s)</option>
+      <option value="TrigPctCh">Triglycerides % Change at C2D1</option>
+
+
+      <option value="WeightC1D1">Weight (C1D1)</option>
+      <option value="WeightPctCh">Weight % Change at C2D1</option>
+    </select><br><br><br>
+
+    <label for="dropdown2">Select Y axis parameter (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="LargestAbsValueDiamPctChange">Largest % Change, target lesion diameters</option> 
+      <option value="LowestDiamPctCh">Lowest % Change, target lesion diameters</option> 
+      <option value="LowestResponseOrder">Best Response</option> 
+      <option value="SwimmersDurationWeeks_OffTrial">Swimmer's plot duration (off trial patients only)</option> 
+      <option value="SwimmersDurationWeeks">Swimmer's plot duration (all patients)</option> 
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+	const value1 = dropdown1.value;
+	const value2 = dropdown2.value;
+	console.log('LOC 01')
+	const newImageSrc = `${value1}_${value2}.jpg`;
+	console.log('LOC 02: '+newImageSrc);
+	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc;
+	console.log('LOC 03: '+newImageSrcWithDir);
+	displayImage.src = newImageSrcWithDir;
+	displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div>Show outcomes near first TBA as a function of metabolic and other parameters</div><br><br>
+    <label for="dropdown1">Select X axis parameter (Metabolic, etc): </label>
+    <select id="dropdown1">
+      <option value="Adiponectin_TBAProx">Adiponectin % Change Near first TBA</option>
+      <option value="Adiponectin_TBAProx_PctCh">Adiponectin_TBAProx_PctCh_PctChange_TL</option>
+      
+      <option value="Alkaline_Phosphatase_TBAProx">Alkaline_Phosphatase_TBAProx</option>
+      <option value="Alkaline_Phosphatase_TBAProx_PctCh">Alkaline_Phosphatase_TBAProx_PctCh</option>
+
+      <option value="Amylase_TBAProx">Amylase_TBAProx</option>
+      <option value="Amylase_TBAProx_PctCh">Amylase_TBAProx_PctCh</option>
+
+      <option value="Creatinine_TBAProx">Creatinine_TBAProx</option>
+      <option value="Creatinine_TBAProx_PctCh">Creatinine_TBAProx_PctCh</option>
+
+      <option value="Glucose_TBAProx">Glucose_TBAProx_PctChange_TL</option>
+      <option value="Glucose_TBAProx_PctCh">Glucose_TBAProx_PctCh_PctChange_TL</option>
+
+      <option value="HbA1c_TBAProx">HbA1c_TBAProx</option>
+      <option value="HbA1c_TBAProx_PctCh">HbA1c_TBAProx_PctCh</option>
+
+      <option value="HDL_Cholesterol_TBAProx">HDL_Cholesterol_TBAProx</option>
+      <option value="HDL_Cholesterol_TBAProx_PctCh">HDL_Cholesterol_TBAProx_PctCh</option>
+
+      <option value="IL_5_TBAProx">IL_5_TBAProx</option>
+      <option value="IL_5_TBAProx_PctCh">IL_5_TBAProx_PctCh</option>
+
+      <option value="IL_10_TBAProx">IL_10_TBAProx</option>
+      <option value="IL_10_TBAProx_PctCh">IL_10_TBAProx_PctCh</option>
+
+      <option value="Insulin_TBAProx">Insulin_TBAProx</option>
+      <option value="Insulin_TBAProx_PctCh">Insulin_TBAProx_PctCh</option>
+
+      <option value="LAR_TBAProx">LAR_TBAProx</option>
+      <option value="LAR_TBAProx_PctCh">LAR_TBAProx_PctCh</option>
+
+      <option value="LDL_Cholesterol_TBAProx">LDL_Cholesterol_TBAProx</option>
+      <option value="LDL_Cholesterol_TBAProx_PctCh">LDL_Cholesterol_TBAProx_PctCh</option>
+
+      <option value="Leptin_TBAProx">Leptin_TBAProx</option>
+      <option value="Leptin_TBAProx_PctCh">Leptin_TBAProx_PctCh</option>
+
+      <option value="Total_Cholesterol_TBAProx">Total_Cholesterol_TBAProx</option>
+      <option value="Total_Cholesterol_TBAProx_PctCh">Total_Cholesterol_TBAProx_PctCh</option>
+
+<option value="Triglycerides_TBAProx">Triglycerides_TBAProx</option>
+      <option value="Triglycerides_TBAProx_PctCh">Triglycerides_TBAProx_PctCh</option>
+
+      <option value="Weight_TBAProx">Weight_TBAProx</option>
+      <option value="Weight_TBAProx_PctCh">Weight_TBAProx_PctCh</option>
+
+    </select><br><br><br>
+
+    <label for="dropdown2">Select Y axis parameter (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="PctChange_TL_AtFirstTBA">PctChange_TL_AtFirstTBA</option>
+      <option value="AbsValue_TL_AtFirstTBA">AbsValue_TL_AtFirstTBA</option>
+
+      <option value="LargestAbsValueDiamPctChange">Largest % Change, target lesion diameters</option> 
+      <option value="LowestDiamPctCh">Lowest % Change, target lesion diameters</option> 
+      <option value="LowestResponseOrder">Best Response</option> 
+      <option value="SwimmersDurationWeeks_OffTrial">Swimmer's plot duration (off trial patients only)</option> 
+      <option value="SwimmersDurationWeeks">Swimmer's plot duration (all patients)</option> 
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+	const value1 = dropdown1.value;
+	const value2 = dropdown2.value;
+	console.log('LOC 01')
+	const newImageSrc = `${value1}_${value2}.jpg`;
+	console.log('LOC 02: '+newImageSrc);
+	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc;
+	console.log('LOC 03: '+newImageSrcWithDir);
+	displayImage.src = newImageSrcWithDir;
+	displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>
