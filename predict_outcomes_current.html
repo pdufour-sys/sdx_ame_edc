@@ -96,34 +96,63 @@
       <option value="PctChange_TL_AtFirstTBA">Percent Change Sum of Diameters at first TBA</option>
       <option value="AbsValue_TL_AtFirstTBA">Sum of diameters at first TBA</option>
     </select>
+    
+    <br>
+    <label for="dropdown3">Bone Only or everyone?</label>
+    <select id="dropdown3">
+      <option value="bo">Bone Only</option>
+      <option value="non-bo">Everyone</option>
+    </select>
+
+    <br>
+    <label for="dropdown4">Cohort?</label>
+    <select id="dropdown4">
+      <option value="all">All patients</option>
+      <option value="capi">Capivasertib (all)</option>
+      <option value="capi49">Capivasertib 49</option>
+      <option value="capi36">Capivasertib 36</option>
+      <option value="alp36">Alpelisib 36</option>
+    </select>
+
+
   </div>
 
   <div id="image-container">
-    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+    <img id="display-image" src="PleaseSelectParameters.jpg" width="600" height="400" alt="Selected Graph">
   </div>
 
   <script>
     // JavaScript variables for the dropdown selections
     const dropdown1 = document.getElementById('dropdown1');
     const dropdown2 = document.getElementById('dropdown2');
+    const dropdown3 = document.getElementById('dropdown3');
+    const dropdown4 = document.getElementById('dropdown4');
     const displayImage = document.getElementById('display-image');
 
     // Function to update the image based on dropdown selections
     function updateImage() {
 	const value1 = dropdown1.value;
 	const value2 = dropdown2.value;
-	console.log('LOC 01')
+	const value3 = dropdown3.value;
+	const value4 = dropdown4.value;
+	console.log('LOC 2.01')
 	const newImageSrc = `${value1}_${value2}.jpg`;
-	console.log('LOC 02: '+newImageSrc);
-	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc;
-	console.log('LOC 03: '+newImageSrcWithDir);
+	console.log('LOC 2.02: '+newImageSrc);
+        newImageSrc2 = `${value4}_${value3}_${newImageSrc}`;
+	console.log('LOC 2.02.2: '+newImageSrc2);
+	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc2;
+	console.log('LOC 2.03: '+newImageSrcWithDir);
 	displayImage.src = newImageSrcWithDir;
-	displayImage.alt = `Graph for ${value1} and ${value2}`;
+	console.log('LOC 2.04: '+newImageSrcWithDir);
+	displayImage.alt = `Graph for ${value4}, ${value3}, ${value1}, and ${value2}`;
+	console.log('LOC 2.05: '+newImageSrcWithDir);
     }
 
     // Add event listeners to dropdown menus
     dropdown1.addEventListener('change', updateImage);
     dropdown2.addEventListener('change', updateImage);
+    dropdown3.addEventListener('change', updateImage);
+    dropdown4.addEventListener('change', updateImage);
   </script>
 </body>
 </html>
