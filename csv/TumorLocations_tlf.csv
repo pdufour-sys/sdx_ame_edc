@@ -14,7 +14,7 @@
 "105-006",TRUE,,"Bone"
 "106-002",FALSE,"Breast","Lymph Node"
 "106-003",TRUE,,"Bone"
-"109-002",FALSE,"Liver","Kidney, Other"
+"109-002",FALSE,,"Other"
 "110-001",FALSE,,"Other"
 "110-002",FALSE,"Other","Lymph Node"
 "111-003",FALSE,"Lymph Node","Lung, Lymph Node, Other"
