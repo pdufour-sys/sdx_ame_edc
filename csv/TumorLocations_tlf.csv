@@ -12,6 +12,7 @@
 "105-003",FALSE,", Liver, Uterus",", Bone"
 "105-005",FALSE,"Bone, Liver","Bone, Liver"
 "105-006",TRUE,,"Bone"
+"105-008",FALSE,"Liver","Bone, Liver"
 "106-002",FALSE,"Breast","Lymph Node"
 "106-003",TRUE,,"Bone"
 "109-002",FALSE,,"Other"
@@ -21,7 +22,7 @@
 "111-004",FALSE,"Lung, Pelvis","Lung"
 "114-002",FALSE,,"Bone, Breast, Lymph Node"
 "115-003",FALSE,"Liver","Liver"
-"115-104",TRUE,,
+"115-104",TRUE,,"Bone"
 "116-001",FALSE,"Lymph Node, Retroperitoneum","Lymph Node"
 "117-001",TRUE,,"Bone"
 "117-002",FALSE,"Liver, Pelvis",
