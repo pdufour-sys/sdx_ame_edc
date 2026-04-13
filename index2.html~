@@ -14,7 +14,7 @@
             background-color: #ddddff /* where is this color used? was ddddff*/
             display: flex;
             flex-direction: column;
-            height: 100px; /* was 160 Adjust the height as needed */
+            height: 160px; /* Adjust the height as needed */
         }
         /* begin middle section removed; it was just a horizontal separator */
         /* .top-area .middle { */
@@ -27,7 +27,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px; /* test remove 11:27, returned to debug "exposure" height mystery */
-            height: 20%; /* test remove 11:28, , returned to debug "exposure" height mystery */
+            height: 50%; /* test remove 11:28, , returned to debug "exposure" height mystery */
             background-color: #88dddd; /* The color of the top area that says "amelia-1 edc ..., and has the SDX logo aaffff COLOR 01 */
         }
         .top-area .upper img {
@@ -75,7 +75,7 @@
         }
 
         .content {
-            padding: 10px;
+            padding: 20px;
             overflow-y: auto;
             height: calc(100vh - 200px); /* Adjust to match the height of the top area */
         }
