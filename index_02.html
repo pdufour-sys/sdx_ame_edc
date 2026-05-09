@@ -6,27 +6,16 @@
     <title>Amelia-1 EDC Data</title>
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
     <style>
-        html, body {
+        body {
             margin: 0;
-            height: 100%;
             font-family: Arial, sans-serif;
         }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
         .top-area {
-            background-color: #ddddff;
+            background-color: #ddddff /* where is this color used? was ddddff*/
             display: flex;
             flex-direction: column;
-            flex: 0 0 auto;
-            /* remove height: 100px */
+            height: 100px; /* was 160 Adjust the height as needed */
         }
-
-
         /* begin middle section removed; it was just a horizontal separator */
         /* .top-area .middle { */
         /*   background-color: steelblue;*/
@@ -50,16 +39,14 @@
             text-align: center;
             flex-grow: 1;
         }
-
         .top-area .lower {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-around;
-            background-color: #ff00ff;
-            align-items: center;
+            background-color: #ff00ff; /* this is the color of unselected tabs */
+            /* height: 25%; remove 11:34: this is why selected tabs were larter, put back for the exposure mystery */
+            align-items: center; /* Ensure vertical centering of elements */
+            position: relative; /* So we can place select absolutely if needed */
         }
-
-
 	.top-area .lower .select-list-style {
             background-color: #88dddd; /* this is the background color of the <select> list */
 	}
@@ -88,25 +75,31 @@
         }
 
         .content {
-            flex: 1 1 auto;
-            min-height: 0;
             padding: 10px;
-            overflow: hidden;
+            overflow-y: auto;
+            height: 100%; /* JS will manage this */
         }
-
         .content iframe {
-            display: block;
             width: 100%;
             height: 100%;
             border: none;
         }
-
         /* Add meta tags for cache control */
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
     </style>
     <script>
+        function adjustContentHeight() {
+            const topArea = document.querySelector('.top-area');
+            const content = document.querySelector('.content');
+            const topHeight = topArea.getBoundingClientRect().height;
+            content.style.height = (window.innerHeight - topHeight - 20) + 'px'; // 20px for padding
+        }
+
+        adjustContentHeight();
+        window.addEventListener('resize', adjustContentHeight);
+
         function showContent(file, tabId) {
             document.getElementById('content-frame').src = file;
             // Remove active class from all tabs
