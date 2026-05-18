@@ -19,7 +19,7 @@
         }
 
         .top-area {
-            background-color: #666666; /* was #ddddff, this isthe color bewlow the selctor tabs*/
+            background-color: #ddddff;
             display: flex;
             flex-direction: column;
             flex: 0 0 auto;
@@ -37,12 +37,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 4px 10px;  /* reduce vertical padding */
+            padding: 10px; /* test remove 11:27, returned to debug "exposure" height mystery */
+            height: 20%; /* test remove 11:28, , returned to debug "exposure" height mystery */
             background-color: #88dddd; /* The color of the top area that says "amelia-1 edc ..., and has the SDX logo aaffff COLOR 01 */
         }
         .top-area .upper img {
-	    max-height: 36px;  /* keeps the logo from forcing extra height */
-	}
+            max-height: 100%;
+        }
         .top-area .upper h1 {
             margin: 0;
             color: black;
