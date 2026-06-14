@@ -6,16 +6,27 @@
     <title>Amelia-1 EDC Data</title>
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
     <style>
-        body {
+        html, body {
             margin: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
         }
-        .top-area {
-            background-color: #ddddff /* where is this color used? was ddddff*/
+
+        body {
             display: flex;
             flex-direction: column;
-            height: 160px; /* Adjust the height as needed */
+            overflow: hidden;
         }
+
+        .top-area {
+            background-color: #666666; /* was #ddddff, this isthe color bewlow the selctor tabs*/
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            /* remove height: 100px */
+        }
+
+
         /* begin middle section removed; it was just a horizontal separator */
         /* .top-area .middle { */
         /*   background-color: steelblue;*/
@@ -26,27 +37,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px; /* test remove 11:27, returned to debug "exposure" height mystery */
-            height: 50%; /* test remove 11:28, , returned to debug "exposure" height mystery */
+            padding: 4px 10px;  /* reduce vertical padding */
             background-color: #88dddd; /* The color of the top area that says "amelia-1 edc ..., and has the SDX logo aaffff COLOR 01 */
         }
         .top-area .upper img {
-            max-height: 100%;
-        }
+	    max-height: 36px;  /* keeps the logo from forcing extra height */
+	}
         .top-area .upper h1 {
             margin: 0;
             color: black;
             text-align: center;
             flex-grow: 1;
         }
+
         .top-area .lower {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
-            background-color: #ff00ff; /* this is the color of unselected tabs */
-            /* height: 25%; remove 11:34: this is why selected tabs were larter, put back for the exposure mystery */
-            align-items: center; /* Ensure vertical centering of elements */
-            position: relative; /* So we can place select absolutely if needed */
+            background-color: #ff00ff;
+            align-items: center;
         }
+
+
 	.top-area .lower .select-list-style {
             background-color: #88dddd; /* this is the background color of the <select> list */
 	}
@@ -75,15 +87,19 @@
         }
 
         .content {
-            padding: 20px;
-            overflow-y: auto;
-            height: calc(100vh - 200px); /* Adjust to match the height of the top area */
+            flex: 1 1 auto;
+            min-height: 0;
+            padding: 10px;
+            overflow: hidden;
         }
+
         .content iframe {
+            display: block;
             width: 100%;
             height: 100%;
             border: none;
         }
+
         /* Add meta tags for cache control */
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
@@ -158,6 +174,21 @@
             //    console.log('LOC 13.0');
             //});
 
+            document.getElementById('tab-km').addEventListener('click', function() {
+                showContent('tab_km.html', 'tab-km');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-km-play').addEventListener('click', function() {
+                showContent('play_with_kaplan_meier.html ', 'tab-km-play');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-mmrm').addEventListener('click', function() {
+                showContent('TabMMRM.html', 'tab-mmrm');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
             document.getElementById('tab-pp').addEventListener('click', function() {
                 showContent('TabPP.html', 'tab-pp');
                 //labValuesSelect.style.display = 'none'; // Hide the select if visible
@@ -182,6 +213,28 @@
                 showContent('TBA_toplevel.html', 'tab-tba');
                 console.log('LOC 16');
             });
+            document.getElementById('tab-ctdna').addEventListener('click', function() {
+                showContent('ctdna_toplevel.html', 'tab-ctdna');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
+            document.getElementById('tab-predout-current').addEventListener('click', function() {
+                showContent('predict_outcomes_current.html', 'tab-predout-current');
+                //labValuesSelect.style.display = 'none';
+
+                console.log('LOC 15.1.2.1');
+            });
+            document.getElementById('tab-predout-multiple').addEventListener('click', function() {
+                showContent('predict_outcomes_current_multiple.html', 'tab-predout-multiple');
+                //labValuesSelect.style.display = 'none';
+
+                console.log('LOC 15.1.2.2');
+            });
+            document.getElementById('tab-tlf').addEventListener('click', function() {
+                showContent('relational_toplevel.html', 'tab-tlf');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
             //document.getElementById('tab-patient-disposition').addEventListener('click', function() {
             //    showContent('CurrentDisposition.html', 'tab-patient-disposition');
             //    console.log('LOC 15.2');
@@ -200,19 +253,26 @@
 </head>
 <body>
     <div class="top-area">
-        <div class="upper">
-          <h1>Amelia-1 EDC Data of 5/26/25 1:00 am ET</h1>
+        <div class="upper">  
+          <h1>Amelia-1 EDC Data of 6/08/26 1:00 am ET</h1> x 
           <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
         </div>
         <div class="lower">
 	    <!-- -the next 2 div used to be marked class='active' . Did that accomplish anything? -->
             <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
             <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
+            <div id="tab-km">Kaplan-Meier (real data)</div>
+            <div id="tab-km-play">Kaplan-Meier (play)</div>
+            <div id="tab-mmrm">MMRM Analyte Graphs</div>
             <div id="tab-pp">Lab Values (Per Patient)</div>
-            <div id="tab-tba">Tumor Assessments and Time on Trial</div>
+            <div id="tab-tba">Tumor Assessments and Swimmers plot</div>
             <div id="tab-scatter">% Change Scatterplots</div>
             <div id="tab-aes">Adverse Events</div>
             <div id="tab-exposure">Exposure</div>
+            <div id="tab-ctdna">ctDNA</div>
+            <div id="tab-predout-current">Correlates With Outcomes</div>
+            <div id="tab-predout-multiple">Cohorts Correlate With Outcomes, Side by Side</div>
+            <div id="tab-tlf">Tables & Listings</div>
         </div>
     </div>
     <div class="content">
