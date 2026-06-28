@@ -11,168 +11,162 @@
     <meta http-equiv="Expires" content="0" />
 
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
-    
-    
     <style>
-      html, body {
-          margin: 0;
-          height: 100%;
-          font-family: Arial, sans-serif;
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
         }
-      
-      body {
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-      }
-      
-      .top-area {
-          background-color: #666666; 
-          display: flex;
-          flex-direction: column;
-          flex: 0 0 auto;
-          position: relative; /* Anchor for mobile dropdown positioning */
-      }
-      
-      .top-area .upper {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 4px 10px;  
-          background-color: #88dddd; 
-      }
-      
-      .top-area .upper img {
-          max-height: 36px;  
-      }
-      
-      .top-area .upper h1 {
-          margin: 0;
-          color: black;
-          text-align: center;
-          flex-grow: 1;
-      }
-      
-      .top-area .upper h5 {
-          margin: 0 10px;
-          color: #333;
-      }
-      
-      /* --- Mobile Hamburger Button Styles --- */
-      .menu-toggle {
-          display: none; /* Hidden on desktop screens */
-          flex-direction: column;
-          justify-content: space-around;
-          width: 30px;
-          height: 22px;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          z-index: 1001;
-      }
-      
-      .menu-toggle span {
-          width: 100%;
-          height: 3px;
-          background-color: black;
-          transition: all 0.3s ease;
-      }
-      
-      .top-area .lower {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          background-color: #ff00ff;
-          align-items: center;
-      }
-      
-      .top-area .lower .select-list-style {
-          background-color: #88dddd; 
-      }
-      
-      .top-area .lower div {
-          flex-grow: 1;
-          text-align: center;
-          padding: 10px 12px; /* OPTIMIZATION: Reduced from 15px to save vertical space on desktop/wider layouts */
-          cursor: pointer;
-          color: black;
-          font-size: 14px;
-      }
-      
-      .top-area .lower div:hover {
-          background-color: #ee88ee; 
-      }
-      
-      .top-area .lower .active {
-          background-color: #aaaaaa;  
-      }
-      
-      #labValuesSelect {
-          display: none; 
-          margin-left: 10px; 
-          font-size: 16px;
-      }
-      
-      .content {
-          flex: 1 1 auto;
-          min-height: 0;
-          padding: 10px;
-          overflow: hidden;
-      }
-      
-      .content iframe {
-          display: block;
-          width: 100%;
-          height: 100%;
-          border: none;
-      }
-      
-      /* --- RESPONSIVE MOBILE MEDIA QUERY --- */
-      /* OPTIMIZATION: Increased breakpoint from 768px to 992px to capture landscape mobile phones */
-      @media (max-width: 992px) {
-          .menu-toggle {
-              display: flex; /* Show the hamburger button on portrait & landscape phones */
-          }
-	  
-          .top-area .upper h1 {
-              font-size: 1.1rem; /* Adjust title size for mobile screens */
-              text-align: left;
-          }
-	  
-          /* Transform menu options into a clean overlay dropdown hidden by default */
-          .top-area .lower {
-              display: none;
-              flex-direction: column;
-              width: 100%;
-              position: absolute;
-              top: 100%; 
-              left: 0;
-              z-index: 1000;
-              box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-              max-height: 75vh; /* OPTIMIZATION: Allows menu to scroll internally if it exceeds screen height in landscape */
-              overflow-y: auto;
-          }
-	  
-          /* Toggled via JS to open menu */
-          .top-area .lower.mobile-open {
-              display: flex;
-          }
-	  
-          .top-area .lower div {
-              width: 100%;
-              box-sizing: border-box;
-              padding: 12px;
-              border-bottom: 1px solid rgba(0,0,0,0.1);
-              background-color: #ff00ff;
-          }
-      }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .top-area {
+            background-color: #666666; 
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            position: relative; /* Anchor for mobile dropdown positioning */
+        }
+
+        .top-area .upper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 10px;  
+            background-color: #88dddd; 
+        }
+        
+        .top-area .upper img {
+            max-height: 36px;  
+        }
+
+        .top-area .upper h1 {
+            margin: 0;
+            color: black;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .top-area .upper h5 {
+            margin: 0 10px;
+            color: #333;
+        }
+
+        /* --- Mobile Hamburger Button Styles --- */
+        .menu-toggle {
+            display: none; /* Hidden on desktop screens */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            transition: all 0.3s ease;
+        }
+
+        .top-area .lower {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #ff00ff;
+            align-items: center;
+        }
+
+        .top-area .lower .select-list-style {
+            background-color: #88dddd; 
+        }
+
+        .top-area .lower div {
+            flex-grow: 1;
+            text-align: center;
+            padding: 15px; 
+            cursor: pointer;
+            color: black;
+        }
+        
+        .top-area .lower div:hover {
+            background-color: #ee88ee; 
+        }
+        
+        .top-area .lower .active {
+            background-color: #aaaaaa;  
+        }
+
+        #labValuesSelect {
+            display: none; 
+            margin-left: 10px; 
+            font-size: 16px;
+        }
+
+        .content {
+            flex: 1 1 auto;
+            min-height: 0;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .content iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- RESPONSIVE MOBILE MEDIA QUERY --- */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex; /* Show the hamburger button on mobile phone */
+            }
+
+            .top-area .upper h1 {
+                font-size: 1.1rem; /* Adjust title size for small mobile screens */
+                text-align: left;
+            }
+
+            /* Transform menu options into a clean overlay dropdown hidden by default */
+            .top-area .lower {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%; 
+                left: 0;
+                z-index: 1000;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            }
+
+            /* Toggled via JS to open menu */
+            .top-area .lower.mobile-open {
+                display: flex;
+            }
+
+            .top-area .lower div {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 12px;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+                background-color: #ff00ff;
+            }
+        }
     </style>
     <script>
-      function showContent(file, tabId) {
-          document.getElementById('content-frame').src = file;
-          document.querySelectorAll('.top-area .lower div').forEach(tab => {
-              tab.classList.remove('active');
+        function showContent(file, tabId) {
+            document.getElementById('content-frame').src = file;
+            document.querySelectorAll('.top-area .lower div').forEach(tab => {
+                tab.classList.remove('active');
             });
             if (tabId) {
                 document.getElementById(tabId).classList.add('active');
@@ -245,7 +239,7 @@
     <div class="top-area">
         <div class="upper">  
           <h1>Amelia-1 EDC Data of 6/24/26 1:00 am ET</h1>
-          <h5>v0.004</h5>
+          <h5>v0.003</h5>
           <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
           
           <!-- Added mobile-toggle button container inside header -->
