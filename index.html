@@ -3,277 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amelia-1 EDC Data</title>
+    <title>Amelia-1 EDC Data Dashboard</title>
     
-    <!-- FIX: Cache tags moved correctly to the head, outside of the style block -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
     
-    
     <style>
-      html, body {
-          margin: 0;
-          height: 100%;
-          font-family: Arial, sans-serif;
+        /* Base Reset and Full-Screen Flexbox Layout */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #666666;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-      
-      body {
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-      }
-      
-      .top-area {
-          background-color: #666666; 
-          display: flex;
-          flex-direction: column;
-          flex: 0 0 auto;
-          position: relative; /* Anchor for mobile dropdown positioning */
-      }
-      
-      .top-area .upper {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 4px 10px;  
-          background-color: #88dddd; 
-      }
-      
-      .top-area .upper img {
-          max-height: 36px;  
-      }
-      
-      .top-area .upper h1 {
-          margin: 0;
-          color: black;
-          text-align: center;
-          flex-grow: 1;
-      }
-      
-      .top-area .upper h5 {
-          margin: 0 10px;
-          color: #333;
-      }
-      
-      /* --- Mobile Hamburger Button Styles --- */
-      .menu-toggle {
-          display: none; /* Hidden on desktop screens */
-          flex-direction: column;
-          justify-content: space-around;
-          width: 30px;
-          height: 22px;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          z-index: 1001;
-      }
-      
-      .menu-toggle span {
-          width: 100%;
-          height: 3px;
-          background-color: black;
-          transition: all 0.3s ease;
-      }
-      
-      .top-area .lower {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          background-color: #ff00ff;
-          align-items: center;
-      }
-      
-      .top-area .lower .select-list-style {
-          background-color: #88dddd; 
-      }
-      
-      .top-area .lower div {
-          flex-grow: 1;
-          text-align: center;
-          padding: 10px 12px; /* OPTIMIZATION: Reduced from 15px to save vertical space on desktop/wider layouts */
-          cursor: pointer;
-          color: black;
-          font-size: 14px;
-      }
-      
-      .top-area .lower div:hover {
-          background-color: #ee88ee; 
-      }
-      
-      .top-area .lower .active {
-          background-color: #aaaaaa;  
-      }
-      
-      #labValuesSelect {
-          display: none; 
-          margin-left: 10px; 
-          font-size: 16px;
-      }
-      
-      .content {
-          flex: 1 1 auto;
-          min-height: 0;
-          padding: 10px;
-          overflow: hidden;
-      }
-      
-      .content iframe {
-          display: block;
-          width: 100%;
-          height: 100%;
-          border: none;
-      }
-      
-      /* --- RESPONSIVE MOBILE MEDIA QUERY --- */
-      /* OPTIMIZATION: Increased breakpoint from 768px to 992px to capture landscape mobile phones */
-      @media (max-width: 992px) {
-          .menu-toggle {
-              display: flex; /* Show the hamburger button on portrait & landscape phones */
-          }
-	  
-          .top-area .upper h1 {
-              font-size: 1.1rem; /* Adjust title size for mobile screens */
-              text-align: left;
-          }
-	  
-          /* Transform menu options into a clean overlay dropdown hidden by default */
-          .top-area .lower {
-              display: none;
-              flex-direction: column;
-              width: 100%;
-              position: absolute;
-              top: 100%; 
-              left: 0;
-              z-index: 1000;
-              box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-              max-height: 75vh; /* OPTIMIZATION: Allows menu to scroll internally if it exceeds screen height in landscape */
-              overflow-y: auto;
-          }
-	  
-          /* Toggled via JS to open menu */
-          .top-area .lower.mobile-open {
-              display: flex;
-          }
-	  
-          .top-area .lower div {
-              width: 100%;
-              box-sizing: border-box;
-              padding: 12px;
-              border-bottom: 1px solid rgba(0,0,0,0.1);
-              background-color: #ff00ff;
-          }
-      }
-    </style>
-    <script>
-      function showContent(file, tabId) {
-          document.getElementById('content-frame').src = file;
-          document.querySelectorAll('.top-area .lower div').forEach(tab => {
-              tab.classList.remove('active');
-            });
-            if (tabId) {
-                document.getElementById(tabId).classList.add('active');
+
+        /* Top Header Area Wrapper */
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            background-color: #666666;
+        }
+
+        /* Branding Strip (Title, Version, Logo) */
+        .header-upper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 12px;
+            background-color: #88dddd;
+        }
+
+        .header-upper h1 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #000000;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .header-upper .version-tag {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 10px;
+            white-space: nowrap;
+        }
+
+        .header-upper img {
+            max-height: 32px;
+            width: auto;
+        }
+
+        /* Navigation Box */
+        .navigation-box {
+            background-color: #ff00ff;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* --- DESKTOP VIEW: Row of Tabs (Hidden on Mobile) --- */
+        .desktop-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .desktop-tabs div {
+            flex: 1 1 auto;
+            text-align: center;
+            padding: 12px 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #000000;
+            cursor: pointer;
+            border-right: 1px solid rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease;
+        }
+
+        .desktop-tabs div:last-child {
+            border-right: none;
+        }
+
+        .desktop-tabs div:hover {
+            background-color: #ee88ee;
+        }
+
+        .desktop-tabs div.active {
+            background-color: #aaaaaa;
+        }
+
+        /* --- MOBILE VIEW: Native Compact Dropdown (Hidden on Laptop) --- */
+        .mobile-dropdown-container {
+            display: none;
+            padding: 6px 12px;
+            background-color: #ff00ff;
+        }
+
+        .mobile-nav-select {
+            width: 100%;
+            padding: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #666666;
+            background-color: #88dddd;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        /* Main Full-Window Content Area */
+        .content-body {
+            flex: 1 1 auto;
+            min-height: 0;
+            padding: 8px;
+            background-color: #666666;
+        }
+
+        .content-body iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #ffffff;
+            border-radius: 4px;
+        }
+
+        /* --- RESPONSIVE CROSSOVER BREAKPOINT --- */
+        @media (max-width: 1024px) {
+            /* Hide the desktop row entirely */
+            .desktop-tabs {
+                display: none !important;
             }
 
-            // Automatically collapse the mobile dropdown after selecting a tab
-            const lowerMenu = document.querySelector('.top-area .lower');
-            lowerMenu.classList.remove('mobile-open');
+            /* Display the ultra-compact mobile selection dropdown */
+            .mobile-dropdown-container {
+                display: block;
+            }
+
+            /* Shrink headers so landscape phone height isn't wasted */
+            .header-upper h1 {
+                font-size: 1.05rem;
+                text-align: left;
+            }
+            
+            .header-upper img {
+                max-height: 24px;
+            }
         }
+    </style>
+</head>
+<body>
 
+    <div class="header-container">
+        <div class="header-upper">
+            <h1>Amelia-1 EDC Data of 6/24/26 1:00 am ET</h1>
+            <span class="version-tag">v1.001</span>
+            <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
+        </div>
+
+        <div class="navigation-box">
+            
+            <div class="desktop-tabs" id="desktopNav">
+                <div data-file="LabValues.html" class="active">Lab Values (Absolute)</div>
+                <div data-file="LabValuesPct.html">Lab Values (% Change)</div>
+                <div data-file="tab_km.html">Kaplan-Meier (Real)</div>
+                <div data-file="play_with_kaplan_meier.html">Kaplan-Meier (Play)</div>
+                <div data-file="TabMMRM.html">MMRM Graphs</div>
+                <div data-file="TabPP.html">Lab Values (Per Patient)</div>
+                <div data-file="TBA_toplevel.html">Tumor Assessments</div>
+                <div data-file="ScatterplotPctChange.html">Scatterplots</div>
+                <div data-file="AEs.html">Adverse Events</div>
+                <div data-file="Exposure_toplevel.html">Exposure</div>
+                <div data-file="ctdna_toplevel.html">ctDNA</div>
+                <div data-file="predict_outcomes_current.html">Outcomes Correlation</div>
+                <div data-file="predict_outcomes_current_multiple.html">Outcomes Side-by-Side</div>
+                <div data-file="relational_toplevel.html">Tables & Listings</div>
+            </div>
+
+            <div class="mobile-dropdown-container">
+                <select class="mobile-nav-select" id="mobileNav">
+                    <option value="LabValues.html">A: Lab Values (Absolute Values)</option>
+                    <option value="LabValuesPct.html">B: Lab Values (% Change from baseline)</option>
+                    <option value="tab_km.html">C: Kaplan-Meier (real data)</option>
+                    <option value="play_with_kaplan_meier.html">D: Kaplan-Meier (play)</option>
+                    <option value="TabMMRM.html">E: MMRM Analyte Graphs</option>
+                    <option value="TabPP.html">F: Lab Values (Per Patient)</option>
+                    <option value="TBA_toplevel.html">G: Tumor Assessments and Swimmers plot</option>
+                    <option value="ScatterplotPctChange.html">H: Scatterplots (Baseline and % Change)</option>
+                    <option value="AEs.html">I: Adverse Events</option>
+                    <option value="Exposure_toplevel.html">J: Exposure</option>
+                    <option value="ctdna_toplevel.html">K: ctDNA</option>
+                    <option value="predict_outcomes_current.html">L: Correlation With Outcomes</option>
+                    <option value="predict_outcomes_current_multiple.html">M: Correlation With Outcomes, Side by Side</option>
+                    <option value="relational_toplevel.html">N: Tables & Listings</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content-body">
+        <iframe id="content-frame" src="LabValues.html"></iframe>
+    </div>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Set default view on load
-            showContent('LabValues.html', 'tab-lab-values-all-abs');
+            const iframe = document.getElementById('content-frame');
+            const desktopNav = document.getElementById('desktopNav');
+            const mobileNav = document.getElementById('mobileNav');
+            const desktopTabs = desktopNav.querySelectorAll('div');
 
-            // Wire up the Mobile Menu toggle functionality
-            const menuToggleBtn = document.getElementById('mobile-menu-btn');
-            const lowerMenu = document.querySelector('.top-area .lower');
+            // Single state controller to perfectly synchronize desktop and mobile widgets
+            function updateActiveView(targetFile) {
+                // Point iframe to chosen page
+                iframe.src = targetFile;
 
-            menuToggleBtn.addEventListener('click', function() {
-                lowerMenu.classList.toggle('mobile-open');
+                // Mark matching desktop link tab as active
+                desktopTabs.forEach(tab => {
+                    if(tab.getAttribute('data-file') === targetFile) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+
+                // Update mobile element dropdown view value
+                mobileNav.value = targetFile;
+            }
+
+            // Bind click events for computer users
+            desktopTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const selectedFile = this.getAttribute('data-file');
+                    updateActiveView(selectedFile);
+                });
             });
 
-            // Tab click handling
-            document.getElementById('tab-lab-values-all-abs').addEventListener('click', function() {
-                showContent('LabValues.html', 'tab-lab-values-all-abs');
-            });
-            document.getElementById('tab-lab-values-all-pct').addEventListener('click', function() {
-                showContent('LabValuesPct.html', 'tab-lab-values-all-pct');
-            });
-            document.getElementById('tab-km').addEventListener('click', function() {
-                showContent('tab_km.html', 'tab-km');
-            });
-            document.getElementById('tab-km-play').addEventListener('click', function() {
-                showContent('play_with_kaplan_meier.html', 'tab-km-play');
-            });
-            document.getElementById('tab-mmrm').addEventListener('click', function() {
-                showContent('TabMMRM.html', 'tab-mmrm');
-            });
-            document.getElementById('tab-pp').addEventListener('click', function() {
-                showContent('TabPP.html', 'tab-pp');
-            });
-            document.getElementById('tab-scatter').addEventListener('click', function() {
-                showContent('ScatterplotPctChange.html', 'tab-scatter');
-            });
-            document.getElementById('tab-aes').addEventListener('click', function() {
-                showContent('AEs.html', 'tab-aes');
-            });
-            document.getElementById('tab-exposure').addEventListener('click', function() {
-                showContent('Exposure_toplevel.html', 'tab-exposure');
-            });
-            document.getElementById('tab-tba').addEventListener('click', function() {
-                showContent('TBA_toplevel.html', 'tab-tba');
-            });
-            document.getElementById('tab-ctdna').addEventListener('click', function() {
-                showContent('ctdna_toplevel.html', 'tab-ctdna');
-            });
-            document.getElementById('tab-predout-current').addEventListener('click', function() {
-                showContent('predict_outcomes_current.html', 'tab-predout-current');
-            });
-            document.getElementById('tab-predout-multiple').addEventListener('click', function() {
-                showContent('predict_outcomes_current_multiple.html', 'tab-predout-multiple');
-            });
-            document.getElementById('tab-tlf').addEventListener('click', function() {
-                showContent('relational_toplevel.html', 'tab-tlf');
+            // Bind change selector logic for smartphone users
+            mobileNav.addEventListener('change', function() {
+                updateActiveView(this.value);
             });
         });
     </script>
-</head>
-<body>
-    <div class="top-area">
-        <div class="upper">  
-          <h1>Amelia-1 EDC Data of 6/24/26 1:00 am ET</h1>
-          <h5>v0.006</h5>
-          <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
-          
-          <!-- Added mobile-toggle button container inside header -->
-          <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
-        </div>
-        <div class="lower">
-            <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
-            <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
-            <div id="tab-km">Kaplan-Meier (real data)</div>
-            <div id="tab-km-play">Kaplan-Meier (play)</div>
-            <div id="tab-mmrm">MMRM Analyte Graphs</div>
-            <div id="tab-pp">Lab Values (Per Patient)</div>
-            <div id="tab-tba">Tumor Assessments and Swimmers plot</div>
-            <div id="tab-scatter">Scatterplots (Baseline and % Change)</div>
-            <div id="tab-aes">Adverse Events</div>
-            <div id="tab-exposure">Exposure</div>
-            <div id="tab-ctdna">ctDNA</div>
-            <div id="tab-predout-current">Correlation With Outcomes</div>
-            <div id="tab-predout-multiple">Correlation With Outcomes, Side by Side</div>
-            <div id="tab-tlf">Tables & Listings</div>
-        </div>
-    </div>
-    <div class="content">
-        <iframe id="content-frame" src=""></iframe>
-    </div>
 </body>
 </html>
