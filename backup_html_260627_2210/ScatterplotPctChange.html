@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Image Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div>Show Percent Change among analytes from C1D1 to C2D1</div><br><br>
+    <label for="dropdown1">Select X axis parameter: </label>
+    <select id="dropdown1">
+<option value="AAPR_C1D1">AAPR (C1D1)</option> 
+<option value="PctChange_AAPR">AAPR (% change at C2D1)</option> 
+
+<option value="Adiponectin_C1D1">Adiponectin (C1D1)</option> 
+<option value="PctChange_Adiponectin"> Adiponectin (% Change at C2D1)</option> 
+
+<option value="Albumin_C1D1"> Albumin (C1D1)</option> 
+<option value="PctChange_Albumin"> Albumin (% Change at C2D1)</option> 
+
+<option value="Alkaline_Phosphatase_C1D1"> Alkaline Phosphatase (C1D1)</option> 
+<option value="PctChange_Alkaline_Phosphatase"> Alkaline Phosphatase (% Change at C2D1)</option> 
+
+<option value="ALT_-_Alanine_aminotransferase_C1D1">ALT - Alanine aminotransferase (C1D1)</option> 
+<option value="PctChange_ALT_-_Alanine_aminotransferase">ALT - Alanine aminotransferase (% Change at C2D1)</option> 
+
+<option value="AGP-2_C1D1">AGP-2 (C1D1)</option> 
+<option value="PctChange_AGP-2">AGP-2 (% Change at C2D1)</option> 
+
+<option value="Amylase_C1D1">Amylase (C1D1)</option> 
+<option value="PctChange_Amylase">Amylase (% Change at C2D1)</option> 
+
+<option value="Apelin_C1D1">Apelin (C1D1)</option> 
+<option value="PctChange_Apelin">Apelin (% Change at C2D1)</option> 
+
+<option value="aPTT_-_Activated_Partial_Thromboplastin_Time_C1D1">aPTT - Activated Partial Thromboplastin Time (C1D1)</option> 
+<option value="PctChange_aPTT_-_Activated_Partial_Thromboplastin_Time">aPTT - Activated Partial Thromboplastin Time (% Change at C2D1)</option> 
+
+<option value="AST_-_Aspartate_Aminotransferase_C1D1">AST - Aspartate Aminotransferase (C1D1)</option> 
+<option value="PctChange_AST_-_Aspartate_Aminotransferase">AST - Aspartate Aminotransferase (% Change at C2D1)</option> 
+
+<option value="Basophils__absolute__C1D1">Basophils (absolute) (C1D1)</option> 
+<option value="PctChange_Basophils__absolute_">Basophils (absolute) (% Change at C2D1)</option> 
+
+<option value="bFGF_C1D1">bFGF (C1D1)</option> 
+<option value="PctChange_bFGF">bFGF (% Change at C2D1)</option> 
+
+<option value="Bicarbonate_C1D1">Bicarbonate (C1D1)</option> 
+<option value="PctChange_Bicarbonate">Bicarbonate (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Direct_C1D1">Bilirubin  Direct (C1D1)</option> 
+<option value="PctChange_Bilirubin__Direct">Bilirubin  Direct (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Indirect_C1D1">Bilirubin  Indirect (C1D1)</option> 
+<option value="PctChange_Bilirubin__Indirect">Bilirubin  Indirect (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Total_C1D1">Bilirubin  Total (C1D1)</option> 
+<option value="PctChange_Bilirubin__Total">Bilirubin  Total (% Change at C2D1)</option> 
+
+<option value="BMI_C1D1">BMI (C1D1)</option> 
+<option value="PctChange_BMI">BMI (% Change at C2D1)</option> 
+
+<option value="BPDiastolic_C1D1">BP (Diastolic) (C1D1)</option> 
+<option value="PctChange_BPDiastolic">BP (Diastolic) (% Change at C2D1)</option> 
+
+<option value="BPSystolic_C1D1">BP (Systolic) (C1D1)</option> 
+<option value="PctChange_BPSystolic">BP (Systolic) (% Change at C2D1)</option> 
+
+<option value="BUN_-_Blood_Urea_Nitrogen_C1D1">BUN - Blood Urea Nitrogen (C1D1)</option> 
+<option value="PctChange_BUN_-_Blood_Urea_Nitrogen">BUN - Blood Urea Nitrogen (% Change at C2D1)</option> 
+
+<option value="Calcium__Total_C1D1">Calcium, Total (C1D1)</option> 
+<option value="PctChange_Calcium__Total">Calcium, Total (% Change at C2D1)</option> 
+
+<option value="Chloride_C1D1">Chloride (C1D1)</option> 
+<option value="PctChange_Chloride">Chloride (% Change at C2D1)</option> 
+
+<option value="Creatine_Kinase_C1D1">Creatine Kinase (C1D1)</option> 
+<option value="PctChange_Creatine_Kinase">Creatine Kinase (% Change at C2D1)</option> 
+
+<option value="Creatinine_C1D1">Creatinine (C1D1)</option> 
+<option value="PctChange_Creatinine">Creatinine (% Change at C2D1)</option> 
+
+<option value="Eosinophils__absolute__C1D1">Eosinophils (absolute) (C1D1)</option> 
+<option value="PctChange_Eosinophils__absolute_">Eosinophils (absolute) (% Change at C2D1)</option> 
+
+<option value="FGF-21_C1D1">FGF-21 (C1D1)</option> 
+<option value="PctChange_FGF-21">FGF-21 (% Change at C2D1)</option> 
+
+<option value="GGT_-_Gamma_Glutamyl_Transferase_C1D1">GGT - Gamma Glutamyl Transferase (C1D1)</option> 
+<option value="PctChange_GGT_-_Gamma_Glutamyl_Transferase">GGT - Gamma Glutamyl Transferase (% Change at C2D1)</option> 
+
+<option value="Glucose_C1D1">Glucose (C1D1)</option> 
+<option value="PctChange_Glucose">Glucose (% Change at C2D1)</option> 
+
+<option value="GM-CSF_C1D1">GM-CSF (C1D1)</option> 
+<option value="PctChange_GM-CSF">GM-CSF (% Change at C2D1)</option> 
+
+<option value="HbA1c_C1D1">HbA1c (C1D1)</option> 
+<option value="PctChange_HbA1c">HbA1c (% Change at C2D1)</option> 
+
+<option value="HDL_Cholesterol_C1D1">HDL Cholesterol (C1D1)</option> 
+<option value="PctChange_HDL_Cholesterol">HDL Cholesterol (% Change at C2D1)</option> 
+
+<option value="Hematocrit_C1D1">Hematocrit (C1D1)</option> 
+<option value="PctChange_Hematocrit">Hematocrit (% Change at C2D1)</option> 
+
+<option value="Hemoglobin_C1D1">Hemoglobin (C1D1)</option> 
+<option value="PctChange_Hemoglobin">Hemoglobin (% Change at C2D1)</option> 
+
+<option value="HOMA_IR_C1D1">HOMA-IR (C1D1)</option> 
+<option value="PctChange_HOMA_IR">HOMA-IR (% Change at C2D1)</option> 
+
+<option value="IGF-1_C1D1">IGF-1 (C1D1)</option> 
+<option value="PctChange_IGF-1">IGF-1 (% Change at C2D1)</option> 
+
+<option value="IL-5_C1D1">IL-5 (C1D1)</option> 
+<option value="PctChange_IL-5">IL-5 (% Change at C2D1)</option> 
+
+<option value="IL-6_C1D1">IL-6 (C1D1)</option> 
+<option value="PctChange_IL-6">IL-6 (% Change at C2D1)</option> 
+
+<option value="IL-10_C1D1">IL-10 (C1D1)</option> 
+<option value="PctChange_IL-10">IL-10 (% Change at C2D1)</option> 
+
+<option value="INR_-_International_Normalized_Ratio_C1D1">INR - International Normalized Ratio (C1D1)</option> 
+<option value="PctChange_INR_-_International_Normalized_Ratio">INR - International Normalized Ratio (% Change at C2D1)</option> 
+
+<option value="Insulin_C1D1">Insulin (C1D1)</option> 
+<option value="PctChange_Insulin">Insulin (% Change at C2D1)</option> 
+
+<option value="LAR_C1D1">LAR (C1D1)</option> 
+<option value="PctChange_LAR">LAR (% Change at C2D1)</option> 
+
+<option value="LDH_-_Lactate_dehydrogenase_C1D1">LDH - Lactate dehydrogenase (C1D1)</option> 
+<option value="PctChange_LDH_-_Lactate_dehydrogenase">LDH - Lactate dehydrogenase (% Change at C2D1)</option> 
+
+<option value="LDL_Cholesterol_C1D1">LDL Cholesterol (C1D1)</option> 
+<option value="PctChange_LDL_Cholesterol">LDL Cholesterol (% Change at C2D1)</option> 
+
+<option value="Leptin_C1D1">Leptin (C1D1)</option> 
+<option value="PctChange_Leptin">Leptin (% Change at C2D1)</option> 
+
+<option value="Lipase_C1D1">Lipase (C1D1)</option> 
+<option value="PctChange_Lipase">Lipase (% Change at C2D1)</option> 
+
+<option value="Lymphocytes__absolute__C1D1">Lymphocytes (absolute) (C1D1)</option> 
+<option value="PctChange_Lymphocytes__absolute_">Lymphocytes (absolute) (% Change at C2D1)</option> 
+
+<option value="Magnesium_C1D1">Magnesium (C1D1)</option> 
+<option value="PctChange_Magnesium">Magnesium (% Change at C2D1)</option> 
+
+<option value="Monocytes__absolute__C1D1">Monocytes (absolute) (C1D1)</option> 
+<option value="PctChange_Monocytes__absolute_">Monocytes (absolute) (% Change at C2D1)</option> 
+
+<option value="Neutrophils__absolute_count__C1D1">Neutrophils (absolute count) (C1D1)</option> 
+<option value="PctChange_Neutrophils__absolute_count_">Neutrophils (absolute count) (% Change at C2D1)</option> 
+
+<option value="NLR_C1D1">NLR (C1D1)</option> 
+<option value="PctChange_NLR">NLR (% Change at C2D1)</option> 
+
+<option value="Platelet_Count_C1D1">Platelet Count (C1D1)</option> 
+<option value="PctChange_Platelet_Count">Platelet Count (% Change at C2D1)</option> 
+
+<option value="Potassium_C1D1">Potassium (C1D1)</option> 
+<option value="PctChange_Potassium">Potassium (% Change at C2D1)</option> 
+
+<option value="RBC__Erythrocytes__C1D1">RBC (Erythrocytes) (C1D1)</option> 
+<option value="PctChange_RBC__Erythrocytes_">RBC (Erythrocytes) (% Change at C2D1)</option> 
+
+<option value="Sodium_C1D1">Sodium (C1D1)</option> 
+<option value="PctChange_Sodium">Sodium (% Change at C2D1)</option> 
+
+<option value="sFRP-5_C1D1">sFRP-5 (C1D1)</option>
+<option value="PctChange_sFRP-5">sFRP-5 (% Change at C2D1)</option>
+
+<option value="Total_Cholesterol_C1D1">Total Cholesterol (C1D1)</option> 
+<option value="PctChange_Total_Cholesterol">Total Cholesterol (% Change at C2D1)</option> 
+
+<option value="Total_Protein_C1D1">Total Protein (C1D1)</option> 
+<option value="PctChange_Total_Protein">Total Protein (% Change at C2D1)</option> 
+
+<option value="Triglycerides_C1D1">Triglycerides (C1D1)</option> 
+<option value="PctChange_Triglycerides">Triglycerides (% Change at C2D1)</option> 
+
+<option value="Uric_acid_C1D1">Uric acid (C1D1)</option> 
+<option value="PctChange_Uric_acid">Uric acid (% Change at C2D1)</option> 
+
+<option value="VEGF_C1D1">VEGF (C1D1)</option> 
+<option value="PctChange_VEGF">VEGF (% Change at C2D1)</option> 
+
+<option value="VEGF-C_C1D1">VEGF-C (C1D1)</option> 
+<option value="PctChange_VEGF-C">VEGF-C (% Change at C2D1)</option> 
+
+<option value="VEGF-D_C1D1">VEGF-D (C1D1)</option> 
+<option value="PctChange_VEGF-D">VEGF-D (% Change at C2D1)</option> 
+
+<option value="WBC__Leukocytes__C1D1">WBC (Leukocytes) (C1D1)</option> 
+<option value="PctChange_WBC__Leukocytes_">WBC (Leukocytes) (% Change at C2D1)</option> 
+
+<option value="Weight_C1D1">Weight (C1D1)</option> 
+<option value="PctChange_Weight">Weight (% Change at C2D1)</option> 
+
+
+    </select><br><br><br>
+
+    <label for="dropdown2">Select Y axis parameter: </label>
+    <select id="dropdown2">
+<option value="AAPR_C1D1">AAPR (C1D1)</option> 
+<option value="PctChange_AAPR">AAPR (% change at C2D1)</option> 
+
+<option value="Adiponectin_C1D1">Adiponectin (C1D1)</option> 
+<option value="PctChange_Adiponectin"> Adiponectin (% Change at C2D1)</option> 
+
+<option value="Albumin_C1D1"> Albumin (C1D1)</option> 
+<option value="PctChange_Albumin"> Albumin (% Change at C2D1)</option> 
+
+<option value="Alkaline_Phosphatase_C1D1"> Alkaline Phosphatase (C1D1)</option> 
+<option value="PctChange_Alkaline_Phosphatase"> Alkaline Phosphatase (% Change at C2D1)</option> 
+
+<option value="ALT_-_Alanine_aminotransferase_C1D1">ALT - Alanine aminotransferase (C1D1)</option> 
+<option value="PctChange_ALT_-_Alanine_aminotransferase">ALT - Alanine aminotransferase (% Change at C2D1)</option> 
+
+<option value="AGP-2_C1D1">AGP-2 (C1D1)</option> 
+<option value="PctChange_AGP-2">AGP-2 (% Change at C2D1)</option> 
+
+<option value="Amylase_C1D1">Amylase (C1D1)</option> 
+<option value="PctChange_Amylase">Amylase (% Change at C2D1)</option> 
+
+<option value="Apelin_C1D1">Apelin (C1D1)</option> 
+<option value="PctChange_Apelin">Apelin (% Change at C2D1)</option> 
+
+<option value="aPTT_-_Activated_Partial_Thromboplastin_Time_C1D1">aPTT - Activated Partial Thromboplastin Time (C1D1)</option> 
+<option value="PctChange_aPTT_-_Activated_Partial_Thromboplastin_Time">aPTT - Activated Partial Thromboplastin Time (% Change at C2D1)</option> 
+
+<option value="AST_-_Aspartate_Aminotransferase_C1D1">AST - Aspartate Aminotransferase (C1D1)</option> 
+<option value="PctChange_AST_-_Aspartate_Aminotransferase">AST - Aspartate Aminotransferase (% Change at C2D1)</option> 
+
+<option value="Basophils__absolute__C1D1">Basophils (absolute) (C1D1)</option> 
+<option value="PctChange_Basophils__absolute_">Basophils (absolute) (% Change at C2D1)</option> 
+
+<option value="bFGF_C1D1">bFGF (C1D1)</option> 
+<option value="PctChange_bFGF">bFGF (% Change at C2D1)</option> 
+
+<option value="Bicarbonate_C1D1">Bicarbonate (C1D1)</option> 
+<option value="PctChange_Bicarbonate">Bicarbonate (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Direct_C1D1">Bilirubin  Direct (C1D1)</option> 
+<option value="PctChange_Bilirubin__Direct">Bilirubin  Direct (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Indirect_C1D1">Bilirubin  Indirect (C1D1)</option> 
+<option value="PctChange_Bilirubin__Indirect">Bilirubin  Indirect (% Change at C2D1)</option> 
+
+<option value="Bilirubin__Total_C1D1">Bilirubin  Total (C1D1)</option> 
+<option value="PctChange_Bilirubin__Total">Bilirubin  Total (% Change at C2D1)</option> 
+
+<option value="BMI_C1D1">BMI (C1D1)</option> 
+<option value="PctChange_BMI">BMI (% Change at C2D1)</option> 
+
+<option value="BPDiastolic_C1D1">BP (Diastolic) (C1D1)</option> 
+<option value="PctChange_BPDiastolic">BP (Diastolic) (% Change at C2D1)</option> 
+
+<option value="BPSystolic_C1D1">BP (Systolic) (C1D1)</option> 
+<option value="PctChange_BPSystolic">BP (Systolic) (% Change at C2D1)</option> 
+
+<option value="BUN_-_Blood_Urea_Nitrogen_C1D1">BUN - Blood Urea Nitrogen (C1D1)</option> 
+<option value="PctChange_BUN_-_Blood_Urea_Nitrogen">BUN - Blood Urea Nitrogen (% Change at C2D1)</option> 
+
+<option value="Calcium__Total_C1D1">Calcium, Total (C1D1)</option> 
+<option value="PctChange_Calcium__Total">Calcium, Total (% Change at C2D1)</option> 
+
+<option value="Chloride_C1D1">Chloride (C1D1)</option> 
+<option value="PctChange_Chloride">Chloride (% Change at C2D1)</option> 
+
+<option value="Creatine_Kinase_C1D1">Creatine Kinase (C1D1)</option> 
+<option value="PctChange_Creatine_Kinase">Creatine Kinase (% Change at C2D1)</option> 
+
+<option value="Creatinine_C1D1">Creatinine (C1D1)</option> 
+<option value="PctChange_Creatinine">Creatinine (% Change at C2D1)</option> 
+
+<option value="Eosinophils__absolute__C1D1">Eosinophils (absolute) (C1D1)</option> 
+<option value="PctChange_Eosinophils__absolute_">Eosinophils (absolute) (% Change at C2D1)</option> 
+
+<option value="FGF-21_C1D1">FGF-21 (C1D1)</option> 
+<option value="PctChange_FGF-21">FGF-21 (% Change at C2D1)</option> 
+
+<option value="GGT_-_Gamma_Glutamyl_Transferase_C1D1">GGT - Gamma Glutamyl Transferase (C1D1)</option> 
+<option value="PctChange_GGT_-_Gamma_Glutamyl_Transferase">GGT - Gamma Glutamyl Transferase (% Change at C2D1)</option> 
+
+<option value="Glucose_C1D1">Glucose (C1D1)</option> 
+<option value="PctChange_Glucose">Glucose (% Change at C2D1)</option> 
+
+<option value="GM-CSF_C1D1">GM-CSF (C1D1)</option> 
+<option value="PctChange_GM-CSF">GM-CSF (% Change at C2D1)</option> 
+
+<option value="HbA1c_C1D1">HbA1c (C1D1)</option> 
+<option value="PctChange_HbA1c">HbA1c (% Change at C2D1)</option> 
+
+<option value="HDL_Cholesterol_C1D1">HDL Cholesterol (C1D1)</option> 
+<option value="PctChange_HDL_Cholesterol">HDL Cholesterol (% Change at C2D1)</option> 
+
+<option value="Hematocrit_C1D1">Hematocrit (C1D1)</option> 
+<option value="PctChange_Hematocrit">Hematocrit (% Change at C2D1)</option> 
+
+<option value="Hemoglobin_C1D1">Hemoglobin (C1D1)</option> 
+<option value="PctChange_Hemoglobin">Hemoglobin (% Change at C2D1)</option> 
+
+<option value="HOMA_IR_C1D1">HOMA-IR (C1D1)</option> 
+<option value="PctChange_HOMA_IR">HOMA-IR (% Change at C2D1)</option> 
+
+<option value="IGF-1_C1D1">IGF-1 (C1D1)</option> 
+<option value="PctChange_IGF-1">IGF-1 (% Change at C2D1)</option> 
+
+<option value="IL-5_C1D1">IL-5 (C1D1)</option> 
+<option value="PctChange_IL-5">IL-5 (% Change at C2D1)</option> 
+
+<option value="IL-6_C1D1">IL-6 (C1D1)</option> 
+<option value="PctChange_IL-6">IL-6 (% Change at C2D1)</option> 
+
+<option value="IL-10_C1D1">IL-10 (C1D1)</option> 
+<option value="PctChange_IL-10">IL-10 (% Change at C2D1)</option> 
+
+<option value="INR_-_International_Normalized_Ratio_C1D1">INR - International Normalized Ratio (C1D1)</option> 
+<option value="PctChange_INR_-_International_Normalized_Ratio">INR - International Normalized Ratio (% Change at C2D1)</option> 
+
+<option value="Insulin_C1D1">Insulin (C1D1)</option> 
+<option value="PctChange_Insulin">Insulin (% Change at C2D1)</option> 
+
+<option value="LAR_C1D1">LAR (C1D1)</option> 
+<option value="PctChange_LAR">LAR (% Change at C2D1)</option> 
+
+<option value="LDH_-_Lactate_dehydrogenase_C1D1">LDH - Lactate dehydrogenase (C1D1)</option> 
+<option value="PctChange_LDH_-_Lactate_dehydrogenase">LDH - Lactate dehydrogenase (% Change at C2D1)</option> 
+
+<option value="LDL_Cholesterol_C1D1">LDL Cholesterol (C1D1)</option> 
+<option value="PctChange_LDL_Cholesterol">LDL Cholesterol (% Change at C2D1)</option> 
+
+<option value="Leptin_C1D1">Leptin (C1D1)</option> 
+<option value="PctChange_Leptin">Leptin (% Change at C2D1)</option> 
+
+<option value="Lipase_C1D1">Lipase (C1D1)</option> 
+<option value="PctChange_Lipase">Lipase (% Change at C2D1)</option> 
+
+<option value="Lymphocytes__absolute__C1D1">Lymphocytes (absolute) (C1D1)</option> 
+<option value="PctChange_Lymphocytes__absolute_">Lymphocytes (absolute) (% Change at C2D1)</option> 
+
+<option value="Magnesium_C1D1">Magnesium (C1D1)</option> 
+<option value="PctChange_Magnesium">Magnesium (% Change at C2D1)</option> 
+
+<option value="Monocytes__absolute__C1D1">Monocytes (absolute) (C1D1)</option> 
+<option value="PctChange_Monocytes__absolute_">Monocytes (absolute) (% Change at C2D1)</option> 
+
+<option value="Neutrophils__absolute_count__C1D1">Neutrophils (absolute count) (C1D1)</option> 
+<option value="PctChange_Neutrophils__absolute_count_">Neutrophils (absolute count) (% Change at C2D1)</option> 
+
+<option value="NLR_C1D1">NLR (C1D1)</option> 
+<option value="PctChange_NLR">NLR (% Change at C2D1)</option> 
+
+<option value="Platelet_Count_C1D1">Platelet Count (C1D1)</option> 
+<option value="PctChange_Platelet_Count">Platelet Count (% Change at C2D1)</option> 
+
+<option value="Potassium_C1D1">Potassium (C1D1)</option> 
+<option value="PctChange_Potassium">Potassium (% Change at C2D1)</option> 
+
+<option value="RBC__Erythrocytes__C1D1">RBC (Erythrocytes) (C1D1)</option> 
+<option value="PctChange_RBC__Erythrocytes_">RBC (Erythrocytes) (% Change at C2D1)</option> 
+
+<option value="Sodium_C1D1">Sodium (C1D1)</option> 
+<option value="PctChange_Sodium">Sodium (% Change at C2D1)</option> 
+
+<option value="sFRP-5_C1D1">sFRP-5 (C1D1)</option>
+<option value="PctChange_sFRP-5">sFRP-5 (% Change at C2D1)</option>
+
+<option value="Total_Cholesterol_C1D1">Total Cholesterol (C1D1)</option> 
+<option value="PctChange_Total_Cholesterol">Total Cholesterol (% Change at C2D1)</option> 
+
+<option value="Total_Protein_C1D1">Total Protein (C1D1)</option> 
+<option value="PctChange_Total_Protein">Total Protein (% Change at C2D1)</option> 
+
+<option value="Triglycerides_C1D1">Triglycerides (C1D1)</option> 
+<option value="PctChange_Triglycerides">Triglycerides (% Change at C2D1)</option> 
+
+<option value="Uric_acid_C1D1">Uric acid (C1D1)</option> 
+<option value="PctChange_Uric_acid">Uric acid (% Change at C2D1)</option> 
+
+<option value="VEGF_C1D1">VEGF (C1D1)</option> 
+<option value="PctChange_VEGF">VEGF (% Change at C2D1)</option> 
+
+<option value="VEGF-C_C1D1">VEGF-C (C1D1)</option> 
+<option value="PctChange_VEGF-C">VEGF-C (% Change at C2D1)</option> 
+
+<option value="VEGF-D_C1D1">VEGF-D (C1D1)</option> 
+<option value="PctChange_VEGF-D">VEGF-D (% Change at C2D1)</option> 
+
+<option value="WBC__Leukocytes__C1D1">WBC (Leukocytes) (C1D1)</option> 
+<option value="PctChange_WBC__Leukocytes_">WBC (Leukocytes) (% Change at C2D1)</option> 
+
+<option value="Weight_C1D1">Weight (C1D1)</option> 
+<option value="PctChange_Weight">Weight (% Change at C2D1)</option> 
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+      const value1 = dropdown1.value;
+    const value2 = dropdown2.value;
+      console.log('LOC 01')
+      const newImageSrc = `${value1}_${value2}.jpg`;
+      console.log('LOC 02: '+newImageSrc);
+      newImageSrcWithDir = 'scatterplotpct/scatter_' + newImageSrc;
+      console.log('LOC 03: '+newImageSrcWithDir);
+      displayImage.src = newImageSrcWithDir;
+      displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>

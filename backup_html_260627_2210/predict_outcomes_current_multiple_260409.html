@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes - Grid View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+      gap: 20px;
+    }
+    /* Narrower menu to accommodate the grid */
+    .menu {
+      flex: 0 0 250px; 
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .menu select {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    /* Grid container for the 4 images */
+    #image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 15px;
+      flex-grow: 1;
+      border: 1px solid #ccc;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      max-height: 40vh; /* Limits height to ensure they fit on screen */
+      border: 1px solid #999;
+      object-fit: contain;
+      background-color: white;
+    }
+
+    .img-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div><strong>Outcomes near first TBA</strong></div><br>
+    
+    <label for="dropdown1">X axis (Metabolic): </label>
+    <select id="dropdown1">
+      <option value="Adiponectin_TBAProx">Adiponectin near first TBA</option>
+      <option value="Adiponectin_TBAProx_PctCh">Adiponectin % Change...</option>
+      <option value="Alkaline_Phosphatase_TBAProx">Alkaline Phosphatase...</option>
+      <option value="Alkaline_Phosphatase_TBAProx_PctCh">Alkaline Phosphatase % Change...</option>
+      <option value="Amylase_TBAProx">Amylase near first TBA</option>
+      <option value="Amylase_TBAProx_PctCh">Amylase % Change...</option>
+      <option value="Creatinine_TBAProx">Creatinine near first TBA</option>
+      <option value="Creatinine_TBAProx_PctCh">Creatinine % Change...</option>
+      <option value="Glucose_TBAProx">Glucose near first TBA</option>
+      <option value="Glucose_TBAProx_PctCh">Glucose % Change...</option>
+      <option value="HbA1c_TBAProx">HbA1c near first TBA</option>
+      <option value="HbA1c_TBAProx_PctCh">HbA1c % Change...</option>
+      <option value="HDL_Cholesterol_TBAProx">HDL Cholesterol...</option>
+      <option value="HDL_Cholesterol_TBAProx_PctCh">HDL Cholesterol % Change...</option>
+      <option value="IL_5_TBAProx">IL-5 near first TBA</option>
+      <option value="IL_5_TBAProx_PctCh">IL-5 % Change...</option>
+      <option value="IL_10_TBAProx">IL-10 near first TBA</option>
+      <option value="IL_10_TBAProx_PctCh">IL-10 % Change...</option>
+      <option value="Insulin_TBAProx">Insulin near first TBA</option>
+      <option value="Insulin_TBAProx_PctCh">Insulin % Change...</option>
+      <option value="LAR_TBAProx">LAR near first TBA</option>
+      <option value="LAR_TBAProx_PctCh">LAR % Change...</option>
+      <option value="LDL_Cholesterol_TBAProx">LDL Cholesterol...</option>
+      <option value="LDL_Cholesterol_TBAProx_PctCh">LDL Cholesterol % Change...</option>
+      <option value="Leptin_TBAProx">Leptin near first TBA</option>
+      <option value="Leptin_TBAProx_PctCh">Leptin % Change...</option>
+      <option value="Total_Cholesterol_TBAProx">Total_Cholesterol...</option>
+      <option value="Total_Cholesterol_TBAProx_PctCh">Total_Cholesterol % Change...</option>
+      <option value="Triglycerides_TBAProx">Triglycerides near first TBA</option>
+      <option value="Triglycerides_TBAProx_PctCh">Triglycerides % Change...</option>
+      <option value="Weight_TBAProx">Weight near first TBA</option>
+      <option value="Weight_TBAProx_PctCh">Weight % Change...</option>
+    </select>
+
+    <label for="dropdown2">Y axis (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="SwimmersDurationWeeks">Swimmers duration (all)</option>
+      <option value="SwimmersDurationWeeks_OffTrial">Swimmers duration (off study)</option>
+      <option value="PctChange_TL_AtFirstTBA">Pct Change Sum Diameters</option>
+      <option value="AbsValue_TL_AtFirstTBA">Sum of diameters</option>
+    </select>
+    
+    <label for="dropdown3">Bone Only?</label>
+    <select id="dropdown3">
+      <option value="non-bo">Everyone</option>
+      <option value="bo">Bone Only</option>
+    </select>
+
+  </div>
+
+  <div id="image-grid">
+    <div class="grid-item">
+        <img id="img-topleft" src="PleaseSelectParameters.jpg" alt="Top Left">
+        <div class="img-label">All Patients</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-topright" src="PleaseSelectParameters.jpg" alt="Top Right">
+        <div class="img-label">All Capivasertib</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-bottomleft" src="PleaseSelectParameters.jpg" alt="Bottom Left">
+        <div class="img-label">Capivasertib @ 36</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-bottomright" src="PleaseSelectParameters.jpg" alt="Bottom Right">
+        <div class="img-label">Capivasertib @ 49</div>
+    </div>
+  </div>
+
+  <script>
+    const dropdowns = [
+      document.getElementById('dropdown1'),
+      document.getElementById('dropdown2'),
+      document.getElementById('dropdown3') //,
+      // document.getElementById('dropdown4')
+    ];
+
+    const images = {
+      tl: document.getElementById('img-topleft'),
+      tr: document.getElementById('img-topright'),
+      bl: document.getElementById('img-bottomleft'),
+      br: document.getElementById('img-bottomright')
+    };
+
+    function updateImages() {
+      const v1 = dropdowns[0].value;
+      const v2 = dropdowns[1].value;
+      const v3 = dropdowns[2].value;
+      // we no longer have a selector for cohort, since we always show  four cohorts
+      // const v4 = dropdowns[3].value;
+
+      // Base filename logic from your original script
+      const baseName_tl = `all_${v3}_${v1}_${v2}.jpg`;
+      const baseName_tr = `capi_${v3}_${v1}_${v2}.jpg`;
+      const baseName_bl = `capi36_${v3}_${v1}_${v2}.jpg`;
+      const baseName_br = `capi49_${v3}_${v1}_${v2}.jpg`;
+      const path = 'predict_outcomes/';
+
+      // Assign the 4 specific filenames
+      // images.tl.src = path + 'topleft_' + baseName;
+      // images.tr.src = path + 'topright_' + baseName;
+      // images.bl.src = path + 'bottomleft_' + baseName;
+      // images.br.src = path + 'bottomright_' + baseName;
+
+      images.tl.src = path + baseName_tl;
+      images.tl.alt = `Graph for all, ${v3}, ${v1}, ${v2}`;
+
+      images.tr.src = path + baseName_tr;
+      images.tr.alt = `Graph for Capi (all), ${v3}, ${v1}, ${v2}`;
+
+      images.bl.src = path + baseName_bl;
+      images.bl.alt = `Graph for Capi 36, ${v3}, ${v1}, ${v2}`;
+
+      images.br.src = path + baseName_br;
+      images.br.alt = `Graph for Capi 49, ${v3}, ${v1}, ${v2}`;
+
+      // => No longer needed since we update each images.xx.alt above
+      // Update alt text for accessibility
+      // Object.values(images).forEach(img => {
+      //     img.alt = `Graph for ${v4}, ${v3}, ${v1}, ${v2}`;
+      // });
+    }
+
+    // Attach listeners to all dropdowns
+    dropdowns.forEach(d => d.addEventListener('change', updateImages));
+
+    updateImages();
+  </script>
+</body>
+</html>

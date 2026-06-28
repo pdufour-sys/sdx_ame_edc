@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amelia-1 EDC Data</title>
+    <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    <style>
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .top-area {
+            background-color: #666666; /* was #ddddff, this isthe color bewlow the selctor tabs*/
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            /* remove height: 100px */
+        }
+
+
+        /* begin middle section removed; it was just a horizontal separator */
+        /* .top-area .middle { */
+        /*   background-color: steelblue;*/
+        /*   height: 5%;*/
+        /* } */
+        /* end middle removed */
+        .top-area .upper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 10px;  /* reduce vertical padding */
+            background-color: #88dddd; /* The color of the top area that says "amelia-1 edc ..., and has the SDX logo aaffff COLOR 01 */
+        }
+        .top-area .upper img {
+	    max-height: 36px;  /* keeps the logo from forcing extra height */
+	}
+        .top-area .upper h1 {
+            margin: 0;
+            color: black;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .top-area .lower {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #ff00ff;
+            align-items: center;
+        }
+
+
+	.top-area .lower .select-list-style {
+            background-color: #88dddd; /* this is the background color of the <select> list */
+	}
+
+        .top-area .lower div {
+            flex-grow: 1;
+            text-align: center;
+            padding: 15px; /* added 11:38 for exposure mystery; had been 15 px */
+            cursor: pointer;
+            color: black;
+        }
+        .top-area .lower div:hover {
+	    /* is this is the color the selected tab becomes during hoverover = d455d4 */
+	    /* half way between aaaaaa and ff00ff had been (7cb300) */
+            background-color: #ee88ee ; /* ee55dd */
+        }
+        .top-area .lower .active {
+            background-color: #aaaaaa;  /* This is is the color the selected tab becomes after hoverover aaaaaa COLOR 00*/
+        }
+
+        /* Style the select if desired */
+        #labValuesSelect {
+            display: none; /* Hidden by default */
+            margin-left: 10px; /* Some spacing if needed */
+            font-size: 16px;
+        }
+
+        .content {
+            flex: 1 1 auto;
+            min-height: 0;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .content iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Add meta tags for cache control */
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </style>
+    <script>
+        function showContent(file, tabId) {
+            document.getElementById('content-frame').src = file;
+            // Remove active class from all tabs
+            document.querySelectorAll('.top-area .lower div').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Add active class to the selected tab
+            if (tabId) {
+                document.getElementById(tabId).classList.add('active');
+            }
+        }
+        /* begin block 4 */ 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default content (which tab is selected when we first load the page
+            showContent('LabValues.html', 'tab-lab-values-all-abs');
+            console.log('LOC 01')
+
+            //const labValuesTab = document.getElementById('tab-lab-values-single');
+            //const labValuesSelect = document.getElementById('labValuesSelect');
+
+            console.log('LOC 02')
+            // Replace the direct showContent() call with toggle of select
+            //labValuesTab.addEventListener('click', function() {
+            //    // Toggle the display of the select
+            //    console.log('LOC 03.1');
+            //    console.log('LOC 03.1' + labValuesSelect.style.display);
+            //    if (labValuesSelect.style.display === 'none' || labValuesSelect.style.display === '') {
+            //        console.log('LOC 04.1.1')
+            //        labValuesSelect.style.display = 'inline-block';
+            //        console.log('LOC 04.1.2')
+            //    } else {
+            //        console.log('LOC 04.2.1')
+            //        labValuesSelect.style.display = 'none';
+            //        showContent('EmptyBody.html', 'tab-lab-values-single');
+            //        console.log('LOC 04.2.1')
+            //    }
+            //});
+
+            document.getElementById('tab-lab-values-all-abs').addEventListener('click', function() {
+                showContent('LabValues.html', 'tab-lab-values-all-abs');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 11');
+            });
+            document.getElementById('tab-lab-values-all-pct').addEventListener('click', function() {
+                showContent('LabValuesPct.html', 'tab-lab-values-all-pct');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 11');
+            });
+            //document.getElementById('tab-lab-values-src').addEventListener('click', function() {
+            //    showContent('LabValuesSrc.html', 'tab-lab-values-src');
+            //    labValuesSelect.style.display = 'none'; // Hide the select if visible
+            //    console.log('LOC 11');
+            //});
+            //document.getElementById('tab-lab-values-single').addEventListener('click', function() {
+            //    showContent('PleaseSelectPatient.html', 'tab-lab-values-single');
+            //    // labValuesSelect.style.display = 'none'; // Hide the select if visible
+            //    console.log('LOC 12');
+            //});
+
+            //// When user chooses a patient in the select
+            //labValuesSelect.addEventListener('change', function() {
+            //    const selectedValue = labValuesSelect.value;
+            //    if (selectedValue) {
+            //        showContent(selectedValue, 'tab-lab-values-single');
+            //    }
+            //    console.log('LOC 13.0');
+            //});
+
+            document.getElementById('tab-km').addEventListener('click', function() {
+                showContent('tab_km.html', 'tab-km');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-km-play').addEventListener('click', function() {
+                showContent('play_with_kaplan_meier.html ', 'tab-km-play');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-mmrm').addEventListener('click', function() {
+                showContent('TabMMRM.html', 'tab-mmrm');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-pp').addEventListener('click', function() {
+                showContent('TabPP.html', 'tab-pp');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.1');
+            });
+            document.getElementById('tab-scatter').addEventListener('click', function() {
+                showContent('ScatterplotPctChange.html', 'tab-scatter');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 13.2');
+            });
+            document.getElementById('tab-aes').addEventListener('click', function() {
+                showContent('AEs.html', 'tab-aes');
+                //labValuesSelect.style.display = 'none'; // Hide the select if visible
+                console.log('LOC 14');
+            });
+            document.getElementById('tab-exposure').addEventListener('click', function() {
+                showContent('Exposure_toplevel.html', 'tab-exposure');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1');
+            });
+            document.getElementById('tab-tba').addEventListener('click', function() {
+                showContent('TBA_toplevel.html', 'tab-tba');
+                console.log('LOC 16');
+            });
+            document.getElementById('tab-ctdna').addEventListener('click', function() {
+                showContent('ctdna_toplevel.html', 'tab-ctdna');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
+            document.getElementById('tab-predout-current').addEventListener('click', function() {
+                showContent('predict_outcomes_current.html', 'tab-predout-current');
+                //labValuesSelect.style.display = 'none';
+
+                console.log('LOC 15.1.2.1');
+            });
+            document.getElementById('tab-predout-multiple').addEventListener('click', function() {
+                showContent('predict_outcomes_current_multiple.html', 'tab-predout-multiple');
+                //labValuesSelect.style.display = 'none';
+
+                console.log('LOC 15.1.2.2');
+            });
+            document.getElementById('tab-tlf').addEventListener('click', function() {
+                showContent('relational_toplevel.html', 'tab-tlf');
+                //labValuesSelect.style.display = 'none';
+                console.log('LOC 15.1.2');
+            });
+            //document.getElementById('tab-patient-disposition').addEventListener('click', function() {
+            //    showContent('CurrentDisposition.html', 'tab-patient-disposition');
+            //    console.log('LOC 15.2');
+            //});
+            //document.getElementById('tab-tba-pct').addEventListener('click', function() {
+            //    showContent('103_tba_pct.html', 'tab-tba-pct');
+            //    console.log('LOC 16');
+            //});
+            //document.getElementById('tab-tba-abs').addEventListener('click', function() {
+            //    showContent('103_tba_abs.html', 'tab-tba-abs');
+            //    console.log('LOC 17');
+            //});
+        });
+        /* end block 4 */ 
+    </script>
+</head>
+<body>
+    <div class="top-area">
+        <div class="upper">  
+          <h1>Amelia-1 EDC Data of 6/24/26 1:00 am ET</h1>
+          <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
+        </div>
+        <div class="lower">
+	    <!-- -the next 2 div used to be marked class='active' . Did that accomplish anything? -->
+            <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
+            <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
+            <div id="tab-km">Kaplan-Meier (real data)</div>
+            <div id="tab-km-play">Kaplan-Meier (play)</div>
+            <div id="tab-mmrm">MMRM Analyte Graphs</div>
+            <div id="tab-pp">Lab Values (Per Patient)</div>
+            <div id="tab-tba">Tumor Assessments and Swimmers plot</div>
+            <div id="tab-scatter">Scatterplots (Baseline and % Change)</div>
+            <div id="tab-aes">Adverse Events</div>
+            <div id="tab-exposure">Exposure</div>
+            <div id="tab-ctdna">ctDNA</div>
+            <div id="tab-predout-current">Correlation  With Outcomes</div>
+            <div id="tab-predout-multiple">Correlation With Outcomes, Side by Side</div>
+            <div id="tab-tlf">Tables & Listings</div>
+        </div>
+    </div>
+    <div class="content">
+        <iframe id="content-frame" src=""></iframe>
+    </div>
+</body>
+</html>

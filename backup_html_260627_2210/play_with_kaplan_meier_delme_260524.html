@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play with Kaplan-Meier - Amelia-1 Capi (all)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #1a3158;
+    --blue: #185FA5;
+    --blue-light: #3b82c4;
+    --accent: #e8a838;
+    --red: #c0392b;
+    --green: #1a7a4a;
+    --bg: #f4f6fa;
+    --card: #ffffff;
+    --border: #dde3ef;
+    --text: #1a2540;
+    --text-soft: #5a6a85;
+    --text-muted: #8a98b0;
+    --pd-bg: #fdf0ee;
+    --pd-border: #e8b4ae;
+    --pd-text: #9b2016;
+    --cens-bg: #edf6f2;
+    --cens-border: #a8d8c0;
+    --cens-text: #1a5c38;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(13,31,60,0.08);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+  }
+  header .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  header img {
+    height: 32px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+  header .divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,0.2);
+  }
+  header .site-title {
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  header .page-title {
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+  }
+
+  /* Nav breadcrumb */
+  .breadcrumb {
+    background: var(--navy-mid);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.65); text-decoration: none; }
+  .breadcrumb a:hover { color: white; }
+  .breadcrumb .sep { opacity: 0.4; }
+  .breadcrumb .current { color: var(--accent); font-weight: 500; }
+
+  /* Main layout */
+  .main {
+    flex: 1;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  /* Left panel */
+  .left-panel {
+    width: 340px;
+    flex-shrink: 0;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .panel-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .panel-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .panel-controls {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+  }
+  .btn-all {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-all-pd {
+    background: var(--pd-bg);
+    border-color: var(--pd-border);
+    color: var(--pd-text);
+  }
+  .btn-all-pd:hover { background: #f7d8d4; }
+  .btn-all-cens {
+    background: var(--cens-bg);
+    border-color: var(--cens-border);
+    color: var(--cens-text);
+  }
+  .btn-all-cens:hover { background: #d6eee3; }
+  .btn-reset {
+    background: #f0f2f7;
+    border-color: var(--border);
+    color: var(--text-soft);
+  }
+  .btn-reset:hover { background: #e4e8f0; }
+
+  .patient-list {
+    overflow-y: auto;
+    flex: 1;
+    padding: 8px 0;
+  }
+  .patient-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 12px;
+    border-bottom: 1px solid #f0f2f7;
+    transition: background 0.1s;
+  }
+  .patient-row:hover { background: #f8f9fc; }
+  .patient-row:last-child { border-bottom: none; }
+
+  .patient-id {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-soft);
+    width: 72px;
+    flex-shrink: 0;
+  }
+  .patient-duration {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    width: 68px;
+    flex-shrink: 0;
+  }
+  .patient-duration span {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  /* Toggle switch */
+  .toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .toggle-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    min-width: 58px;
+    text-align: right;
+    transition: color 0.2s;
+  }
+  .toggle-label.pd { color: var(--pd-text); }
+  .toggle-label.cens { color: var(--cens-text); }
+
+  .toggle {
+    position: relative;
+    width: 44px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+  .toggle-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background 0.25s;
+    background: var(--red);
+  }
+  .toggle input:checked ~ .toggle-track { background: var(--green); }
+  .toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    pointer-events: none;
+  }
+  .toggle input:checked ~ .toggle-track .toggle-thumb {
+    transform: translateX(22px);
+  }
+
+  /* Status badge */
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-dot.pd { background: var(--red); }
+  .status-dot.cens { background: var(--green); }
+
+  /* Right panel */
+  .right-panel {
+    flex: 1;
+    padding: 24px 28px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s;
+  }
+  .stat-card:first-child {
+    border-color: var(--blue);
+    background: linear-gradient(135deg, #eef4fb 0%, #f8fafd 100%);
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-value.highlight { color: var(--blue); }
+  .stat-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .stat-value.not-reached {
+    font-size: 16px;
+    color: var(--text-soft);
+  }
+
+  /* Chart card */
+  .chart-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 24px 16px;
+    flex: 1;
+  }
+  .chart-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .chart-card-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+  }
+  .chart-card-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-soft);
+    align-items: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-line { width: 20px; height: 2px; background: var(--blue); }
+  .legend-cross { color: var(--red); font-size: 14px; font-weight: 700; line-height: 1; }
+  .legend-median-line { width: 20px; height: 2px; background: var(--accent); border-top: 2px dashed var(--accent); }
+
+  .chart-wrap { position: relative; height: 340px; }
+
+  /* Note */
+  .note {
+    background: #fffbf0;
+    border: 1px solid #f0d98a;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #7a5c10;
+    line-height: 1.6;
+  }
+  .note strong { color: #5a3e05; }
+
+  /* KM table */
+  .km-table-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .km-table-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: var(--navy);
+  }
+  .km-table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  th {
+    background: #f4f6fa;
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 7px 14px;
+    border-bottom: 1px solid #f0f2f7;
+    font-family: 'DM Mono', monospace;
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr.median-row td { background: #fffbf0; font-weight: 600; color: var(--navy); }
+  tr:hover td { background: #f8f9fc; }
+
+  /* Scrollbar */
+  .patient-list::-webkit-scrollbar { width: 4px; }
+  .patient-list::-webkit-scrollbar-track { background: transparent; }
+  .patient-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  @media (max-width: 900px) {
+    .main { flex-direction: column; }
+    .left-panel { width: 100%; height: 300px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="https://pdufour-sys.github.io/sdx_ame_edc/SynDevRxLogo.jpg" alt="SynDevRx" onerror="this.style.display='none'">
+    <div class="divider"></div>
+    <span class="site-title">Amelia-1 EDC Data</span>
+  </div>
+  <span class="page-title">Play with Kaplan-Meier, data from Amelia-1 Capivasertib (at 36 and 49)</span>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://pdufour-sys.github.io/sdx_ame_edc/">Home</a>
+  <span class="sep">›</span>
+  <span class="current">Play with Kaplan-Meier, data from Amelia-1 Capivasertib (at 36 and 49)</span>
+</div>
+
+<div class="main">
+  <!-- LEFT: Patient list -->
+  <div class="left-panel">
+    <div class="panel-header">
+      <h2>Patient Status</h2>
+      <p>Toggle each patient between PD and Censored</p>
+    </div>
+    <div class="panel-controls">
+      <button class="btn-all btn-all-pd" onclick="setAll(1)">All PD</button>
+      <button class="btn-all btn-all-cens" onclick="setAll(0)">All Censored</button>
+      <button class="btn-all btn-reset" onclick="resetData()">Reset</button>
+    </div>
+    <div class="patient-list" id="patientList"></div>
+  </div>
+
+  <!-- RIGHT: KM output -->
+  <div class="right-panel">
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Median PFS</div>
+        <div class="stat-value highlight" id="statMedian">—</div>
+        <div class="stat-sub" id="statMedianDays">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Patients (N)</div>
+        <div class="stat-value" id="statN">22</div>
+        <div class="stat-sub" id="statEvents">— events, — censored</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Event Rate</div>
+        <div class="stat-value" id="statRate">—</div>
+        <div class="stat-sub">PD observed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">S(t) at 6 mo</div>
+        <div class="stat-value" id="statS6">—</div>
+        <div class="stat-sub">survival at 6 months</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-header">
+        <div>
+          <h3>Kaplan-Meier PFS Curve</h3>
+          <p>Product-Limit estimator · toggle patients on the left to update</p>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-line"></div> KM estimate</div>
+          <div class="legend-item"><span class="legend-cross">✕</span> Censored</div>
+          <div class="legend-item"><div class="legend-median-line"></div> Median</div>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="kmChart"></canvas>
+      </div>
+    </div>
+
+    <div class="note" id="noteBox"></div>
+
+    <div class="km-table-card">
+      <div class="km-table-header">KM Table</div>
+      <div class="km-table-wrap">
+        <table id="kmTable">
+          <thead>
+            <tr>
+              <th>Time (mo)</th>
+              <th>At Risk</th>
+              <th>Events</th>
+              <th>Censored</th>
+              <th>S(t)</th>
+            </tr>
+          </thead>
+          <tbody id="kmTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+const ORIGINAL = [
+  {id:"102-017", dur:0.919918,  pd:0},
+  {id:"102-016", dur:1.182752,  pd:0},
+  {id:"114-002", dur:1.774127,  pd:1},
+  {id:"111-001", dur:1.839836,  pd:0},
+  {id:"105-008", dur:2.234086,  pd:0},
+  {id:"110-001", dur:2.234086,  pd:1},
+  {id:"102-009", dur:2.266940,  pd:1},
+  {id:"102-010", dur:2.266940,  pd:1},
+  {id:"106-002", dur:2.266940,  pd:1},
+  {id:"109-002", dur:3.679671,  pd:0},
+  {id:"117-003", dur:3.679671,  pd:0},
+  {id:"115-104", dur:3.712526,  pd:0},
+  {id:"117-002", dur:4.599589,  pd:0},
+  {id:"117-001", dur:5.059548,  pd:0},
+  {id:"115-003", dur:5.388090,  pd:1},
+  {id:"102-012", dur:5.519507,  pd:0},
+  {id:"102-014", dur:6.078029,  pd:0},
+  {id:"106-003", dur:6.439425,  pd:0},
+  {id:"116-001", dur:7.359343,  pd:0},
+  {id:"111-003", dur:7.556468,  pd:0},
+  {id:"104-002", dur:8.673511,  pd:1},
+  {id:"104-001", dur:10.776181, pd:1},
+];
+
+let patients = ORIGINAL.map(p => ({...p}));
+
+// ── KM computation ────────────────────────────────────────────────────────────
+function computeKM(pts) {
+  const sorted = [...pts].sort((a,b) => a.dur - b.dur);
+  const times = [...new Set(sorted.map(p => p.dur))].sort((a,b)=>a-b);
+  let n = sorted.length;
+  let S = 1.0;
+  let atRisk = n;
+  const rows = [];
+
+  for (const t of times) {
+    const atT = sorted.filter(p => p.dur === t);
+    const ev = atT.filter(p => p.pd === 1).length;
+    const ce = atT.filter(p => p.pd === 0).length;
+    if (ev > 0) S = S * (1 - ev / atRisk);
+    rows.push({t, atRisk, ev, ce, S: Math.round(S*10000)/10000});
+    atRisk -= (ev + ce);
+  }
+  return rows;
+}
+
+function getMedian(rows) {
+  // Standard: first time S(t) <= 0.5
+  // Handle flat exactly-at-0.5: midpoint convention
+  const crossRow = rows.find(r => r.S <= 0.5);
+  if (!crossRow) return null;
+
+  if (crossRow.S === 0.5) {
+    // Find next drop
+    const idx = rows.indexOf(crossRow);
+    if (idx + 1 < rows.length) {
+      const nextDrop = rows[idx + 1];
+      return (crossRow.t + nextDrop.t) / 2;
+    }
+    return crossRow.t;
+  }
+  return crossRow.t;
+}
+
+function getSurvivalAt(rows, t) {
+  // S(t) just before or at time t
+  let S = 1.0;
+  for (const r of rows) {
+    if (r.t <= t) S = r.S;
+    else break;
+  }
+  return S;
+}
+
+// ── Build KM line data (step function) ───────────────────────────────────────
+function buildLineData(rows, maxT) {
+  const pts = [{x:0, y:1.0}];
+  for (const r of rows) {
+    // horizontal then drop
+    pts.push({x: r.t, y: pts[pts.length-1].y});
+    pts.push({x: r.t, y: r.S});
+  }
+  pts.push({x: maxT * 1.05, y: rows[rows.length-1].S});
+  return pts;
+}
+
+function buildCensoredData(pts, rows) {
+  return pts.filter(p => p.pd === 0).map(p => {
+    // find S at this time
+    let S = 1.0;
+    for (const r of rows) {
+      if (r.t <= p.dur) S = r.S;
+      else break;
+    }
+    return {x: p.dur, y: S};
+  });
+}
+
+// ── Chart ─────────────────────────────────────────────────────────────────────
+let chart = null;
+
+function buildChart(rows, censoredPts, median, maxT) {
+  const lineData = buildLineData(rows, maxT);
+
+  const medianAnnotation = median ? [
+    {x:0, y:0.5}, {x:median, y:0.5}, {x:median, y:0}
+  ] : [];
+
+  const datasets = [
+    {
+      label: 'KM',
+      data: lineData,
+      showLine: true,
+      borderColor: '#185FA5',
+      backgroundColor: 'rgba(24,95,165,0.07)',
+      fill: true,
+      borderWidth: 2.5,
+      pointRadius: 0,
+      tension: 0,
+      order: 2,
+    },
+    {
+      label: 'Censored',
+      data: censoredPts,
+      showLine: false,
+      pointStyle: 'crossRot',
+      pointRadius: 8,
+      pointBorderWidth: 2.5,
+      borderColor: '#c0392b',
+      backgroundColor: '#c0392b',
+      order: 1,
+    },
+  ];
+
+  if (median) {
+    datasets.push({
+      label: 'Median line',
+      data: medianAnnotation,
+      showLine: true,
+      borderColor: '#e8a838',
+      borderWidth: 1.5,
+      borderDash: [5,4],
+      pointRadius: 0,
+      fill: false,
+      order: 3,
+    });
+  }
+
+  const ctx = document.getElementById('kmChart').getContext('2d');
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 300 },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              if (ctx.dataset.label === 'Censored') return `Censored at ${ctx.parsed.x.toFixed(2)} mo`;
+              if (ctx.dataset.label === 'Median line') return null;
+              return `S(t) = ${(ctx.parsed.y * 100).toFixed(1)}% at ${ctx.parsed.x.toFixed(2)} mo`;
+            }
+          },
+          filter: item => item.dataset.label !== 'Median line',
+        }
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0,
+          title: { display: true, text: 'Time (months from C1D1)', font: { size: 12, family: 'DM Sans' }, color: '#8a98b0' },
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { font: { family: 'DM Mono', size: 11 } }
+        },
+        y: {
+          min: 0,
+          max: 1.05,
+          title: { display: true, text: 'Survival probability', font: { size: 12, family: 'DM Sans' }, color: '#8a98b0' },
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { stepSize: 0.25, callback: v => (v*100).toFixed(0)+'%', font: { family: 'DM Mono', size: 11 } }
+        }
+      }
+    }
+  });
+}
+
+// ── Update all outputs ────────────────────────────────────────────────────────
+function update() {
+  const rows = computeKM(patients);
+  const nEvents = patients.filter(p => p.pd === 1).length;
+  const nCens = patients.filter(p => p.pd === 0).length;
+  const median = getMedian(rows);
+  const S6 = getSurvivalAt(rows, 6);
+  const maxT = Math.max(...patients.map(p=>p.dur));
+
+  // Stats
+  if (median !== null) {
+    document.getElementById('statMedian').textContent = median.toFixed(1) + ' mo';
+    document.getElementById('statMedianDays').textContent = `~${Math.round(median*30.44)} days`;
+    document.getElementById('statMedian').className = 'stat-value highlight';
+  } else {
+    document.getElementById('statMedian').textContent = 'Not reached';
+    document.getElementById('statMedianDays').textContent = `S(t) min = ${(rows[rows.length-1].S*100).toFixed(1)}%`;
+    document.getElementById('statMedian').className = 'stat-value not-reached';
+  }
+  document.getElementById('statN').textContent = patients.length;
+  document.getElementById('statEvents').textContent = `${nEvents} events, ${nCens} censored`;
+  document.getElementById('statRate').textContent = (nEvents/patients.length*100).toFixed(1)+'%';
+  document.getElementById('statS6').textContent = (S6*100).toFixed(1)+'%';
+
+  // Note
+  let note = `<strong>Method:</strong> Standard Kaplan-Meier (Product-Limit estimator). `;
+  if (median !== null) {
+    const exactRow = rows.find(r => r.S === 0.5);
+    if (exactRow) {
+      note += `Survival curve lands exactly at 50% at ${exactRow.t.toFixed(2)} mo — median shown as midpoint between this step and the next drop (Brookmeyer-Crowley convention).`;
+    } else {
+      note += `Median is the first time S(t) ≤ 50%.`;
+    }
+  } else {
+    note += `Median PFS is <strong>not reached</strong> — the survival curve has not dropped to 50% with the current patient statuses.`;
+  }
+  document.getElementById('noteBox').innerHTML = note;
+
+  // KM table
+  const tbody = document.getElementById('kmTableBody');
+  tbody.innerHTML = '';
+  for (const r of rows) {
+    const tr = document.createElement('tr');
+    const isMedianRow = median !== null && Math.abs(r.t - (rows.find(rr=>rr.S<=0.5)||{t:-1}).t) < 0.001 && r.S <= 0.5;
+    if (isMedianRow) tr.className = 'median-row';
+    tr.innerHTML = `
+      <td>${r.t.toFixed(3)}</td>
+      <td>${r.atRisk}</td>
+      <td>${r.ev}</td>
+      <td>${r.ce}</td>
+      <td>${(r.S*100).toFixed(1)}%${isMedianRow ? ' ← median' : ''}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // Chart
+  const censored = buildCensoredData(patients, rows);
+  buildChart(rows, censored, median, maxT);
+
+  // Update dots in patient list
+  document.querySelectorAll('.status-dot').forEach((dot, i) => {
+    dot.className = 'status-dot ' + (patients[i].pd === 1 ? 'pd' : 'cens');
+  });
+  document.querySelectorAll('.toggle-label').forEach((lbl, i) => {
+    if (patients[i].pd === 1) {
+      lbl.textContent = 'PD';
+      lbl.className = 'toggle-label pd';
+    } else {
+      lbl.textContent = 'Censored';
+      lbl.className = 'toggle-label cens';
+    }
+  });
+}
+
+// ── Build patient list ────────────────────────────────────────────────────────
+function buildPatientList() {
+  const list = document.getElementById('patientList');
+  list.innerHTML = '';
+  patients.forEach((p, i) => {
+    const row = document.createElement('div');
+    row.className = 'patient-row';
+    row.innerHTML = `
+      <div class="status-dot ${p.pd===1?'pd':'cens'}"></div>
+      <div class="patient-id">${p.id}</div>
+      <div class="patient-duration">${p.dur.toFixed(2)} <span>mo</span></div>
+      <div class="toggle-wrap">
+        <span class="toggle-label ${p.pd===1?'pd':'cens'}">${p.pd===1?'PD':'Censored'}</span>
+        <label class="toggle">
+          <input type="checkbox" ${p.pd===0?'checked':''} data-idx="${i}" onchange="togglePatient(${i}, this.checked)">
+          <div class="toggle-track"><div class="toggle-thumb"></div></div>
+        </label>
+      </div>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function togglePatient(idx, isCensored) {
+  patients[idx].pd = isCensored ? 0 : 1;
+  update();
+}
+
+function setAll(pdVal) {
+  patients.forEach(p => p.pd = pdVal);
+  // Rebuild checkboxes
+  document.querySelectorAll('.toggle input').forEach(inp => {
+    inp.checked = pdVal === 0;
+  });
+  update();
+}
+
+function resetData() {
+  patients = ORIGINAL.map(p => ({...p}));
+  buildPatientList();
+  update();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+buildPatientList();
+update();
+</script>
+</body>
+</html>

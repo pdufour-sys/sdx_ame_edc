@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes - Grid View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+      gap: 20px;
+    }
+    /* Narrower menu to accommodate the grid */
+    .menu {
+      flex: 0 0 250px; 
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .menu select {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    /* Grid container for the 4 images */
+    #image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 15px;
+      flex-grow: 1;
+      border: 1px solid #ccc;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      max-height: 40vh; /* Limits height to ensure they fit on screen */
+      border: 1px solid #999;
+      object-fit: contain;
+      background-color: white;
+    }
+
+    .img-label {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div><strong>Outcomes near first TBA</strong></div><br>
+    
+    <label for="dropdown1">X axis (Metabolic): </label>
+    <select id="dropdown1">
+      <option value="AUC7539">__SDX-7539 AUC (Week 1)</option>
+      <option value="CMax7539_Week1">__SDX-7539 CMax (Week 1)</option>
+      <option value="AUC7320">__SDX-7320 AUC (Week 1)</option>
+      <option value="CMax7320_Week1">__SDX-7320 CMax (Week 1)</option>
+      <option value="AUC11558">__SDX-11558 AUC (Week 1)</option>
+      <option value="CMax11558_Week1">__SDX-11558 CMax (Week 1)</option>
+
+      <option value="AAPR_C1D1">AAPR (Alb./Alk Phos) (C1D1)</option>
+      <option value="AAPR_TBAProx">AAPR (Alb./Alk Phos) near first TBA</option>
+      <option value="AAPR_TBAProx_PctCh">AAPR (Alb./Alk Phos) % change from baseline near first TBA</option>
+
+      <option value="Adiponectin_C1D1">Adiponectin (C1D1)</option>
+      <option value="Adiponectin_TBAProx">Adiponectin near first TBA</option>
+      <option value="Adiponectin_TBAProx_PctCh">Adiponectin % change from baseline near first TBA</option>
+
+      <option value="AGP_2_C1D1">AGP-2 (C1D1)</option>
+      <option value="AGP_2_TBAProx">AGP-2 near first TBA</option>
+      <option value="AGP_2_TBAProx_PctCh">AGP-2 % change from baseline near first TBA</option>
+
+      <option value="Albumin_C1D1">Albumin (C1D1)</option>
+      <option value="Albumin_TBAProx">Albumin near first TBA</option>
+      <option value="Albumin_TBAProx_PctCh">Albumin % change from baseline near first TBA</option>
+
+      <option value="Alkaline_Phosphatase_C1D1">Alkaline Phosphatase (C1D1)</option>
+      <option value="Alkaline_Phosphatase_TBAProx">Alkaline Phosphatase near first TBA</option>
+      <option value="Alkaline_Phosphatase_TBAProx_PctCh">Alkaline Phosphatase % change from baseline near first TBA</option>
+
+      <option value="ALT___Alanine_aminotransferase_C1D1">ALT (C1D1)</option>
+      <option value="ALT___Alanine_aminotransferase_TBAProx">ALT near first TBA</option>
+      <option value="ALT___Alanine_aminotransferase_TBAProx_PctCh">ALT % change from baseline near first TBA</option>
+
+      <option value="Amylase_C1D1">Amylase (C1D1)</option>
+      <option value="Amylase_TBAProx">Amylase near first TBA</option>
+      <option value="Amylase_TBAProx_PctCh">Amylase % change from baseline near first TBA</option>
+
+      <option value="Apelin_C1D1">Apelin (C1D1)</option>
+      <option value="Apelin_TBAProx">Apelin near first TBA</option>
+      <option value="Apelin_TBAProx_PctCh">Apelin % change from baseline near first TBA</option>
+
+      <option value="aPTT___Activated_Partial_Thromboplastin_Time_C1D1">aPTT (C1D1)</option>
+      <option value="aPTT___Activated_Partial_Thromboplastin_Time_TBAProx">aPTT near first TBA</option>
+      <option value="aPTT___Activated_Partial_Thromboplastin_Time_TBAProx_PctCh">aPTT % change from baseline near first TBA</option>
+
+      <option value="AST___Aspartate_Aminotransferase_C1D1">AST (C1D1)</option>
+      <option value="AST___Aspartate_Aminotransferase_TBAProx">AST near first TBA </option>
+      <option value="AST___Aspartate_Aminotransferase_TBAProx_PctCh">AST % change from baseline near first TBA</option>
+
+      <option value="Basophils__absolute__C1D1">Basophils (abs) (C1D1)</option>
+      <option value="Basophils__absolute__TBAProx">Basophils (abs) near first TBA</option>
+      <option value="Basophils__absolute__TBAProx_PctCh">Basophils (abs)  % change from baseline near first TBA</option>
+
+      <option value="Basophils__percent__C1D1">Basophils (%) (C1D1) (C1D1)</option>
+      <option value="Basophils__percent__TBAProx">Basophils (%) near first TBA</option>
+      <option value="Basophils__percent__TBAProx_PctCh">Basophils (%) % change from baseline near first TBA</option>
+
+      <option value="Bicarbonate_C1D1">Bicarbonate (C1D1)</option>
+      <option value="Bicarbonate_TBAProx">Bicarbonate near first TBA</option>
+      <option value="Bicarbonate_TBAProx_PctCh">Bicarbonate % change from baseline near first TBA</option>
+
+      <option value="Bilirubin__Direct_C1D1">Bilirubin, Direct (C1D1)</option>
+      <option value="Bilirubin__Direct_TBAProx">Bilirubin, Direct near first TBA</option>
+      <option value="Bilirubin__Direct_TBAProx_PctCh">Bilirubin, Direct % change from baseline near first TBA</option>
+
+      <option value="Bilirubin__Indirect_C1D1">Bilirubin, Indirect (C1D1)</option>
+      <option value="Bilirubin__Indirect_TBAProx">Bilirubin, Indirect near first TBA</option>
+      <option value="Bilirubin__Indirect_TBAProx_PctCh">Bilirubin, Indirect % change from baseline near first TBA</option>
+
+      <option value="Bilirubin__Total_C1D1">Bilirubin, Total (C1D1)</option>
+      <option value="Bilirubin__Total_TBAProx">Bilirubin, Total near first TBA</option>
+      <option value="Bilirubin__Total_TBAProx_PctCh">Bilirubin, Total % change from baseline near first TBA</option>
+
+      <option value="BMI_C1D1">BMI (C1D1)</option>
+      <option value="BMI_TBAProx">BMI near first TBA</option>
+      <option value="BMI_TBAProx_PctCh">BMI % change from baseline near first TBA</option>
+
+      <option value="BPDiastolic_C1D1">BPDiastolic (C1D1)</option>
+      <option value="BPDiastolic_TBAProx">BPDiastolic near first TBA</option>
+      <option value="BPDiastolic_TBAProx_PctCh">BPDiastolic % change from baseline near first TBA</option>
+
+      <option value="BPSystolic_C1D1">BPSystolic (C1D1)</option>
+      <option value="BPSystolic_TBAProx">BPSystolic near first TBA</option>
+      <option value="BPSystolic_TBAProx_PctCh">BPSystolic % change from baseline near first TBA</option>
+
+      <option value="BUN___Blood_Urea_Nitrogen_C1D1">BUN (C1D1)</option>
+      <option value="BUN___Blood_Urea_Nitrogen_TBAProx">BUN near first TBA</option>
+      <option value="BUN___Blood_Urea_Nitrogen_TBAProx_PctCh">BUN % change from baseline near first TBA</option>
+
+      <option value="Calcium__Total_C1D1">Calcium, Total (C1D1)</option>
+      <option value="Calcium__Total_TBAProx">Calcium, Total near first TBA</option>
+      <option value="Calcium__Total_TBAProx_PctCh">Calcium, Total % change from baseline near first TBA</option>
+
+      <option value="Chloride_C1D1">Chloride (C1D1)</option>
+      <option value="Chloride_TBAProx">Chloride near first TBA</option>
+      <option value="Chloride_TBAProx_PctCh">Chloride % change from baseline near first TBA</option>
+
+      <option value="Creatine_Kinase_C1D1">Creatine Kinase (C1D1)</option>
+      <option value="Creatine_Kinase_TBAProx">Creatine Kinase near first TBA</option>
+      <option value="Creatine_Kinase_TBAProx_PctCh">Creatine Kinase % change from baseline near first TBA</option>
+
+      <option value="Creatinine_C1D1">Creatinine (C1D1)</option>
+      <option value="Creatinine_TBAProx">Creatinine near first TBA</option>
+      <option value="Creatinine_TBAProx_PctCh">Creatinine % change from baseline near first TBA</option>
+
+      <option value="Eosinophils__absolute__C1D1">Eosinophils (abs) (C1D1)</option>
+      <option value="Eosinophils__absolute__TBAProx">Eosinophils (abs) near first TBA</option>
+      <option value="Eosinophils__absolute__TBAProx_PctCh">Eosinophil (abs) % change from baseline near first TBA</option>
+
+      <option value="Eosinophils__percent__C1D1">Eosinophils (%) (C1D1)</option>
+      <option value="Eosinophils__percent__TBAProx">Eosinophils (%) near first TBA</option>
+      <option value="Eosinophils__percent__TBAProx_PctCh">Eosinophils (%) % change from baseline near first TBA</option>
+
+      <option value="FGF_21_C1D1">FGF_21 (C1D1)</option>
+      <option value="FGF_21_TBAProx">FGF_21 near first TBA</option>
+      <option value="FGF_21_TBAProx_PctCh">FGF_21 % change from baseline near first TBA</option>
+
+      <option value="GGT___Gamma_Glutamyl_Transferase_C1D1">GGT (C1D1)</option>
+      <option value="GGT___Gamma_Glutamyl_Transferase_TBAProx">GGT near first TBA</option>
+      <option value="GGT___Gamma_Glutamyl_Transferase_TBAProx_PctCh">GGT % change from baseline near first TBA</option>
+
+      <option value="Glucose_C1D1">Glucose (C1D1)</option>
+      <option value="Glucose_TBAProx">Glucose near first TBA</option>
+      <option value="Glucose_TBAProx_PctCh">Glucose % change from baseline near first TBA</option>
+
+      <option value="GM_CSF_C1D1">GM-CSF (C1D1)</option>
+      <option value="GM_CSF_TBAProx">GM-CSF near first TBA</option>
+      <option value="GM_CSF_TBAProx_PctCh">GM-CSF % change from baseline near first TBA</option>
+
+      <option value="HbA1c_C1D1">HbA1c (C1D1)</option>
+      <option value="HbA1c_TBAProx">HbA1c near first TBA</option>
+      <option value="HbA1c_TBAProx_PctCh">HbA1c % change from baseline near first TBA</option>
+
+      <option value="HDL_Cholesterol_C1D1">HDL_Cholesterol (C1D1)</option>
+      <option value="HDL_Cholesterol_TBAProx">HDL_Cholesterol near first TBA</option>
+      <option value="HDL_Cholesterol_TBAProx_PctCh">HDL_Cholesterol % change from baseline near first TBA</option>
+
+      <option value="Hematocrit_C1D1">Hematocrit (C1D1)</option>
+      <option value="Hematocrit_TBAProx">Hematocrit near first TBA</option>
+      <option value="Hematocrit_TBAProx_PctCh">Hematocrit % change from baseline near first TBA</option>
+
+      <option value="Hemoglobin_C1D1">Hemoglobin (C1D1)</option>
+      <option value="Hemoglobin_TBAProx">Hemoglobin near first TBA</option>
+      <option value="Hemoglobin_TBAProx_PctCh">Hemoglobin % change from baseline near first TBA</option>
+
+      <option value="HOMA_IR_C1D1">HOMA-IR (C1D1)</option>
+      <option value="HOMA_IR_TBAProx">HOMA-IR near first TBA</option>
+      <option value="HOMA_IR_TBAProx_PctCh">HOMA-IR % change from baseline near first TBA</option>
+
+      <option value="IGF_1_C1D1">IGF-1 (C1D1)</option>
+      <option value="IGF_1_TBAProx">IGF-1 near first TBA</option>
+      <option value="IGF_1_TBAProx_PctCh">IGF-1 % change from baseline near first TBA</option>
+
+      <option value="IL_5_C1D1">IL-5 (C1D1)</option>
+      <option value="IL_5_TBAProx">IL-5 near first TBA</option>
+      <option value="IL_5_TBAProx_PctCh">IL-5 % change from baseline near first TBA</option>
+
+      <option value="IL_6_C1D1">IL-6 (C1D1)</option>
+      <option value="IL_6_TBAProx">IL-6 near first TBA</option>
+      <option value="IL_6_TBAProx_PctCh">IL-6 % change from baseline near first TBA</option>
+
+      <option value="IL_10_C1D1">IL-10 (C1D1)</option>
+      <option value="IL_10_TBAProx">IL-10 near first TBA</option>
+      <option value="IL_10_TBAProx_PctCh">IL-10 % change from baseline near first TBA</option>
+
+      <option value="INR___International_Normalized_Ratio_C1D1">INR (C1D1)</option>
+      <option value="INR___International_Normalized_Ratio_TBAProx">INR near first TBA</option>
+      <option value="INR___International_Normalized_Ratio_TBAProx_PctCh">INR % change from baseline near first TBA</option>
+
+      <option value="Insulin_C1D1">Insulin (C1D1)</option>
+      <option value="Insulin_TBAProx">Insulin near first TBA</option>
+      <option value="Insulin_TBAProx_PctCh">Insulin % change from baseline near first TBA</option>
+
+      <option value="LAR_C1D1">LAR (C1D1)</option>
+      <option value="LAR_TBAProx">LAR near first TBA</option>
+      <option value="LAR_TBAProx_PctCh">LAR % change from baseline near first TBA</option>
+
+      <option value="LDH___Lactate_dehydrogenase_C1D1">LDH (C1D1)</option>
+      <option value="LDH___Lactate_dehydrogenase_TBAProx">LDH near first TBA</option>
+      <option value="LDH___Lactate_dehydrogenase_TBAProx_PctCh">LDH % change from baseline near first TBA</option>
+
+      <option value="LDL_Cholesterol_C1D1">LDL_Cholesterol (C1D1)</option>
+      <option value="LDL_Cholesterol_TBAProx">LDL_Cholesterol near first TBA</option>
+      <option value="LDL_Cholesterol_TBAProx_PctCh">LDL_Cholesterol % change from baseline near first TBA</option>
+
+      <option value="Leptin_C1D1">Leptin (C1D1)</option>
+      <option value="Leptin_TBAProx">Leptin near first TBA</option>
+      <option value="Leptin_TBAProx_PctCh">Leptin % change from baseline near first TBA</option>
+
+      <option value="Lipase_C1D1">Lipase (C1D1)</option>
+      <option value="Lipase_TBAProx">Lipase near first TBA</option>
+      <option value="Lipase_TBAProx_PctCh">Lipase % change from baseline near first TBA</option>
+
+      <option value="Lymphocytes__absolute__C1D1">Lymphocytes (abs) (C1D1)</option>
+      <option value="Lymphocytes__absolute__TBAProx">Lymphocytes (abs) near first TBA</option>
+      <option value="Lymphocytes__absolute__TBAProx_PctCh">Lymphocytes (abs) % change from baseline near first TBA</option>
+
+      <option value="Lymphocytes__percent__C1D1">Lymphocytes (%) (C1D1)</option>
+      <option value="Lymphocytes__percent__TBAProx">Lymphocytes (%) near first TBA</option>
+      <option value="Lymphocytes__percent__TBAProx_PctCh">Lymphocytes (%) % change from baseline near first TBA</option>
+
+      <option value="Magnesium_C1D1">Magnesium (C1D1)</option>
+      <option value="Magnesium_TBAProx">Magnesium near first TBA</option>
+      <option value="Magnesium_TBAProx_PctCh">Magnesium % change from baseline near first TBA</option>
+
+      <option value="Monocytes__absolute__C1D1">Monocytes (abs) (C1D1)</option>
+      <option value="Monocytes__absolute__TBAProx">Monocytes (abs) near first TBA</option>
+      <option value="Monocytes__absolute__TBAProx_PctCh">Monocytes (abs) % change from baseline near first TBA</option>
+
+      <option value="Monocytes__percent__C1D1">Monocytes (%) (C1D1)</option>
+      <option value="Monocytes__percent__TBAProx">Monocytes (%) near first TBA</option>
+      <option value="Monocytes__percent__TBAProx_PctCh">Monocytes (5) % change from baseline near first TBA</option>
+
+      <option value="Neutrophils__absolute_count__C1D1">Neutrophils (abs) (C1D1)</option>
+      <option value="Neutrophils__absolute_count__TBAProx">Neutrophils (abs) near first TBA</option>
+      <option value="Neutrophils__absolute_count__TBAProx_PctCh">Neutrophils (abs) % change from baseline near first TBA</option>
+
+      <option value="Neutrophils__percent__C1D1">Neutrophils (%) (C1D1)</option>
+      <option value="Neutrophils__percent__TBAProx">Neutrophils (%) near first TBA</option>
+      <option value="Neutrophils__percent__TBAProx_PctCh">Neutrophils (%) % change from baseline near first TBA</option>
+
+      <option value="NLR_C1D1">NLR (C1D1)</option>
+      <option value="NLR_TBAProx">NLR near first TBA</option>
+      <option value="NLR_TBAProx_PctCh">NLR % change from baseline near first TBA</option>
+
+      <option value="Platelet_Count_C1D1">Platelet Count (C1D1)</option>
+      <option value="Platelet_Count_TBAProx">Platelet Count near first TBA</option>
+      <option value="Platelet_Count_TBAProx_PctCh">Platelet Count % change from baseline near first TBA</option>
+
+      <option value="Potassium_C1D1">Potassium (C1D1)</option>
+      <option value="Potassium_TBAProx">Potassium near first TBA</option>
+      <option value="Potassium_TBAProx_PctCh">Potassium % change from baseline near first TBA</option>
+
+      <option value="RBC__Erythrocytes__C1D1">RBC (C1D1)</option>
+      <option value="RBC__Erythrocytes__TBAProx">RBC near first TBA</option>
+      <option value="RBC__Erythrocytes__TBAProx_PctCh">RBC % change from baseline near first TBA</option>
+
+      <option value="sFRP_5_C1D1">sFRP-5 (C1D1)</option>
+      <option value="sFRP_5_TBAProx">sFRP-5 near first TBA</option>
+      <option value="sFRP_5_TBAProx_PctCh">sFRP-5 % change from baseline near first TBA</option>
+
+      <option value="Sodium_C1D1">Sodium (C1D1)</option>
+      <option value="Sodium_TBAProx">Sodium near first TBA</option>
+      <option value="Sodium_TBAProx_PctCh">Sodium % change from baseline near first TBA</option>
+
+      <option value="Total_Cholesterol_C1D1">Total Cholesterol (C1D1)</option>
+      <option value="Total_Cholesterol_TBAProx">Total Cholesterol near first TBA</option>
+      <option value="Total_Cholesterol_TBAProx_PctCh">Total Cholesterol % change from baseline near first TBA</option>
+
+      <option value="Total_Protein_C1D1">Total Protein (C1D1)</option>
+      <option value="Total_Protein_TBAProx">Total Protein near first TBA</option>
+      <option value="Total_Protein_TBAProx_PctCh">Total Protein % change from baseline near first TBA</option>
+
+      <option value="Triglycerides_C1D1">Triglycerides (C1D1)</option>
+      <option value="Triglycerides_TBAProx">Triglycerides near first TBA</option>
+      <option value="Triglycerides_TBAProx_PctCh">Triglycerides % change from baseline near first TBA</option>
+
+      <option value="Urea_C1D1">Urea (C1D1)</option>
+      <option value="Urea_TBAProx">Urea near first TBA</option>
+      <option value="Urea_TBAProx_PctCh">Urea % change from baseline near first TBA</option>
+
+      <option value="Uric_acid_C1D1">Uric acid (C1D1)</option>
+      <option value="Uric_acid_TBAProx">Uric acid near first TBA</option>
+      <option value="Uric_acid_TBAProx_PctCh">Uric acid % change from baseline near first TBA</option>
+
+      <option value="VEGF_C1D1">VEGF (C1D1)</option>
+      <option value="VEGF_TBAProx">VEGF near first TBA</option>
+      <option value="VEGF_TBAProx_PctCh">VEGF % change from baseline near first TBA</option>
+
+      <option value="VEGF_C_C1D1">VEGF-C (C1D1)</option>
+      <option value="VEGF_C_TBAProx">VEGF-C near first TBA</option>
+      <option value="VEGF_C_TBAProx_PctCh">VEGF-C % change from baseline near first TBA</option>
+
+      <option value="VEGF_D_C1D1">VEGF-D (C1D1)</option>
+      <option value="VEGF_D_TBAProx">VEGF-D near first TBA</option>
+      <option value="VEGF_D_TBAProx_PctCh">VEGF-D % change from baseline near first TBA</option>
+
+      <option value="WBC__Leukocytes__C1D1">WBC (Leukocytes) (C1D1)</option>
+      <option value="WBC__Leukocytes__TBAProx">WBC (Leukocytes) near first TBA</option>
+      <option value="WBC__Leukocytes__TBAProx_PctCh">WBC (Leukocytes) % change from baseline near first TBA</option>
+
+      <option value="Weight_C1D1">Weight (C1D1)</option>
+      <option value="Weight_TBAProx">Weight near first TBA</option>
+      <option value="Weight_TBAProx_PctCh">Weight % change from baseline near first TBA</option>
+
+    </select>
+
+    <label for="dropdown2">Y axis (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="LowestPctChangeTLDiam">Best % Change in TL Diams (Waterfall plot)</option>
+      <option value="SwimmersDurationWeeks_OffTrial">Swimmers duration of treatment (weeks, patient off study)</option>
+      <option value="SwimmersDurationWeeks">Swimmers duration of treatment (weeks, all patients)</option>
+      <option value="PctChange_TL_AtFirstTBA">Percent Change Sum of Diameters at first TBA</option>
+      <!-- <option value="AbsValue_TL_AtFirstTBA">Sum of diameters at first TBA</option> -->
+
+      <option value="CBR">Clinical Benefit Rate</option>
+
+      <option value="AUC7539">__SDX-7539 AUC (Week 1)</option>
+      <option value="CMax7539_Week1">__SDX-7539 CMax (Week 1)</option>
+      <option value="AUC7320">__SDX-7320 AUC (Week 1)</option>
+      <option value="CMax7320_Week1">__SDX-7320 CMax (Week 1)</option>
+      <option value="AUC11558">__SDX-11558 AUC (Week 1)</option>
+      <option value="CMax11558_Week1">__SDX-11558 CMax (Week 1)</option>
+    </select>
+    
+    <label for="dropdown3">Types of Metastases</label>
+    <select id="dropdown3">
+      <option value="non-bo">All Patients</option>
+      <option value="livery">Any Liver Mets</option>
+      <option value="livern">No Liver Mets</option>
+      <option value="bo">Bone-Only</option>
+      <option value="excl-bo">Exclude Bone-Only</option>
+    </select>
+
+  </div>
+
+  <div id="image-grid">
+    <div class="grid-item">
+        <img id="img-topleft" src="PleaseSelectParameters.jpg" alt="Top Left">
+        <div class="img-label">All Patients</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-topright" src="PleaseSelectParameters.jpg" alt="Top Right">
+        <div class="img-label">All Capivasertib</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-bottomleft" src="PleaseSelectParameters.jpg" alt="Bottom Left">
+        <div class="img-label">Capivasertib @ 36</div>
+    </div>
+    <div class="grid-item">
+        <img id="img-bottomright" src="PleaseSelectParameters.jpg" alt="Bottom Right">
+        <div class="img-label">Capivasertib @ 49</div>
+    </div>
+  </div>
+
+  <script>
+    const dropdowns = [
+      document.getElementById('dropdown1'),
+      document.getElementById('dropdown2'),
+      document.getElementById('dropdown3') //,
+      // document.getElementById('dropdown4')
+    ];
+
+    const images = {
+      tl: document.getElementById('img-topleft'),
+      tr: document.getElementById('img-topright'),
+      bl: document.getElementById('img-bottomleft'),
+      br: document.getElementById('img-bottomright')
+    };
+
+    function updateImages() {
+      const v1 = dropdowns[0].value;
+      const v2 = dropdowns[1].value;
+      const v3 = dropdowns[2].value;
+      // we no longer have a selector for cohort, since we always show  four cohorts
+      // const v4 = dropdowns[3].value;
+
+      // Base filename logic from your original script
+      const baseName_tl = `all_${v3}_${v1}_${v2}.jpg`;
+      const baseName_tr = `capi_${v3}_${v1}_${v2}.jpg`;
+      const baseName_bl = `capi36_${v3}_${v1}_${v2}.jpg`;
+      const baseName_br = `capi49_${v3}_${v1}_${v2}.jpg`;
+      const path = 'predict_outcomes/';
+
+      // Assign the 4 specific filenames
+      // images.tl.src = path + 'topleft_' + baseName;
+      // images.tr.src = path + 'topright_' + baseName;
+      // images.bl.src = path + 'bottomleft_' + baseName;
+      // images.br.src = path + 'bottomright_' + baseName;
+
+      images.tl.src = path + baseName_tl;
+      images.tl.alt = `Graph for all, ${v3}, ${v1}, ${v2}`;
+
+      images.tr.src = path + baseName_tr;
+      images.tr.alt = `Graph for Capi (all), ${v3}, ${v1}, ${v2}`;
+
+      images.bl.src = path + baseName_bl;
+      images.bl.alt = `Graph for Capi 36, ${v3}, ${v1}, ${v2}`;
+
+      images.br.src = path + baseName_br;
+      images.br.alt = `Graph for Capi 49, ${v3}, ${v1}, ${v2}`;
+
+      // => No longer needed since we update each images.xx.alt above
+      // Update alt text for accessibility
+      // Object.values(images).forEach(img => {
+      //     img.alt = `Graph for ${v4}, ${v3}, ${v1}, ${v2}`;
+      // });
+    }
+
+    // Attach listeners to all dropdowns
+    dropdowns.forEach(d => d.addEventListener('change', updateImages));
+
+    updateImages();
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Outcomes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 20px;
+    }
+    .menu {
+      margin-right: 20px;
+    }
+    .menu label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    #image-container img {
+      <!-- max-width: 600px; -->
+      <!-- max-height: 400px; -->
+  width: 500px;  /* Set width */
+  height: auto;  /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure responsiveness */
+  max-height: 500px; /* Limit height */
+  border: 1px solid #ccc; /* Optional: Add a border */						     
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <div>Show outcomes near first TBA as a function of metabolic and other parameters</div><br><br>
+    <label for="dropdown1">Select X axis parameter (Metabolic, etc): </label>
+    <select id="dropdown1">
+      <option value="Adiponectin_TBAProx">Adiponectin near first TBA</option>
+      <option value="Adiponectin_TBAProx_PctCh">Adiponectin % Change from baseline near first TBA</option>
+      
+      <option value="Alkaline_Phosphatase_TBAProx">Alkaline Phosphatase near first TBA</option>
+      <option value="Alkaline_Phosphatase_TBAProx_PctCh">Alkaline Phosphatase % Change from baseline near first TBA</option>
+
+      <option value="Amylase_TBAProx">Amylase near first TBA</option>
+      <option value="Amylase_TBAProx_PctCh">Amylase % Change from baseline near first TBA</option>
+
+      <option value="Creatinine_TBAProx">Creatinine near first TBA</option>
+      <option value="Creatinine_TBAProx_PctCh">Creatinine % Change from baseline near first TBA</option>
+
+      <option value="Glucose_TBAProx">Glucose near first TBA</option>
+      <option value="Glucose_TBAProx_PctCh">Glucose % Change from baseline near first TBA</option>
+
+      <option value="HbA1c_TBAProx">HbA1c near first TBA</option>
+      <option value="HbA1c_TBAProx_PctCh">HbA1c % Change from baseline near first TBA</option>
+
+      <option value="HDL_Cholesterol_TBAProx">HDL Cholesterol near first TBA</option>
+      <option value="HDL_Cholesterol_TBAProx_PctCh">HDL Cholesterol % Change from baseline near first TBA</option>
+
+      <option value="IL_5_TBAProx">IL-5 near first TBA</option>
+      <option value="IL_5_TBAProx_PctCh">IL-5 % Change from baseline near first TBA</option>
+
+      <option value="IL_10_TBAProx">IL-10 near first TBA</option>
+      <option value="IL_10_TBAProx_PctCh">IL-10 % Change from baseline near first TBA</option>
+
+      <option value="Insulin_TBAProx">Insulin near first TBA</option>
+      <option value="Insulin_TBAProx_PctCh">Insulin % Change from baseline near first TBA</option>
+
+      <option value="LAR_TBAProx">LAR near first TBA</option>
+      <option value="LAR_TBAProx_PctCh">LAR % Change from baseline near first TBA</option>
+
+      <option value="LDL_Cholesterol_TBAProx">LDL Cholesterol near first TBA</option>
+      <option value="LDL_Cholesterol_TBAProx_PctCh">LDL Cholesterol % Change from baseline near first TBA</option>
+
+      <option value="Leptin_TBAProx">Leptin near first TBA</option>
+      <option value="Leptin_TBAProx_PctCh">Leptin % Change from baseline near first TBA</option>
+      
+      <option value="Total_Cholesterol_TBAProx">Total_Cholesterol near first TBA</option>
+      <option value="Total_Cholesterol_TBAProx_PctCh">Total_Cholesterol % Change from baseline near first TBA</option>
+      
+      <option value="Triglycerides_TBAProx">Triglycerides near first TBA</option>
+      <option value="Triglycerides_TBAProx_PctCh">Triglycerides % Change from baseline near first TBA</option>
+
+      <option value="Weight_TBAProx">Weight near first TBA</option>
+      <option value="Weight_TBAProx_PctCh">Weight % Change from baseline near first TBA</option>
+
+    </select><br><br><br>
+
+    <label for="dropdown2">Select Y axis parameter (Outcomes): </label>
+    <select id="dropdown2">
+      <option value="PctChange_TL_AtFirstTBA">Percent Change Sum of Diameters at first TBA</option>
+      <option value="AbsValue_TL_AtFirstTBA">Sum of diameters at first TBA</option>
+    </select>
+  </div>
+
+  <div id="image-container">
+    <img id="display-image" src="PleaseSelectParameters.jpg" alt="Selected Graph">
+  </div>
+
+  <script>
+    // JavaScript variables for the dropdown selections
+    const dropdown1 = document.getElementById('dropdown1');
+    const dropdown2 = document.getElementById('dropdown2');
+    const displayImage = document.getElementById('display-image');
+
+    // Function to update the image based on dropdown selections
+    function updateImage() {
+	const value1 = dropdown1.value;
+	const value2 = dropdown2.value;
+	console.log('LOC 01')
+	const newImageSrc = `${value1}_${value2}.jpg`;
+	console.log('LOC 02: '+newImageSrc);
+	newImageSrcWithDir = 'predict_outcomes/'+newImageSrc;
+	console.log('LOC 03: '+newImageSrcWithDir);
+	displayImage.src = newImageSrcWithDir;
+	displayImage.alt = `Graph for ${value1} and ${value2}`;
+    }
+
+    // Add event listeners to dropdown menus
+    dropdown1.addEventListener('change', updateImage);
+    dropdown2.addEventListener('change', updateImage);
+  </script>
+</body>
+</html>
