@@ -3,280 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amelia-1 EDC Data</title>
+    <title>Amelia-1 EDC Data Dashboard</title>
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <link rel="shortcut icon" href="SynDevRxFavicon.png" type="image/x-icon" />
+    
     <style>
+        /* Base Reset and Full-Screen Flexbox Layout */
         html, body {
             margin: 0;
+            padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-        }
-
-        body {
+            background-color: #666666;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
-        .top-area {
-            background-color: #666666; /* was #ddddff, this isthe color bewlow the selctor tabs*/
+        /* Top Header Area Wrapper */
+        .header-container {
             display: flex;
             flex-direction: column;
             flex: 0 0 auto;
-            /* remove height: 100px */
+            background-color: #666666;
         }
 
-
-        /* begin middle section removed; it was just a horizontal separator */
-        /* .top-area .middle { */
-        /*   background-color: steelblue;*/
-        /*   height: 5%;*/
-        /* } */
-        /* end middle removed */
-        .top-area .upper {
+        /* Branding Strip (Title, Version, Logo) */
+        .header-upper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 4px 10px;  /* reduce vertical padding */
-            background-color: #88dddd; /* The color of the top area that says "amelia-1 edc ..., and has the SDX logo aaffff COLOR 01 */
-        }
-        .top-area .upper img {
-	    max-height: 36px;  /* keeps the logo from forcing extra height */
-	}
-        .top-area .upper h1 {
-            margin: 0;
-            color: black;
-            text-align: center;
-            flex-grow: 1;
+            padding: 6px 12px;
+            background-color: #88dddd;
         }
 
-        .top-area .lower {
+        .header-upper h1 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #000000;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .header-upper .version-tag {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #333333;
+            margin: 0 10px;
+            white-space: nowrap;
+        }
+
+        .header-upper img {
+            max-height: 32px;
+            width: auto;
+        }
+
+        /* Navigation Box */
+        .navigation-box {
+            background-color: #ff00ff;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* --- DESKTOP VIEW: Row of Tabs (Hidden on Mobile) --- */
+        .desktop-tabs {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            background-color: #ff00ff;
             align-items: center;
         }
 
-
-	.top-area .lower .select-list-style {
-            background-color: #88dddd; /* this is the background color of the <select> list */
-	}
-
-        .top-area .lower div {
-            flex-grow: 1;
+        .desktop-tabs div {
+            flex: 1 1 auto;
             text-align: center;
-            padding: 15px; /* added 11:38 for exposure mystery; had been 15 px */
+            padding: 12px 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #000000;
             cursor: pointer;
-            color: black;
-        }
-        .top-area .lower div:hover {
-	    /* is this is the color the selected tab becomes during hoverover = d455d4 */
-	    /* half way between aaaaaa and ff00ff had been (7cb300) */
-            background-color: #ee88ee ; /* ee55dd */
-        }
-        .top-area .lower .active {
-            background-color: #aaaaaa;  /* This is is the color the selected tab becomes after hoverover aaaaaa COLOR 00*/
+            border-right: 1px solid rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease;
         }
 
-        /* Style the select if desired */
-        #labValuesSelect {
-            display: none; /* Hidden by default */
-            margin-left: 10px; /* Some spacing if needed */
-            font-size: 16px;
+        .desktop-tabs div:last-child {
+            border-right: none;
         }
 
-        .content {
+        .desktop-tabs div:hover {
+            background-color: #ee88ee;
+        }
+
+        .desktop-tabs div.active {
+            background-color: #aaaaaa;
+        }
+
+        /* --- MOBILE VIEW: Native Compact Dropdown (Hidden on Laptop) --- */
+        .mobile-dropdown-container {
+            display: none;
+            padding: 6px 12px;
+            background-color: #ff00ff;
+        }
+
+        .mobile-nav-select {
+            width: 100%;
+            padding: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #666666;
+            background-color: #88dddd;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        /* Main Full-Window Content Area */
+        .content-body {
             flex: 1 1 auto;
             min-height: 0;
-            padding: 10px;
-            overflow: hidden;
+            padding: 8px;
+            background-color: #666666;
         }
 
-        .content iframe {
+        .content-body iframe {
             display: block;
             width: 100%;
             height: 100%;
             border: none;
+            background-color: #ffffff;
+            border-radius: 4px;
         }
 
-        /* Add meta tags for cache control */
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-    </style>
-    <script>
-        function showContent(file, tabId) {
-            document.getElementById('content-frame').src = file;
-            // Remove active class from all tabs
-            document.querySelectorAll('.top-area .lower div').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            // Add active class to the selected tab
-            if (tabId) {
-                document.getElementById(tabId).classList.add('active');
+        /* --- RESPONSIVE CROSSOVER BREAKPOINT --- */
+        @media (max-width: 1024px) {
+            /* Hide the desktop row entirely */
+            .desktop-tabs {
+                display: none !important;
+            }
+
+            /* Display the ultra-compact mobile selection dropdown */
+            .mobile-dropdown-container {
+                display: block;
+            }
+
+            /* Shrink headers so landscape phone height isn't wasted */
+            .header-upper h1 {
+                font-size: 1.05rem;
+                text-align: left;
+            }
+            
+            .header-upper img {
+                max-height: 24px;
             }
         }
-        /* begin block 4 */ 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set default content (which tab is selected when we first load the page
-            showContent('LabValues.html', 'tab-lab-values-all-abs');
-            console.log('LOC 01')
-
-            //const labValuesTab = document.getElementById('tab-lab-values-single');
-            //const labValuesSelect = document.getElementById('labValuesSelect');
-
-            console.log('LOC 02')
-            // Replace the direct showContent() call with toggle of select
-            //labValuesTab.addEventListener('click', function() {
-            //    // Toggle the display of the select
-            //    console.log('LOC 03.1');
-            //    console.log('LOC 03.1' + labValuesSelect.style.display);
-            //    if (labValuesSelect.style.display === 'none' || labValuesSelect.style.display === '') {
-            //        console.log('LOC 04.1.1')
-            //        labValuesSelect.style.display = 'inline-block';
-            //        console.log('LOC 04.1.2')
-            //    } else {
-            //        console.log('LOC 04.2.1')
-            //        labValuesSelect.style.display = 'none';
-            //        showContent('EmptyBody.html', 'tab-lab-values-single');
-            //        console.log('LOC 04.2.1')
-            //    }
-            //});
-
-            document.getElementById('tab-lab-values-all-abs').addEventListener('click', function() {
-                showContent('LabValues.html', 'tab-lab-values-all-abs');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 11');
-            });
-            document.getElementById('tab-lab-values-all-pct').addEventListener('click', function() {
-                showContent('LabValuesPct.html', 'tab-lab-values-all-pct');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 11');
-            });
-            //document.getElementById('tab-lab-values-src').addEventListener('click', function() {
-            //    showContent('LabValuesSrc.html', 'tab-lab-values-src');
-            //    labValuesSelect.style.display = 'none'; // Hide the select if visible
-            //    console.log('LOC 11');
-            //});
-            //document.getElementById('tab-lab-values-single').addEventListener('click', function() {
-            //    showContent('PleaseSelectPatient.html', 'tab-lab-values-single');
-            //    // labValuesSelect.style.display = 'none'; // Hide the select if visible
-            //    console.log('LOC 12');
-            //});
-
-            //// When user chooses a patient in the select
-            //labValuesSelect.addEventListener('change', function() {
-            //    const selectedValue = labValuesSelect.value;
-            //    if (selectedValue) {
-            //        showContent(selectedValue, 'tab-lab-values-single');
-            //    }
-            //    console.log('LOC 13.0');
-            //});
-
-            document.getElementById('tab-km').addEventListener('click', function() {
-                showContent('tab_km.html', 'tab-km');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 13.1');
-            });
-            document.getElementById('tab-km-play').addEventListener('click', function() {
-                showContent('play_with_kaplan_meier.html ', 'tab-km-play');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 13.1');
-            });
-            document.getElementById('tab-mmrm').addEventListener('click', function() {
-                showContent('TabMMRM.html', 'tab-mmrm');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 13.1');
-            });
-            document.getElementById('tab-pp').addEventListener('click', function() {
-                showContent('TabPP.html', 'tab-pp');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 13.1');
-            });
-            document.getElementById('tab-scatter').addEventListener('click', function() {
-                showContent('ScatterplotPctChange.html', 'tab-scatter');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 13.2');
-            });
-            document.getElementById('tab-aes').addEventListener('click', function() {
-                showContent('AEs.html', 'tab-aes');
-                //labValuesSelect.style.display = 'none'; // Hide the select if visible
-                console.log('LOC 14');
-            });
-            document.getElementById('tab-exposure').addEventListener('click', function() {
-                showContent('Exposure_toplevel.html', 'tab-exposure');
-                //labValuesSelect.style.display = 'none';
-                console.log('LOC 15.1');
-            });
-            document.getElementById('tab-tba').addEventListener('click', function() {
-                showContent('TBA_toplevel.html', 'tab-tba');
-                console.log('LOC 16');
-            });
-            document.getElementById('tab-ctdna').addEventListener('click', function() {
-                showContent('ctdna_toplevel.html', 'tab-ctdna');
-                //labValuesSelect.style.display = 'none';
-                console.log('LOC 15.1.2');
-            });
-            document.getElementById('tab-predout-current').addEventListener('click', function() {
-                showContent('predict_outcomes_current.html', 'tab-predout-current');
-                //labValuesSelect.style.display = 'none';
-
-                console.log('LOC 15.1.2.1');
-            });
-            document.getElementById('tab-predout-multiple').addEventListener('click', function() {
-                showContent('predict_outcomes_current_multiple.html', 'tab-predout-multiple');
-                //labValuesSelect.style.display = 'none';
-
-                console.log('LOC 15.1.2.2');
-            });
-            document.getElementById('tab-tlf').addEventListener('click', function() {
-                showContent('relational_toplevel.html', 'tab-tlf');
-                //labValuesSelect.style.display = 'none';
-                console.log('LOC 15.1.2');
-            });
-            //document.getElementById('tab-patient-disposition').addEventListener('click', function() {
-            //    showContent('CurrentDisposition.html', 'tab-patient-disposition');
-            //    console.log('LOC 15.2');
-            //});
-            //document.getElementById('tab-tba-pct').addEventListener('click', function() {
-            //    showContent('103_tba_pct.html', 'tab-tba-pct');
-            //    console.log('LOC 16');
-            //});
-            //document.getElementById('tab-tba-abs').addEventListener('click', function() {
-            //    showContent('103_tba_abs.html', 'tab-tba-abs');
-            //    console.log('LOC 17');
-            //});
-        });
-        /* end block 4 */ 
-    </script>
+    </style>
 </head>
 <body>
-    <div class="top-area">
-        <div class="upper">  
-          <h1>Amelia-1 EDC Data of 6/08/26 1:00 am ET</h1> x 
-          <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
+
+    <div class="header-container">
+        <div class="header-upper">
+            <h1>Amelia-1 EDC Data of 6/24/26 1:00 am ET</h1>
+            <span class="version-tag">v1.001</span>
+            <img src="SynDevRxLogo.jpg" alt="SynDevRx Logo">
         </div>
-        <div class="lower">
-	    <!-- -the next 2 div used to be marked class='active' . Did that accomplish anything? -->
-            <div id="tab-lab-values-all-abs">Lab Values (Absolute Values)</div>
-            <div id="tab-lab-values-all-pct">Lab Values (% Change from baseline)</div>
-            <div id="tab-km">Kaplan-Meier (real data)</div>
-            <div id="tab-km-play">Kaplan-Meier (play)</div>
-            <div id="tab-mmrm">MMRM Analyte Graphs</div>
-            <div id="tab-pp">Lab Values (Per Patient)</div>
-            <div id="tab-tba">Tumor Assessments and Swimmers plot</div>
-            <div id="tab-scatter">% Change Scatterplots</div>
-            <div id="tab-aes">Adverse Events</div>
-            <div id="tab-exposure">Exposure</div>
-            <div id="tab-ctdna">ctDNA</div>
-            <div id="tab-predout-current">Correlates With Outcomes</div>
-            <div id="tab-predout-multiple">Cohorts Correlate With Outcomes, Side by Side</div>
-            <div id="tab-tlf">Tables & Listings</div>
+
+        <div class="navigation-box">
+            
+            <div class="desktop-tabs" id="desktopNav">
+                <div data-file="LabValues.html" class="active">Lab Values (Absolute)</div>
+                <div data-file="LabValuesPct.html">Lab Values (% Change)</div>
+                <div data-file="tab_km.html">Kaplan-Meier (Real)</div>
+                <div data-file="play_with_kaplan_meier.html">Kaplan-Meier (Play)</div>
+                <div data-file="TabMMRM.html">MMRM Graphs</div>
+                <div data-file="TabPP.html">Lab Values (Per Patient)</div>
+                <div data-file="TBA_toplevel.html">Tumor Assessments</div>
+                <div data-file="ScatterplotPctChange.html">Scatterplots</div>
+                <div data-file="AEs.html">Adverse Events</div>
+                <div data-file="Exposure_toplevel.html">Exposure</div>
+                <div data-file="ctdna_toplevel.html">ctDNA</div>
+                <div data-file="predict_outcomes_current.html">Outcomes Correlation</div>
+                <div data-file="predict_outcomes_current_multiple.html">Outcomes Side-by-Side</div>
+                <div data-file="relational_toplevel.html">Tables & Listings</div>
+            </div>
+
+            <div class="mobile-dropdown-container">
+                <select class="mobile-nav-select" id="mobileNav">
+                    <option value="LabValues.html">A: Lab Values (Absolute Values)</option>
+                    <option value="LabValuesPct.html">B: Lab Values (% Change from baseline)</option>
+                    <option value="tab_km.html">C: Kaplan-Meier (real data)</option>
+                    <option value="play_with_kaplan_meier.html">D: Kaplan-Meier (play)</option>
+                    <option value="TabMMRM.html">E: MMRM Analyte Graphs</option>
+                    <option value="TabPP.html">F: Lab Values (Per Patient)</option>
+                    <option value="TBA_toplevel.html">G: Tumor Assessments and Swimmers plot</option>
+                    <option value="ScatterplotPctChange.html">H: Scatterplots (Baseline and % Change)</option>
+                    <option value="AEs.html">I: Adverse Events</option>
+                    <option value="Exposure_toplevel.html">J: Exposure</option>
+                    <option value="ctdna_toplevel.html">K: ctDNA</option>
+                    <option value="predict_outcomes_current.html">L: Correlation With Outcomes</option>
+                    <option value="predict_outcomes_current_multiple.html">M: Correlation With Outcomes, Side by Side</option>
+                    <option value="relational_toplevel.html">N: Tables & Listings</option>
+                </select>
+            </div>
+
         </div>
     </div>
-    <div class="content">
-        <iframe id="content-frame" src=""></iframe>
+
+    <div class="content-body">
+        <iframe id="content-frame" src="LabValues.html"></iframe>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('content-frame');
+            const desktopNav = document.getElementById('desktopNav');
+            const mobileNav = document.getElementById('mobileNav');
+            const desktopTabs = desktopNav.querySelectorAll('div');
+
+            // Single state controller to perfectly synchronize desktop and mobile widgets
+            function updateActiveView(targetFile) {
+                // Point iframe to chosen page
+                iframe.src = targetFile;
+
+                // Mark matching desktop link tab as active
+                desktopTabs.forEach(tab => {
+                    if(tab.getAttribute('data-file') === targetFile) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+
+                // Update mobile element dropdown view value
+                mobileNav.value = targetFile;
+            }
+
+            // Bind click events for computer users
+            desktopTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const selectedFile = this.getAttribute('data-file');
+                    updateActiveView(selectedFile);
+                });
+            });
+
+            // Bind change selector logic for smartphone users
+            mobileNav.addEventListener('change', function() {
+                updateActiveView(this.value);
+            });
+        });
+    </script>
 </body>
 </html>
