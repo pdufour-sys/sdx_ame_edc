@@ -3981,7 +3981,7 @@
 "102-007","C23D1",2026-02-03,629,"Chloride","101","mmol/L",FALSE,98,107,""
 "102-007","C23D1",2026-02-03,629,"Creatine Kinase","55","U/L",FALSE,26,308,""
 "102-007","C23D1",2026-02-03,629,"Creatinine","0.83","mg/dL",FALSE,0.6,1.3,""
-"102-007","C23D1",2026-02-03,629,"Eosinophils (absolute)","0.64","K/uL",FALSE,0,0.36,"Not Clinically Significant"
+"102-007","C23D1",2026-02-03,629,"Eosinophils (absolute)","0.34","K/uL",FALSE,0,0.36,""
 "102-007","C23D1",2026-02-03,629,"GGT - Gamma Glutamyl Transferase","26","U/L",FALSE,5,55,""
 "102-007","C23D1",2026-02-03,629,"Glucose","83","mg/dL",FALSE,80,99,""
 "102-007","C23D1",2026-02-03,629,"HDL Cholesterol","70","mg/dL",FALSE,40,60,"Not Clinically Significant"
@@ -25165,7 +25165,7 @@
 "115-004","C1D1",2025-12-03,0,"Insulin",,"mIU/mL",FALSE,,,
 "115-004","C1D1",2025-12-03,0,"LAR","3","",FALSE,,,
 "115-004","C1D1",2025-12-03,0,"LDH - Lactate dehydrogenase","186","U/L",FALSE,135,214,""
-"115-004","C1D1",2025-12-03,0,"LDL Cholesterol","177","mg/dL",FALSE,0,99,""
+"115-004","C1D1",2025-12-03,0,"LDL Cholesterol","177","mg/dL",FALSE,0,99,"Not Clinically Significant"
 "115-004","C1D1",2025-12-03,0,"Leptin","42969","pg/mL",FALSE,,,
 "115-004","C1D1",2025-12-03,0,"Lipase","71","U/L",FALSE,16,61,"Not Clinically Significant"
 "115-004","C1D1",2025-12-03,0,"Lymphocytes (absolute)","1.15","K/uL",FALSE,1,4,""
@@ -25180,7 +25180,7 @@
 "115-004","C1D1",2025-12-03,0,"Potassium","4.4","mmol/L",FALSE,3.7,5.1,""
 "115-004","C1D1",2025-12-03,0,"RBC (Erythrocytes)","4.22","M/uL",FALSE,3.9,5.2,""
 "115-004","C1D1",2025-12-03,0,"Sodium","138","mmol/L",FALSE,136,144,""
-"115-004","C1D1",2025-12-03,0,"Total Cholesterol","261","mg/dL",FALSE,0,199,""
+"115-004","C1D1",2025-12-03,0,"Total Cholesterol","261","mg/dL",FALSE,0,199,"Not Clinically Significant"
 "115-004","C1D1",2025-12-03,0,"Total Protein","7.3","g/dL",FALSE,6.3,8,""
 "115-004","C1D1",2025-12-03,0,"Triglycerides","78","mg/dL",FALSE,0,149,""
 "115-004","C1D1",2025-12-03,0,"Urea","ND","",FALSE,,,""
@@ -25382,7 +25382,7 @@
 "115-004","C2D8",2026-01-07,35,"NLR","3.78",,FALSE,,,
 "115-004","C2D8",2026-01-07,35,"Neutrophils (absolute count)","3.55","K/uL",FALSE,1.45,7.5,""
 "115-004","C2D8",2026-01-07,35,"Neutrophils (percent)","69.7","",FALSE,,,""
-"115-004","C2D8",2026-01-07,35,"Platelet Count","236","K/uL",FALSE,150,400,""
+"115-004","C2D8",2026-01-07,35,"Platelet Count","238","K/uL",FALSE,150,400,""
 "115-004","C2D8",2026-01-07,35,"Potassium","4.1","mmol/L",FALSE,3.7,5.1,""
 "115-004","C2D8",2026-01-07,35,"RBC (Erythrocytes)","3.80","M/uL",FALSE,3.9,5.2,"Not Clinically Significant"
 "115-004","C2D8",2026-01-07,35,"Sodium","140","mmol/L",FALSE,136,144,""
