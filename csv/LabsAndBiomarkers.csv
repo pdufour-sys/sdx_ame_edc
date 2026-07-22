@@ -2998,7 +2998,6 @@
 "102-007","C11D15",2025-03-05,294,"HDL Cholesterol","133","mg/dL",FALSE,40,60,"Not Clinically Significant"
 "102-007","C11D15",2025-03-05,294,"Hematocrit","36.5","%",FALSE,35,45,""
 "102-007","C11D15",2025-03-05,294,"Hemoglobin","11.9","g/dL",FALSE,12,15,"Not Clinically Significant"
-"102-007","C11D15",2025-03-05,294,"Insulin",,"mIU/mL",FALSE,,,
 "102-007","C11D15",2025-03-05,294,"LDH - Lactate dehydrogenase","283","U/L",FALSE,84,246,"Not Clinically Significant"
 "102-007","C11D15",2025-03-05,294,"LDL Cholesterol","69","mg/dL",FALSE,0,129,""
 "102-007","C11D15",2025-03-05,294,"Lipase","47","U/L",FALSE,13,75,""

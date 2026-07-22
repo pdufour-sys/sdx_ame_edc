@@ -222,8 +222,17 @@
   <label for="dropdown2">Select Patient Group </label>
   <select id="dropdown_cohort" onchange='updateImage()'>
       <option value="_C49">Capivasertib (49 mg/m2)</option>
+      <option value="_C">Capivasertib (36 mg/m2 + 49 mg/m2)</option>
       <option value="_X">All Patients</option> 
   </select>
+
+
+  <label for="dropdown3">Select Comparison </label>
+  <select id="dropdown_comparison" onchange='updateImage()'>
+      <option value="_orr">Overall Response</option>
+      <option value="_cbr">Clinical Benefit</option>
+  </select>
+
 </div>
 
   <div id="image-container" class="image-container-class">
@@ -244,6 +253,7 @@
 	// const patient = dropdown_patient.value;
         const analyte = dropdown_analyte.value;
         const cohort = dropdown_cohort.value;
+        const comparison = dropdown_comparison.value;
 
         // change commas, spacees, open and close parens to "_"
 	console.log('updateImage LOC 01 '+analyte);
@@ -258,7 +268,7 @@
         analyte_to_ul = analyte_to_ul.replace(/\)/g, "_");
 	console.log('updateImage LOC 05 '+analyte_to_ul);
 
-        solution2 = 'mmrm/efficacy/MMRM_'+analyte_to_ul+cohort+'.png';
+        solution2 = 'mmrm/efficacy/MMRM_'+analyte_to_ul+cohort+comparison+'.png';
 	console.log('updateImage LOC 06 '+analyte_to_ul);
 	console.log('updateImage LOC 07 '+solution2);
 	// ppa/ppa_ALT_-_Alanine_aminotransferase_111-004.jpg
