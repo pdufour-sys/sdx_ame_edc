@@ -21947,12 +21947,10 @@
 "111-003","C8D1",2025-04-23,210,"GGT - Gamma Glutamyl Transferase","23","U/L",FALSE,9,64,""
 "111-003","C8D1",2025-04-23,210,"Glucose","219","mg/dL",FALSE,40,99,"Not Clinically Significant"
 "111-003","C8D1",2025-04-23,210,"HDL Cholesterol","58","mg/dL",FALSE,50,999,""
-"111-003","C8D1",2025-04-23,210,"HOMA_IR",,"",FALSE,,,
 "111-003","C8D1",2025-04-23,210,"HbA1c","6.5","%",FALSE,,,
 "111-003","C8D1",2025-04-23,210,"Hematocrit","39.2","%",FALSE,35,45,""
 "111-003","C8D1",2025-04-23,210,"Hemoglobin","13.5","g/dL",FALSE,11.6,15,""
 "111-003","C8D1",2025-04-23,210,"INR - International Normalized Ratio","1.1","Ratio",FALSE,0.8,1.2,""
-"111-003","C8D1",2025-04-23,210,"Insulin",,"mIU/mL",FALSE,,,
 "111-003","C8D1",2025-04-23,210,"LDH - Lactate dehydrogenase","211","U/L",FALSE,140,271,""
 "111-003","C8D1",2025-04-23,210,"LDL Cholesterol","135","mg/dL",FALSE,0,100,"Not Clinically Significant"
 "111-003","C8D1",2025-04-23,210,"Lipase","28","U/L",FALSE,11,82,""
