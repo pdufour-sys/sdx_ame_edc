@@ -1,0 +1,230 @@
+Subject,VisitName,Gene,Variant,type,Pct
+102-001,SCREEN,PIK3CA,p.V105_R108del Inframe deletion (exon 1) - GOF,,0.8
+102-001,SCREEN,ARID1A,p.Q1342* Stop gain - LOF,,0.7
+102-001,C4D15,PIK3CA,p.V105_R108del Inframe deletion - GOF,,0.3
+102-006,SCREEN,CHEK2,p.R346C Missense variant - LOF,,54.4
+102-006,SCREEN,PTEN,p.S170I Missense variant - LOF,,13.4
+102-006,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,13.2
+102-006,SCREEN,RB1,p.W516* Stop gain - LOF,,12.3
+102-006,SCREEN,TP53,p.Q331* Splice region variant - LOF,,10.3
+102-006,SCREEN,GATA3,p.P409fs Frameshift - GOF,,8.6
+102-006,SCREEN,GRIN2A,p.E1256* Stop gain - LOF,,8.1
+102-006,SCREEN,TP53,p.E285K Missense variant - LOF,,0.5
+102-006,SCREEN,SMAD4,c.1308+1G>T Splice region variant - LOF,,0.4
+102-006,C2D15,CHEK2,p.R346C Missense variant - LOF,,54.4
+102-006,C2D15,RB1,p.W516* Stop gain - LOF,,19.2
+102-006,C2D15,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,18.3
+102-006,C2D15,PTEN,p.S170I Missense variant - LOF,,16.5
+102-006,C2D15,GRIN2A,p.E1256* Stop gain - LOF,,14
+102-006,C2D15,TP53,p.Q331* Splice region variant - LOF,,13
+102-006,C2D15,GATA3,p.P409fs Frameshift - GOF,,12.5
+102-006,C2D15,TP53,p.E285K Missense variant - LOF,,0.3
+102-008,SCREEN,PIK3CA,p.E418K Splice region variant (exon 7) - GOF,,7.4
+102-008,SCREEN,PIK3CA,p.E545A Missense variant (exon 9) - GOF,,4.7
+102-008,SCREEN,ESR1,p.D538G Missense variant - GOF,,1.6
+102-008,SCREEN,MDM2,Copy number gain,,
+102-010,SCREEN,AKT1,p.E17K Splice region variant - GOF,,5.6
+102-010,SCREEN,ESR1,p.Y537C Missense variant - GOF,,3.1
+102-010,SCREEN,CUL3,p.Q224Q Splice region variant - LOF,,2.6
+102-010,C2D15,ESR1,p.L536R Missense variant - GOF,,3.1
+102-010,C2D15,CDKN1B,p.S83fs Frameshift - LOF,,2.8
+102-010,C2D15,DNMT3A,p.W297* Stop gain - LOF,,2.4
+102-010,C2D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,2.2
+102-011,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,23.7
+102-012,SCREEN,AKT1,p.E17K Splice region variant - GOF,,5.6
+102-012,SCREEN,ESR1,p.Y537S Missense variant - GOF,,3.1
+102-012,SCREEN,CUL3,p.Q224Q Splice region variant - LOF,,2.6
+102-012,C4D1,TP53,p.Y220C Missense variant - LOF,,0.1
+102-014,SCREEN,AKT1,p.E17K Splice region variant - GOF,,3.1
+102-014,SCREEN,ESR1,p.Y537S Missense variant - GOF,,0.1
+102-014,C2D15,AKT1,p.E17K Splice region variant - GOF,,1.1
+102-014,C4D1,AKT1,p.E17K Splice region variant - GOF,,13.8
+102-016,SCREEN,PTEN,p.N323fs Frameshift - LOF,,27.5
+102-016,SCREEN,ESR1,p.Y537S Missense variant - GOF,,12.4
+102-016,SCREEN,ESR1,p.Y537N Missense variant - GOF,,3
+102-016,SCREEN,ESR1,p.D538G Missense variant - GOF,,0.1
+102-016,C2D1,PTEN,p.N323fs Frameshift - LOF,,14.3
+102-016,C2D1,ESR1,p.Y537S Missense variant - GOF,,8
+102-016,C2D1,ESR1,p.Y537N Missense variant - GOF,,0.8
+102-016,C2D1,TP52,p.Q136E Missense variant - LOF,,0.2
+102-017,SCREEN,MAP3K1,p.N309fs Frameshift - LOF,,41.3
+102-017,SCREEN,CDH1,p.Q641* Stop gain - LOF,,29.5
+102-017,SCREEN,PIK3CA,p.L452_G460del Inframe deletion (exon 7) - GOF,,27.7
+102-017,SCREEN,RB1,p.S149* Stop gain - LOF,,20.6
+102-017,SCREEN,ESR1,p.D538G Missense variant - GOF,,18.2
+102-017,SCREEN,RB1,p.V654L Splice region variant - LOF,,7.1
+102-017,SCREEN,DNMT3A,p.L813fs Frameshift - LOF,,4.8
+102-017,SCREEN,ESR1,p.E380Q Missense variant - GOF,,1.5
+102-017,SCREEN,RB1,p.Q850* Stop gain - LOF,,0.9
+102-017,SCREEN,ESR1,p.Y537S Missense variant - GOF,,0.9
+104-001,SCREEN,KMT2C (MLL3),p.E21* Stop gain - LOF,,1.1
+104-001,SCREEN,PTEN,p.T319fs Frameshift - LOF,,0.8
+104-001,SCREEN,ESR1,p.Y537S Missense variant - GOF,,0.2
+104-001,SCREEN,ESR1,p.D538G Missense variant - GOF,,0.1
+104-001,SCREEN,MYC,Copy number gain,,
+104-001,C2D15,KMT2C (MLL3),p.E21* Stop gain - LOF,,3.9
+104-001,C2D15,PTEN,p.T319fs Frameshift - LOF,,2.6
+104-001,C2D15,ESR1,p.Y537S Missense variant - GOF,,1.8
+104-001,C2D15,MYC,Copy number gain,,
+104-001,C4D15,KMT2C (MLL3) p.E21* Stop gain - LOF,,3.3,
+104-001,C4D15,PTEN,p.T319fs Frameshift - LOF,,2.8
+104-001,C4D15,ESR1,p.Y537S Missense variant - GOF,,1.5
+104-001,C4D15,ESR1,p.D538G Missense variant - GOF,,0.3
+104-002,C2D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,1.4
+104-002,C2D15,RB1,p.R787* Stop gain - LOF,,0.7
+104-002,C2D15,PTEN,p.T319* Stop gain - LOF,,0.6
+104-002,C4D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,0.4
+104-002,C4D15,RB1,p.R787* Stop gain - LOF,,0.2
+105-001,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,37.3
+105-001,SCREEN,TP53,p.K132T Missense variant - LOF,,1.9
+105-001,C2D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,0.1
+105-001,C4D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,0.2
+105-003,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,0.6
+105-003,SCREEN,ESR1,p.D538G Missense variant - GOF,,0.2
+105-003,SCREEN,NRAS,p.Q61R Missense variant (exon 3) - GOF,,0.2
+105-005,SCREEN,ESR1,p.Y537C Missense variant - GOF,,5.1
+105-005,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,4.3
+105-005,SCREEN,SMAD4,p.S144* Stop gain - LOF,,3.3
+105-005,SCREEN,NF1,p.Q912* Stop gain - LOF,,2.8
+105-005,SCREEN,FGFR2,p.N550K Missense variant - GOF,,0.7
+105-006,SCREEN,PIK3CA,p.V105_G106del Inframe deletion (exon 1) - GOF,,34.1
+105-006,SCREEN,TP53,p.S215N Missense variant - LOF,,25.2
+105-006,SCREEN,NF1,p.I679fs Frameshift - LOF,,24.9
+105-006,SCREEN,RB1,p.Q344* Stop gain - LOF,,16.3
+105-006,C2D15,PIK3CA,p.V105_G106del Inframe deletion (exon 1) - GOF,,8
+105-006,C2D15,NF1,p.I679fs Frameshift - LOF,,4
+105-006,C2D15,TP53,p.S215N Missense variant - LOF,,3.2
+105-006,C2D15,RB1,p.Q344* Stop gain - LOF,,3
+105-006,C4D15,PIK3CA,p.V105_G106del Inframe deletion (exon 1) - GOF,,10
+105-006,C4D15,NF1,p.I679fs Frameshift - LOF,,4.9
+105-006,C4D15,TP53,p.S215N Missense variant - LOF,,4.9
+105-006,C4D15,RB1,p.Q344* Stop gain - LOF,,3.9
+105-008,SCREEN,MEN1,p.E466fs Frameshift - LOF,,29.9
+105-008,SCREEN,AKT1,p.E17K Splice region variant - GOF,,29.3
+105-008,SCREEN,ESR1,p.D538G Missense variant - GOF,,22.2
+105-008,SCREEN,ACVR1B,p.E63* Stop gain - LOF,,16.4
+105-008,SCREEN,DNMT3A,p.S255fs Frameshift - LOF,,6.8
+105-008,SCREEN,ESR1,p.V422del Inframe deletion - GOF,,0.2
+105-008,C2D15,AKT1,p.E17K Splice region variant - GOF,,11.8
+105-008,C2D15,ESR1,p.D538G Missense variant - GOF,,9.7
+105-008,C2D15,DNMT3A,p.S255fs Frameshift - LOF,,9
+105-008,C2D15,ACVR1B,p.E63* Stop gain - LOF,,5.3
+106-002,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,3.6
+106-002,SCREEN,TP53,p.S127Y Missense variant - LOF,,2.6
+106-002,SCREEN,RHOA,p.R5Q Missense variant - LOF,,1.8
+106-002,C2D15,PIK3DA,p.H1047R Missense variant (exon 20) - GOF,,0.9
+106-002,C2D15,TP53,p.S127Y Missense variant - LOF,,0.6
+106-002,C2D15,RHOA,p.R5Q Missense variant - LOF,,0.3
+106-002,C4D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,1.7
+106-002,C4D15,TP53,p.S127Y Missense variant - LOF,,0.8
+106-002,C4D15,RHOA,p.R5Q Missense variant - LOF,,0.5
+106-003,SCREEN,CDH1,p.T438fs Frameshift - LOF,,43.3
+106-003,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,40.4
+106-003,SCREEN,ARID1A,c.1921-2A>G Splice region variant - LOF,,30
+106-003,SCREEN,PTPN13,c.547-1G>C Splice region variant - LOF,,1.9
+106-003,SCREEN,MTOR,p.E2419K Missense variant - GOF,,1.5
+106-003,SCREEN,ESR1,p.Y537S Missense variant - GOF,,1.3
+106-003,SCREEN,MSH2,p.Q24* Stop gain - LOF,,0.6
+106-003,SCREEN,ARID1A,p.S2272* Stop gain - LOF,,0.5
+106-003,SCREEN,AKT1,p.E49K Missense variant - GOF,,0.5
+106-003,SCREEN,SPOP,p.E47K Missense variant - LOF,,0.4
+106-003,SCREEN,MTOR,p.M2327I Missense variant - GOF,,0.3
+106-003,SCREEN,PTEN,p.C124S Missense variant - LOF,,0.2
+106-003,C2D1,DNMT3A,p.R635W Missense variant - LOF,,1.7
+106-003,C2D1,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,1.2
+106-003,C2D1,ARID1A,c.1921-2A>G Splice region variant - LOF,,0.8
+106-003,C2D1,CDH1,p.T438fs Frameshift - LOF,,0.6
+106-003,C4D1,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,2.8
+106-003,C4D1,DNMT3A,p.R635W Missense variant - LOF,,1.4
+106-003,C4D1,ARID1A,c.1921-2A>G Splice region variant - LOF,,1.2
+106-003,C4D1,CDH1,p.T438fs Frameshift - LOF,,0.8
+106-003,C4D1,ESR1,p.Y537S Missense variant - GOF,,0.7
+106-003,C4D1,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,2.8
+106-003,C4D1,DNMT3A,p.R635W Missense variant - LOF,,1.4
+106-003,C4D1,CDH1,p.T438fs Frameshift - LOF,,0.8
+106-003,C4D1,ESR1,p.Y537S Missense variant - GOF,,0.7
+109-002,SCREEN,DNMT3A,p.R882H Missense variant - LOF,,5.9
+109-002,C2D15,DNMT3A,p.R882H Missense variant - LOF,,4.1
+109-002,C4D15,DNMT3A,p.R882H Missense variant - LOF,,5.6
+110-001,SCREEN,PIK3CA Missense variant (exon 9) - GOF,,1.2,
+110-001,SCREEN,PIK3CA,p.E726K Missense variant (exon 13) - GOF,,0.4
+110-001,SCREEN,ARID1A,p.S1791* Stop gain - LOF,,0.4
+110-001,SCREEN,TP53,p.E287* Stop gain - LOF,,0.3
+110-001,C2D15,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,0.4
+110-001,C2D15,ARID1A,p.S1791* Stop gain - LOF,,0.3
+110-001,C2D15,TP53,p.E287* Stop gain - LOF,,0.3
+110-002,SCREEN,PIK3CA,p.E726K Missense variant (exon 13) - GOF,,1.9
+110-002,SCREEN,ARID1A,p.Q1330* Stop gain - LOF,,1
+110-002,C2D15,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,1.2
+111-001,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,6.4
+111-001,SCREEN,ATM,p.L1513fs Frameshift - LOF,,3.2
+111-001,SCREEN,ARID1A,p.Q575* Stop gain - LOF,,2.6
+111-001,SCREEN,ESR1,p.D538G Missense variant - GOF,,1
+111-001,SCREEN,ESR1,p.Y537S Missense variant - GOF,,0.1
+111-001,C2D15,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,1.6
+111-001,C2D15,ATM,p.L1513fs Frameshift - LOF,,1
+111-001,C2D15,ARID1A,p.Q575* Stop gain - LOF,,0.7
+111-001,C2D15,ESR1,D538G Missense variant - GOF,,0.5
+111-003,C4D15,PTEN,p.K267fs Frameshift - LOF,,0.9
+111-003,C4D15,TP52,p.E286fs Frameshift - LOF,,0.7
+111-004,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,4.8
+111-004,SCREEN,GATA3,p.N320fs Frameshift - GOF,,1.9
+111-004,SCREEN,FGFR1,p.N546K Missense variant - GOF,,0.9
+111-004,SCREEN,MDM12,Copy number gain,,
+111-004,C4D15,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,0.1
+114-001,SCREEN,ARID1A,p.S138* Stop gain - LOF,,13.2
+114-001,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,11.9
+114-001,SCREEN,TP53,p.R248L Missense variant - LOF,,8.8
+114-001,SCREEN,FOXA1,p.F266L Missense variant - GOF,,8.5
+114-001,SCREEN,ESR1,p.Y537S Missense variant - GOF,,2.2
+114-001,SCREEN,ESR1,p.L536H Missense variant - GOF,,0.9
+114-001,SCREEN,FGFR2,p.K660E Missense variant - GOF,,0.7
+114-001,SCREEN,ESR1,p.Y537N Missense variant - GOF,,0.6
+114-001,SCREEN,ESR1,p.D538G Missense variant - GOF,,0.4
+114-002,SCREEN,AKT1,p.E17K Splice region variant - GOF,,4.2
+114-002,SCREEN,DNMT3A,p.W601* Stop gain - LOF,,3.9
+114-002,SCREEN,APC,p.S1272* Stop gain - LOF,,2.3
+114-002,SCREEN,TP53,p.M1_A2del Inframe deletion - LOF,,2.1
+114-002,C2D1,AKT1,p.E17K Splice region variant - GOF,,6.1
+114-002,C2D1,APC,p.S1272* Stop gain - LOF,,3.6
+114-002,C2D1,DNMT3A,p.W601* Stop gain - LOF,,3.4
+114-002,C2D1,TP53,p.M1_A2del Inframe deletion - LOF,,2.6
+114-002,C4D15,DNMT3A,p.W601* Stop gain - LOF,,3.2
+114-002,C4D15,AKT1,p.E17K Splice region variant - GOF,,0.8
+114-002,C4D15,APC,p.S1272* Stop gain - LOF,,0.5
+114-002,C4D15,TP53,p.M1_A2del Inframe deletion - LOF,,0.3
+115-003,SCREEN,PIK3CA,p.R88Q  Missense variant (exon 1) - GOF,,9.7
+115-003,SCREEN,ESR1,p.Y537S Missense variant - GOF,,8.9
+115-003,C2D1,PIK3CA,p.R88Q  Missense variant (exon 1) - GOF,,0.2
+115-003,C2D1,ESR1,p.Y537S Missense variant - GOF,,0.2
+115-004,SCREEN,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,9.4
+115-004,SCREEN,ARID1A,p.M1564fs Frameshift - LOF,,2.3
+115-004,SCREEN,ESR1,p.Y537N Missense variant - GOF,,1.6
+115-004,SCREEN,ESR1,p.L536Q Missense variant - GOF,,0.5
+115-004,SCREEN,ESR1,p.D538G Missense variant - GOF,,0.3
+115-004,C2D1,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,0.7
+115-004,C2D1,ESR1,p.L536Q Missense variant - GOF,,0.1
+117-001,SCREEN,PIK3CA,p.E545K Missense variant (exon ,9) - GOF,
+117-001,SCREEN,CDKN1B,p.C49* Stop ,gain - LOF,
+117-001,SCREEN,ESR1,p.E380Q Missense ,variant - GOF,
+117-001,C2D1,CDKN1B,p.C49* Stop gain - LOF,,3.5
+117-001,C2D1,PIK3CA,p.E545K Missense variant (exon 9) - GOF,,3
+117-001,C2D1,NSD1,p.5885* Stop gain - LOF,,2
+117-001,C2D1,CHEK2,p.R523fs Frameshift - LOF,,0.4
+117-001,C4D1,CHEK2,p.R523fs Frameshift - LOF,,0.4
+117-002,SCREEN,PIK3CA,p.E103_P104del Inframe deletion (exon 2) - GOF,,7.6
+117-002,SCREEN,MAP3K,1p.Y791fs Frameshift - LOF,,5.3
+117-002,SCREEN,MAP3K1,p.E672fs Frameshift - LOF,,3.5
+117-002,SCREEN,ZFHX3,p.N1331fs Frameshift - LOF,,2.5
+117-002,SCREEN,ARID1A,p.Q1148* Stop gain - LOF,,2.3
+117-002,C2D1,PIK3CA,p.E103_P104del Inframe deletion (exon 2) - GOF,,1.9
+117-002,C2D1,ARID1A,p.Q1148* Stop gain - LOF,,0.4
+117-002,C4D1,PIK3CA,p.E103_P104del Inframe deletion (exon 2) - GOF,,0.1
+117-003,SCREEN,ESR1,p.E380Q Missense variant - GOF,,16
+117-003,SCREEN,CDH1,p.E806* Stop gain - LOF,,14.8
+117-003,SCREEN,TP53,p.V216m Missense variant - LOF,13,
+117-003,SCREEN,PIK3CA,p.H1047R Missense variant (exon 20) - GOF,,12.8
+117-003,SCREEN,FOXA1,p.S250F Missense variant - GOF,,6.9
+117-003,SCREEN,ARID1A,p.Q200* Stop gain - LOF,,4.4
+117-003,SCREEN,ASXL1,p.G646fs Frameshift - LOF,,0.9
+117-003,C2D1,ESR1,p.E380Q Missense variant - GOF,,0.1
