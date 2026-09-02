@@ -19,10 +19,8 @@ Caution: You lose important information if you filter this package's results.
 See '? untidy'
 [1] "&&& PD CREATING QQ?"
 [1] "&&& PD CREATING QQ!"
-[1] "SV.PATCH.RAW.DATA counts 0"
 [1] "IN LAB.APPEND.NLR.R, RIGHT BEFORE THAT CALL"
 [1] "IN LAB.APPEND.NLR.R, RIGHT AFTER THAT CALL"
-[1] "IN TR.PATCH.RAW.DATA WE ARE REMOVING FROM GG.TR 105-008 ON 10/21/25"
 [1] "BIG NOTIFICATION IN 103_BIOMARKERS_APPEND_TO_GG_LAB.R SKIPPING bFGF till I figure about LLOQ"
 
 Attaching package: 'lubridate'
@@ -2129,7 +2127,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: X, HOMA_IR"
-In Visit there are dropped visits: 35, 49, 63, 70.
+In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C, HOMA_IR"
@@ -2137,7 +2135,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C, HOMA_IR"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: A, HOMA_IR"
@@ -2163,10 +2161,10 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C36, HOMA_IR"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
+In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C36, HOMA_IR: contrasts can be applied only to factors with 2 or more levels"
+[1] "MMRM FIT FAILED FOR C36, HOMA_IR: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
 [1] "next, since analysis_df_factor is NA for HOMA_IR"
 [1] "WHERE: 9, HOMA_IR"
 In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
@@ -2452,24 +2450,9 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C36, Insulin"
-In Visit there are dropped visits: 49, 56, 63.
+In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C36, Insulin: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR C36, Insulin: Non-finite or negative SE in LS means"
 [1] "WHERE: 9, Insulin"
 In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
