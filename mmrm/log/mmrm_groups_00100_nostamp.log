@@ -1,3 +1,7 @@
+mmrm() registered as emmeans extension
+Welcome to emmeans.
+Caution: You lose important information if you filter this package's results.
+See '? untidy'
 
 Attaching package: 'dplyr'
 
@@ -13,12 +17,9 @@ The following objects are masked from 'package:base':
 
     intersect, setdiff, setequal, union
 
-mmrm() registered as emmeans extension
-Welcome to emmeans.
-Caution: You lose important information if you filter this package's results.
-See '? untidy'
 [1] "&&& PD CREATING QQ?"
 [1] "&&& PD CREATING QQ!"
+[1] "in mostrecent.R, g.most.recent == 260914"
 [1] "IN LAB.APPEND.NLR.R, RIGHT BEFORE THAT CALL"
 [1] "IN LAB.APPEND.NLR.R, RIGHT AFTER THAT CALL"
 [1] "BIG NOTIFICATION IN 103_BIOMARKERS_APPEND_TO_GG_LAB.R SKIPPING bFGF till I figure about LLOQ"
