@@ -23920,30 +23920,72 @@
 "114-001","EOT",2025-06-30,68,"INR - International Normalized Ratio","1.1","Ratio",FALSE,4.6,999,"Not Clinically Significant"
 "114-001","EOT",2025-06-30,68,"aPTT - Activated Partial Thromboplastin Time","27.2","Seconds",FALSE,25.1,36.5,""
 "114-001","UNSCH",2025-07-18,86,"AAPR","0.0457","",FALSE,,,
+"114-001","EOS",2025-07-18,86,"AAPR","0.0457","",FALSE,,,
 "114-001","UNSCH",2025-07-18,86,"ALT - Alanine aminotransferase","12","U/L",FALSE,7,52,""
+"114-001","EOS",2025-07-18,86,"ALT - Alanine aminotransferase","12","U/L",FALSE,7,52,""
 "114-001","UNSCH",2025-07-18,86,"AST - Aspartate Aminotransferase","26","U/L",FALSE,13,39,""
+"114-001","EOS",2025-07-18,86,"AST - Aspartate Aminotransferase","26","U/L",FALSE,13,39,""
 "114-001","UNSCH",2025-07-18,86,"Albumin","4.2","g/dL",FALSE,3.5,5.7,""
+"114-001","EOS",2025-07-18,86,"Albumin","4.2","g/dL",FALSE,3.5,5.7,""
 "114-001","UNSCH",2025-07-18,86,"Alkaline Phosphatase","92","U/L",FALSE,27,120,""
+"114-001","EOS",2025-07-18,86,"Alkaline Phosphatase","92","U/L",FALSE,27,120,""
 "114-001","UNSCH",2025-07-18,86,"Amylase","ND","U/L",FALSE,29,103,""
+"114-001","EOS",2025-07-18,86,"Amylase","ND","U/L",FALSE,29,103,""
+"114-001","EOS",2025-07-18,86,"BMI",,,FALSE,,,
+"114-001","EOS",2025-07-18,86,"BPDiastolic",,,FALSE,,,
+"114-001","EOS",2025-07-18,86,"BPSystolic",,,FALSE,,,
 "114-001","UNSCH",2025-07-18,86,"BUN - Blood Urea Nitrogen","11","mg/dL",FALSE,7,25,""
+"114-001","EOS",2025-07-18,86,"BUN - Blood Urea Nitrogen","11","mg/dL",FALSE,7,25,""
+"114-001","EOS",2025-07-18,86,"Basophils (absolute)","0.06","K/mcL",FALSE,0,0.2,""
 "114-001","UNSCH",2025-07-18,86,"Bicarbonate","26","mmol/L",FALSE,21,31,""
+"114-001","EOS",2025-07-18,86,"Bicarbonate","26","mmol/L",FALSE,21,31,""
 "114-001","UNSCH",2025-07-18,86,"Bilirubin, Direct","ND","mg/dL",FALSE,0,0.2,""
+"114-001","EOS",2025-07-18,86,"Bilirubin, Direct","ND","mg/dL",FALSE,0,0.2,""
 "114-001","UNSCH",2025-07-18,86,"Bilirubin, Indirect","ND","",FALSE,,,""
+"114-001","EOS",2025-07-18,86,"Bilirubin, Indirect","ND","",FALSE,,,""
 "114-001","UNSCH",2025-07-18,86,"Bilirubin, Total","0.4","mg/dL",FALSE,0.3,1.2,""
+"114-001","EOS",2025-07-18,86,"Bilirubin, Total","0.4","mg/dL",FALSE,0.3,1.2,""
 "114-001","UNSCH",2025-07-18,86,"Calcium, Total","9.6","mmol/L",FALSE,8.6,10.3,""
+"114-001","EOS",2025-07-18,86,"Calcium, Total","9.6","mmol/L",FALSE,8.6,10.3,""
 "114-001","UNSCH",2025-07-18,86,"Chloride","105","mmol/L",FALSE,98,107,""
+"114-001","EOS",2025-07-18,86,"Chloride","105","mmol/L",FALSE,98,107,""
 "114-001","UNSCH",2025-07-18,86,"Creatine Kinase","ND","U/L",FALSE,25,155,""
+"114-001","EOS",2025-07-18,86,"Creatine Kinase","ND","U/L",FALSE,25,155,""
 "114-001","UNSCH",2025-07-18,86,"Creatinine","0.67","mg/dL",FALSE,0.6,1.2,""
+"114-001","EOS",2025-07-18,86,"Creatinine","0.67","mg/dL",FALSE,0.6,1.2,""
+"114-001","EOS",2025-07-18,86,"Eosinophils (absolute)","0.29","K/mcL",FALSE,0,0.7,""
 "114-001","UNSCH",2025-07-18,86,"GGT - Gamma Glutamyl Transferase","ND","U/L",FALSE,9,64,""
+"114-001","EOS",2025-07-18,86,"GGT - Gamma Glutamyl Transferase","ND","U/L",FALSE,9,64,""
 "114-001","UNSCH",2025-07-18,86,"Glucose","84","mg/dL",FALSE,70,99,""
+"114-001","EOS",2025-07-18,86,"Glucose","101","mg/dL",FALSE,70,99,"Not Clinically Significant"
+"114-001","EOS",2025-07-18,86,"Hematocrit","33.2","%",FALSE,35,46,"Not Clinically Significant"
+"114-001","EOS",2025-07-18,86,"Hemoglobin","10.2","g/dL",FALSE,12,16,"Not Clinically Significant"
+"114-001","EOS",2025-07-18,86,"INR - International Normalized Ratio","1.1","Ratio",FALSE,4.6,999,"Not Clinically Significant"
 "114-001","UNSCH",2025-07-18,86,"LDH - Lactate dehydrogenase","ND","U/L",FALSE,140,271,""
+"114-001","EOS",2025-07-18,86,"LDH - Lactate dehydrogenase","ND","U/L",FALSE,140,271,""
 "114-001","UNSCH",2025-07-18,86,"Lipase","ND","U/L",FALSE,11,82,""
+"114-001","EOS",2025-07-18,86,"Lipase","28","U/L",FALSE,11,82,""
+"114-001","EOS",2025-07-18,86,"Lymphocytes (absolute)","1.20","K/mcL",FALSE,0.8,5,""
 "114-001","UNSCH",2025-07-18,86,"Magnesium","ND","mmol/L",FALSE,1.7,2.5,""
+"114-001","EOS",2025-07-18,86,"Magnesium","ND","mmol/L",FALSE,1.7,2.5,""
+"114-001","EOS",2025-07-18,86,"Monocytes (absolute)","0.60","K/mcL",FALSE,0,0.8,""
+"114-001","EOS",2025-07-18,86,"NLR","4.69",,FALSE,,,
+"114-001","EOS",2025-07-18,86,"Neutrophils (absolute count)","5.63","K/mcL",FALSE,1.7,7.6,""
+"114-001","EOS",2025-07-18,86,"Platelet Count","480","K/mcL",FALSE,150,450,"Not Clinically Significant"
 "114-001","UNSCH",2025-07-18,86,"Potassium","4.1","mmol/L",FALSE,3.5,5.3,""
+"114-001","EOS",2025-07-18,86,"Potassium","4.1","mmol/L",FALSE,3.5,5.3,""
+"114-001","EOS",2025-07-18,86,"RBC (Erythrocytes)","3.71","M/mcL",FALSE,3.8,5.2,"Not Clinically Significant"
 "114-001","UNSCH",2025-07-18,86,"Sodium","139","mmol/L",FALSE,135,144,""
+"114-001","EOS",2025-07-18,86,"Sodium","139","mmol/L",FALSE,135,144,""
 "114-001","UNSCH",2025-07-18,86,"Total Protein","7.3","g/dL",FALSE,6.1,7.9,""
+"114-001","EOS",2025-07-18,86,"Total Protein","7.3","g/dL",FALSE,6.1,7.9,""
 "114-001","UNSCH",2025-07-18,86,"Urea","ND","",FALSE,,,""
+"114-001","EOS",2025-07-18,86,"Urea","ND","",FALSE,,,""
 "114-001","UNSCH",2025-07-18,86,"Uric acid","ND","mg/dL",FALSE,2.3,6.6,""
+"114-001","EOS",2025-07-18,86,"Uric acid","ND","mg/dL",FALSE,2.3,6.6,""
+"114-001","EOS",2025-07-18,86,"WBC (Leukocytes)","7.8","K/mcL",FALSE,3.7,11,""
+"114-001","EOS",2025-07-18,86,"Weight",,"KG",FALSE,,,
+"114-001","EOS",2025-07-18,86,"aPTT - Activated Partial Thromboplastin Time","27.4","Seconds",FALSE,25.1,36.5,""
 "114-002","SCR",2025-06-02,-23,"BMI",,,FALSE,,,
 "114-002","SCR",2025-06-02,-23,"BPDiastolic",,,FALSE,,,
 "114-002","SCR",2025-06-02,-23,"BPSystolic",,,FALSE,,,
@@ -28081,11 +28123,11 @@
 "117-001","C11D1",2026-08-10,280,"BMI",,,FALSE,,,
 "117-001","C11D1",2026-08-10,280,"BPDiastolic",,,FALSE,,,
 "117-001","C11D1",2026-08-10,280,"BPSystolic",,,FALSE,,,
-"117-001","C11D1",2026-08-10,280,"BUN - Blood Urea Nitrogen","20","mg/dL",FALSE,9,23,""
+"117-001","C11D1",2026-08-10,280,"BUN - Blood Urea Nitrogen","17","mg/dL",FALSE,9,23,""
 "117-001","C11D1",2026-08-10,280,"Basophils (absolute)","0.0","K/uL",FALSE,0,0.1,""
 "117-001","C11D1",2026-08-10,280,"Bicarbonate","21","mmol/L",FALSE,20,31,""
 "117-001","C11D1",2026-08-10,280,"Bilirubin, Direct","0.18","mg/dL",FALSE,0,0.2,""
-"117-001","C11D1",2026-08-10,280,"Bilirubin, Indirect","0.16","",FALSE,,,""
+"117-001","C11D1",2026-08-10,280,"Bilirubin, Indirect","ND","",FALSE,,,""
 "117-001","C11D1",2026-08-10,280,"Bilirubin, Total","0.3","mg/dL",FALSE,0.3,1.2,""
 "117-001","C11D1",2026-08-10,280,"Calcium, Total","9.5","mmol/L",FALSE,8.7,10.4,""
 "117-001","C11D1",2026-08-10,280,"Chloride","102","mmol/L",FALSE,98,107,""
@@ -28117,6 +28159,35 @@
 "117-001","C11D1",2026-08-10,280,"Uric acid","5.8","mg/dL",FALSE,3.1,7.8,""
 "117-001","C11D1",2026-08-10,280,"WBC (Leukocytes)","5.6","K/uL",FALSE,4.3,10,""
 "117-001","C11D1",2026-08-10,280,"Weight",,"KG",FALSE,,,
+"117-001","C11D15",2026-08-24,294,"AAPR","0.0462","",FALSE,,,
+"117-001","C11D15",2026-08-24,294,"ALT - Alanine aminotransferase","14","U/L",FALSE,7,40,""
+"117-001","C11D15",2026-08-24,294,"AST - Aspartate Aminotransferase","36","U/L",FALSE,13,40,""
+"117-001","C11D15",2026-08-24,294,"Albumin","4.2","g/dL",FALSE,3.2,4.8,""
+"117-001","C11D15",2026-08-24,294,"Alkaline Phosphatase","91","U/L",FALSE,46,116,""
+"117-001","C11D15",2026-08-24,294,"Amylase","45","U/L",FALSE,30,118,""
+"117-001","C11D15",2026-08-24,294,"BMI",,,FALSE,,,
+"117-001","C11D15",2026-08-24,294,"BPDiastolic",,,FALSE,,,
+"117-001","C11D15",2026-08-24,294,"BPSystolic",,,FALSE,,,
+"117-001","C11D15",2026-08-24,294,"BUN - Blood Urea Nitrogen","16","mg/dL",FALSE,9,23,""
+"117-001","C11D15",2026-08-24,294,"Bicarbonate","24","mmol/L",FALSE,20,31,""
+"117-001","C11D15",2026-08-24,294,"Bilirubin, Direct","0.15","mg/dL",FALSE,0,0.2,""
+"117-001","C11D15",2026-08-24,294,"Bilirubin, Indirect","ND","",FALSE,,,""
+"117-001","C11D15",2026-08-24,294,"Bilirubin, Total","0.3","mg/dL",FALSE,0.3,1.2,""
+"117-001","C11D15",2026-08-24,294,"Calcium, Total","9.2","mmol/L",FALSE,8.7,10.4,""
+"117-001","C11D15",2026-08-24,294,"Chloride","102","mmol/L",FALSE,98,107,""
+"117-001","C11D15",2026-08-24,294,"Creatine Kinase","ND","",FALSE,,,""
+"117-001","C11D15",2026-08-24,294,"Creatinine","0.84","mg/dL",FALSE,0.55,1,""
+"117-001","C11D15",2026-08-24,294,"GGT - Gamma Glutamyl Transferase","18","U/L",FALSE,0,37,""
+"117-001","C11D15",2026-08-24,294,"Glucose","87","mg/dL",FALSE,74,106,""
+"117-001","C11D15",2026-08-24,294,"LDH - Lactate dehydrogenase","225","U/L",FALSE,120,246,""
+"117-001","C11D15",2026-08-24,294,"Lipase","25","U/L",FALSE,12,53,""
+"117-001","C11D15",2026-08-24,294,"Magnesium","2.4","mmol/L",FALSE,1.6,2.6,""
+"117-001","C11D15",2026-08-24,294,"Potassium","4.0","mmol/L",FALSE,3.5,5.1,""
+"117-001","C11D15",2026-08-24,294,"Sodium","140","mmol/L",FALSE,136,145,""
+"117-001","C11D15",2026-08-24,294,"Total Protein","6.4","g/dL",FALSE,5.7,8.2,""
+"117-001","C11D15",2026-08-24,294,"Urea","16","",FALSE,,,""
+"117-001","C11D15",2026-08-24,294,"Uric acid","5.6","mg/dL",FALSE,3.1,7.8,""
+"117-001","C11D15",2026-08-24,294,"Weight",,"KG",FALSE,,,
 "117-002","SCR",2025-10-27,-14,"AAPR","0.0421","",FALSE,,,
 "117-002","SCR",2025-10-27,-14,"ALT - Alanine aminotransferase","12","U/L",FALSE,7,40,""
 "117-002","SCR",2025-10-27,-14,"AST - Aspartate Aminotransferase","16","U/L",FALSE,13,40,""
@@ -29564,11 +29635,11 @@
 "117-003","C6D1",2026-04-28,140,"Weight",,"KG",FALSE,,,
 "117-003","C6D1",2026-04-28,140,"aPTT - Activated Partial Thromboplastin Time","23.3","Seconds",FALSE,26,35,"Not Clinically Significant"
 "117-003","C6D15",2026-05-12,154,"AAPR","0.0567","",FALSE,,,
-"117-003","C6D15",2026-05-12,154,"ALT - Alanine aminotransferase","21","U/L",FALSE,13,56,""
-"117-003","C6D15",2026-05-12,154,"AST - Aspartate Aminotransferase","64","U/L",FALSE,15,37,""
+"117-003","C6D15",2026-05-12,154,"ALT - Alanine aminotransferase","22","U/L",FALSE,13,56,""
+"117-003","C6D15",2026-05-12,154,"AST - Aspartate Aminotransferase","ND","U/L",FALSE,15,37,""
 "117-003","C6D15",2026-05-12,154,"Albumin","3.4","g/dL",FALSE,3.4,5,""
 "117-003","C6D15",2026-05-12,154,"Alkaline Phosphatase","60","U/L",FALSE,45,117,""
-"117-003","C6D15",2026-05-12,154,"Amylase","54","U/L",FALSE,25,115,""
+"117-003","C6D15",2026-05-12,154,"Amylase","ND","U/L",FALSE,25,115,""
 "117-003","C6D15",2026-05-12,154,"BMI",,,FALSE,,,
 "117-003","C6D15",2026-05-12,154,"BPDiastolic",,,FALSE,,,
 "117-003","C6D15",2026-05-12,154,"BPSystolic",,,FALSE,,,
@@ -29578,7 +29649,7 @@
 "117-003","C6D15",2026-05-12,154,"Bilirubin, Indirect","ND","",FALSE,,,""
 "117-003","C6D15",2026-05-12,154,"Bilirubin, Total","ND","mg/dL",FALSE,0.2,1,""
 "117-003","C6D15",2026-05-12,154,"Calcium, Total","9.1","mmol/L",FALSE,8.5,10.1,""
-"117-003","C6D15",2026-05-12,154,"Chloride","110","mmol/L",FALSE,98,107,""
+"117-003","C6D15",2026-05-12,154,"Chloride","110","mmol/L",FALSE,98,107,"Not Clinically Significant"
 "117-003","C6D15",2026-05-12,154,"Creatine Kinase","ND","",FALSE,,,""
 "117-003","C6D15",2026-05-12,154,"Creatinine","0.88","mg/dL",FALSE,0.6,1,""
 "117-003","C6D15",2026-05-12,154,"GGT - Gamma Glutamyl Transferase","ND","U/L",FALSE,5,55,""
@@ -29588,7 +29659,7 @@
 "117-003","C6D15",2026-05-12,154,"Magnesium","ND","mmol/L",FALSE,1.8,2.4,""
 "117-003","C6D15",2026-05-12,154,"Potassium","3.5","mmol/L",FALSE,3.5,5.1,""
 "117-003","C6D15",2026-05-12,154,"Sodium","141","mmol/L",FALSE,136,145,""
-"117-003","C6D15",2026-05-12,154,"Total Protein","6.3","g/dL",FALSE,6.4,8.2,""
+"117-003","C6D15",2026-05-12,154,"Total Protein","6.3","g/dL",FALSE,6.4,8.2,"Not Clinically Significant"
 "117-003","C6D15",2026-05-12,154,"Urea","ND","",FALSE,,,""
 "117-003","C6D15",2026-05-12,154,"Uric acid","ND","mg/dL",FALSE,2.6,6,""
 "117-003","C6D15",2026-05-12,154,"Weight",,"KG",FALSE,,,
@@ -29629,7 +29700,7 @@
 "117-003","C7D1",2026-05-26,168,"RBC (Erythrocytes)","3.61","M/uL",FALSE,3.9,5.2,"Not Clinically Significant"
 "117-003","C7D1",2026-05-26,168,"Sodium","141","mmol/L",FALSE,136,145,""
 "117-003","C7D1",2026-05-26,168,"Total Protein","6.7","g/dL",FALSE,6.4,8.2,""
-"117-003","C7D1",2026-05-26,168,"Urea","ND","",FALSE,,,""
+"117-003","C7D1",2026-05-26,168,"Urea","15","",FALSE,,,""
 "117-003","C7D1",2026-05-26,168,"Uric acid","4.5","mg/dL",FALSE,2.6,6,""
 "117-003","C7D1",2026-05-26,168,"WBC (Leukocytes)","3.5","K/uL",FALSE,4.3,10,"Not Clinically Significant"
 "117-003","C7D1",2026-05-26,168,"Weight",,"KG",FALSE,,,
@@ -29646,8 +29717,8 @@
 "117-003","C7D15",2026-06-09,182,"BUN - Blood Urea Nitrogen","16","mg/dL",FALSE,7,18,""
 "117-003","C7D15",2026-06-09,182,"Bicarbonate","26","mmol/L",FALSE,21,32,""
 "117-003","C7D15",2026-06-09,182,"Bilirubin, Direct","ND","mg/dL",FALSE,0,0.2,""
-"117-003","C7D15",2026-06-09,182,"Bilirubin, Indirect","ND","",FALSE,,,""
-"117-003","C7D15",2026-06-09,182,"Bilirubin, Total","ND","mg/dL",FALSE,0.2,1,""
+"117-003","C7D15",2026-06-09,182,"Bilirubin, Indirect","<0.1","",TRUE,,,""
+"117-003","C7D15",2026-06-09,182,"Bilirubin, Total","0.4","mg/dL",FALSE,0.2,1,""
 "117-003","C7D15",2026-06-09,182,"Calcium, Total","9.9","mmol/L",FALSE,8.5,10.1,""
 "117-003","C7D15",2026-06-09,182,"Chloride","108","mmol/L",FALSE,98,107,"Not Clinically Significant"
 "117-003","C7D15",2026-06-09,182,"Creatine Kinase","51","",FALSE,,,""
@@ -29660,7 +29731,7 @@
 "117-003","C7D15",2026-06-09,182,"Potassium","3.4","mmol/L",FALSE,3.5,5.1,"Not Clinically Significant"
 "117-003","C7D15",2026-06-09,182,"Sodium","140","mmol/L",FALSE,136,145,""
 "117-003","C7D15",2026-06-09,182,"Total Protein","6.9","g/dL",FALSE,6.4,8.2,""
-"117-003","C7D15",2026-06-09,182,"Urea","ND","",FALSE,,,""
+"117-003","C7D15",2026-06-09,182,"Urea","16","",FALSE,,,""
 "117-003","C7D15",2026-06-09,182,"Uric acid","3.8","mg/dL",FALSE,2.6,6,""
 "117-003","C7D15",2026-06-09,182,"Weight",,"KG",FALSE,,,
 "117-003","C8D1",2026-06-23,196,"AAPR","0.0529","",FALSE,,,
