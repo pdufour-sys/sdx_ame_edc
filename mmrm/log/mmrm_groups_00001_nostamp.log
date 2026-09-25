@@ -64,46 +64,47 @@ The following objects are masked from 'package:base':
 [26] "Eosinophils (absolute)"                      
 [27] "Eosinophils (percent)"                       
 [28] "FGF-21"                                      
-[29] "GGT - Gamma Glutamyl Transferase"            
-[30] "Glucose"                                     
-[31] "GM-CSF"                                      
-[32] "HbA1c"                                       
-[33] "HDL Cholesterol"                             
-[34] "Hematocrit"                                  
-[35] "Hemoglobin"                                  
-[36] "HOMA_IR"                                     
-[37] "IGF-1"                                       
-[38] "IL-10"                                       
-[39] "IL-5"                                        
-[40] "INR - International Normalized Ratio"        
-[41] "Insulin"                                     
-[42] "LAR"                                         
-[43] "LDH - Lactate dehydrogenase"                 
-[44] "LDL Cholesterol"                             
-[45] "Leptin"                                      
-[46] "Lipase"                                      
-[47] "Lymphocytes (absolute)"                      
-[48] "Lymphocytes (percent)"                       
-[49] "Magnesium"                                   
-[50] "Monocytes (absolute)"                        
-[51] "Monocytes (percent)"                         
-[52] "Neutrophils (absolute count)"                
-[53] "Neutrophils (percent)"                       
-[54] "NLR"                                         
-[55] "Platelet Count"                              
-[56] "Potassium"                                   
-[57] "RBC (Erythrocytes)"                          
-[58] "sFRP-5"                                      
-[59] "Sodium"                                      
-[60] "Total Cholesterol"                           
-[61] "Total Protein"                               
-[62] "Triglycerides"                               
-[63] "Uric acid"                                   
-[64] "VEGF"                                        
-[65] "VEGF-C"                                      
-[66] "VEGF-D"                                      
-[67] "WBC (Leukocytes)"                            
-[68] "Weight"                                      
+[29] "Fructosamine"                                
+[30] "GGT - Gamma Glutamyl Transferase"            
+[31] "Glucose"                                     
+[32] "GM-CSF"                                      
+[33] "HbA1c"                                       
+[34] "HDL Cholesterol"                             
+[35] "Hematocrit"                                  
+[36] "Hemoglobin"                                  
+[37] "HOMA_IR"                                     
+[38] "IGF-1"                                       
+[39] "IL-10"                                       
+[40] "IL-5"                                        
+[41] "INR - International Normalized Ratio"        
+[42] "Insulin"                                     
+[43] "LAR"                                         
+[44] "LDH - Lactate dehydrogenase"                 
+[45] "LDL Cholesterol"                             
+[46] "Leptin"                                      
+[47] "Lipase"                                      
+[48] "Lymphocytes (absolute)"                      
+[49] "Lymphocytes (percent)"                       
+[50] "Magnesium"                                   
+[51] "Monocytes (absolute)"                        
+[52] "Monocytes (percent)"                         
+[53] "Neutrophils (absolute count)"                
+[54] "Neutrophils (percent)"                       
+[55] "NLR"                                         
+[56] "Platelet Count"                              
+[57] "Potassium"                                   
+[58] "RBC (Erythrocytes)"                          
+[59] "sFRP-5"                                      
+[60] "Sodium"                                      
+[61] "Total Cholesterol"                           
+[62] "Total Protein"                               
+[63] "Triglycerides"                               
+[64] "Uric acid"                                   
+[65] "VEGF"                                        
+[66] "VEGF-C"                                      
+[67] "VEGF-D"                                      
+[68] "WBC (Leukocytes)"                            
+[69] "Weight"                                      
 [1] FALSE
 [1] TRUE
 [1] "Should have NLR"
@@ -1604,6 +1605,65 @@ To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
 [1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
 [1] "EMMEANS/KR FAILED FOR 9, FGF-21: Non-finite or negative SE in LS means"
+[1] "Fructosamine (Fructosamine)"
+[1] "WHERE: X, Fructosamine"
+In Visit there are dropped visits: 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: X, Fructosamine"
+In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR X, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Fructosamine"
+[1] "WHERE: C, Fructosamine"
+In Visit there are dropped visits: 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: C, Fructosamine"
+In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Fructosamine"
+[1] "WHERE: A, Fructosamine"
+In Visit there are dropped visits: 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: A, Fructosamine"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR A, Fructosamine with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Fructosamine"
+[1] "WHERE: C49, Fructosamine"
+In Visit there are dropped visits: 42, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Fructosamine: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Fructosamine: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Fructosamine: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
+[1] "WHERE: C49, Fructosamine"
+In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "NO PLOTTABLE DATA FOR C49, Fructosamine"
+[1] "WHERE: C36, Fructosamine"
+In Visit there are dropped visits: 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: C36, Fructosamine"
+In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C36, Fructosamine: contrasts can be applied only to factors with 2 or more levels"
+[1] "next, since analysis_df_factor is NA for Fructosamine"
+[1] "WHERE: 9, Fructosamine"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Fructosamine with rowcount 0"
+[1] "WHERE: 9, Fructosamine"
+In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR 9, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "NO PLOTTABLE DATA FOR 9, Fructosamine"
 [1] "GGT - Gamma Glutamyl Transferase (GGT)"
 [1] "WHERE: X, GGT - Gamma Glutamyl Transferase"
 In Visit there are dropped visits: 49, 63.
