@@ -19,7 +19,8 @@ The following objects are masked from 'package:base':
 
 [1] "&&& PD CREATING QQ?"
 [1] "&&& PD CREATING QQ!"
-[1] "in mostrecent.R, g.most.recent == 261023"
+[1] "Using Diane Mould's data of 7/21/26"
+[1] "in mostrecent.R, g.most.recent == 261104"
 [1] "IN LAB.APPEND.NLR.R, RIGHT BEFORE THAT CALL"
 [1] "IN LAB.APPEND.NLR.R, RIGHT AFTER THAT CALL"
 [1] "BIG NOTIFICATION IN 103_BIOMARKERS_APPEND_TO_GG_LAB.R SKIPPING bFGF till I figure about LLOQ"
@@ -140,9 +141,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, AAPR"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AAPR: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, AAPR: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, AAPR"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -156,10 +170,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, AAPR"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, AAPR: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, AAPR with rowcount 0"
 [1] "next, since analysis_df_factor is NA for AAPR"
 [1] "Adiponectin (Adiponectin)"
 [1] "WHERE: X, Adiponectin"
@@ -204,9 +215,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Adiponectin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Adiponectin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Adiponectin"
 [1] "WHERE: C36, Adiponectin"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -220,10 +233,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Adiponectin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Adiponectin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Adiponectin with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Adiponectin"
 [1] "AGP-2 (AGP-2)"
 [1] "WHERE: X, AGP-2"
@@ -257,9 +267,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, AGP-2"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, AGP-2: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for AGP-2"
 [1] "WHERE: C36, AGP-2"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -275,10 +287,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, AGP-2"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, AGP-2: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, AGP-2 with rowcount 0"
 [1] "next, since analysis_df_factor is NA for AGP-2"
 [1] "Albumin (Albumin)"
 [1] "WHERE: X, Albumin"
@@ -312,9 +321,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Albumin"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Albumin: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Albumin: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, Albumin"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -328,10 +350,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Albumin"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Albumin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Albumin with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Albumin"
 [1] "Alkaline Phosphatase (Alkaline Phosphatase)"
 [1] "WHERE: X, Alkaline Phosphatase"
@@ -365,9 +384,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Alkaline Phosphatase"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Alkaline Phosphatase: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Alkaline Phosphatase"
 [1] "WHERE: C36, Alkaline Phosphatase"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -381,10 +402,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Alkaline Phosphatase"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Alkaline Phosphatase: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Alkaline Phosphatase with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Alkaline Phosphatase"
 [1] "ALT - Alanine aminotransferase (ALT)"
 [1] "WHERE: X, ALT - Alanine aminotransferase"
@@ -418,9 +436,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, ALT - Alanine aminotransferase"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, ALT - Alanine aminotransferase: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for ALT - Alanine aminotransferase"
 [1] "WHERE: C36, ALT - Alanine aminotransferase"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -434,22 +454,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, ALT - Alanine aminotransferase"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, ALT - Alanine aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, ALT - Alanine aminotransferase: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, ALT - Alanine aminotransferase with rowcount 0"
+[1] "next, since analysis_df_factor is NA for ALT - Alanine aminotransferase"
 [1] "Amylase (Amylase)"
 [1] "WHERE: X, Amylase"
 In Visit there are dropped visits: 49, 63.
@@ -482,9 +488,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Amylase"
-In Visit there are dropped visits: 7, 49, 63.
+In Visit there are dropped visits: 7, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Amylase: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Amylase"
 [1] "WHERE: C36, Amylase"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -498,22 +506,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Amylase"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Amylase: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Amylase: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Amylase with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Amylase"
 [1] "Apelin (Apelin)"
 [1] "WHERE: X, Apelin"
 In Visit there are dropped visits: 49, 63.
@@ -631,6 +625,7 @@ In Visit there are dropped visits: 7, 21, 35, 42, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, aPTT - Activated Partial Thromboplastin Time"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, aPTT - Activated Partial Thromboplastin Time with rowcount 0"
 [1] "next, since analysis_df_factor is NA for aPTT - Activated Partial Thromboplastin Time"
 [1] "AST - Aspartate Aminotransferase (AST)"
 [1] "WHERE: X, AST - Aspartate Aminotransferase"
@@ -664,9 +659,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, AST - Aspartate Aminotransferase"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, AST - Aspartate Aminotransferase: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, AST - Aspartate Aminotransferase"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -680,22 +688,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, AST - Aspartate Aminotransferase"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, AST - Aspartate Aminotransferase: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, AST - Aspartate Aminotransferase: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, AST - Aspartate Aminotransferase with rowcount 0"
+[1] "next, since analysis_df_factor is NA for AST - Aspartate Aminotransferase"
 [1] "Basophils (absolute) (Basophils (abs))"
 [1] "WHERE: X, Basophils (absolute)"
 In Visit there are dropped visits: 49, 63.
@@ -728,9 +722,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Basophils (absolute)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Basophils (absolute): Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Basophils (absolute): Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, Basophils (absolute)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -744,26 +740,8 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Basophils (absolute)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Basophils (absolute): Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Basophils (absolute): Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Basophils (absolute) with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Basophils (absolute)"
 [1] "Basophils (percent) (Basophils (%))"
 [1] "WHERE: X, Basophils (percent)"
 In Visit there are dropped visits: 49, 63.
@@ -837,9 +815,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, bFGF"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 28, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, bFGF: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for bFGF"
 [1] "WHERE: C36, bFGF"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -853,18 +833,8 @@ In Visit there are dropped visits: 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, bFGF"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, bFGF: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, bFGF: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, bFGF with rowcount 0"
+[1] "next, since analysis_df_factor is NA for bFGF"
 [1] "Bicarbonate (Bicarbonate)"
 [1] "WHERE: X, Bicarbonate"
 In Visit there are dropped visits: 49, 63.
@@ -906,9 +876,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Bicarbonate"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Bicarbonate: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Bicarbonate: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, Bicarbonate"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -922,10 +894,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Bicarbonate"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Bicarbonate: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bicarbonate with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Bicarbonate"
 [1] "Bilirubin, Direct (Bilirubin, Direct)"
 [1] "WHERE: X, Bilirubin, Direct"
@@ -981,10 +950,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Bilirubin, Direct"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Bilirubin, Direct: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Direct with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Bilirubin, Direct"
 [1] "Bilirubin, Indirect (Bilirubin, Indirect)"
 [1] "WHERE: X, Bilirubin, Indirect"
@@ -1036,9 +1002,9 @@ To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "MMRM FIT FAILED FOR C36, Bilirubin, Indirect: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
 [1] "next, since analysis_df_factor is NA for Bilirubin, Indirect"
 [1] "WHERE: 9, Bilirubin, Indirect"
-[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Indirect with rowcount 35"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Indirect with rowcount 41"
 [1] "WHERE: 9, Bilirubin, Indirect"
-[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Indirect with rowcount 6"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Indirect with rowcount 0"
 [1] "NO PLOTTABLE DATA FOR 9, Bilirubin, Indirect"
 [1] "Bilirubin, Total (Bilirubin, Total)"
 [1] "WHERE: X, Bilirubin, Total"
@@ -1072,9 +1038,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Bilirubin, Total"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Bilirubin, Total: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Bilirubin, Total"
 [1] "WHERE: C36, Bilirubin, Total"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1088,10 +1056,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Bilirubin, Total"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Bilirubin, Total: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Bilirubin, Total with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Bilirubin, Total"
 [1] "BMI (BMI)"
 [1] "WHERE: X, BMI"
@@ -1125,9 +1090,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, BMI"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, BMI: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for BMI"
 [1] "WHERE: C36, BMI"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -1141,10 +1108,7 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, BMI"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, BMI: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, BMI with rowcount 0"
 [1] "next, since analysis_df_factor is NA for BMI"
 [1] "BPDiastolic (BPDiastolic)"
 [1] "WHERE: X, BPDiastolic"
@@ -1178,9 +1142,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, BPDiastolic"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, BPDiastolic: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for BPDiastolic"
 [1] "WHERE: C36, BPDiastolic"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -1194,10 +1160,7 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, BPDiastolic"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, BPDiastolic: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, BPDiastolic with rowcount 0"
 [1] "next, since analysis_df_factor is NA for BPDiastolic"
 [1] "BPSystolic (BPSystolic)"
 [1] "WHERE: X, BPSystolic"
@@ -1236,9 +1199,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, BPSystolic"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, BPSystolic: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for BPSystolic"
 [1] "WHERE: C36, BPSystolic"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -1252,20 +1217,8 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, BPSystolic"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, BPSystolic: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, BPSystolic: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, BPSystolic with rowcount 0"
+[1] "next, since analysis_df_factor is NA for BPSystolic"
 [1] "BUN - Blood Urea Nitrogen (BUN)"
 [1] "WHERE: X, BUN - Blood Urea Nitrogen"
 In Visit there are dropped visits: 49, 63.
@@ -1307,9 +1260,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, BUN - Blood Urea Nitrogen"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, BUN - Blood Urea Nitrogen: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, BUN - Blood Urea Nitrogen: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, BUN - Blood Urea Nitrogen"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1323,10 +1289,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, BUN - Blood Urea Nitrogen"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, BUN - Blood Urea Nitrogen: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, BUN - Blood Urea Nitrogen with rowcount 0"
 [1] "next, since analysis_df_factor is NA for BUN - Blood Urea Nitrogen"
 [1] "Calcium, Total (Calcium, Total)"
 [1] "WHERE: X, Calcium, Total"
@@ -1360,9 +1323,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Calcium, Total"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Calcium, Total: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Calcium, Total"
 [1] "WHERE: C36, Calcium, Total"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1376,10 +1341,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Calcium, Total"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Calcium, Total: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Calcium, Total with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Calcium, Total"
 [1] "Chloride (Chloride)"
 [1] "WHERE: X, Chloride"
@@ -1413,9 +1375,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Chloride"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Chloride: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Chloride: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, Chloride"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1429,11 +1404,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Chloride"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Chloride: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Chloride: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Chloride with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Chloride"
 [1] "Creatine Kinase (Creatine Kinase)"
 [1] "WHERE: X, Creatine Kinase"
 In Visit there are dropped visits: 49, 63.
@@ -1495,10 +1467,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Creatine Kinase"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Creatine Kinase: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Creatine Kinase with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Creatine Kinase"
 [1] "Creatinine (Creatinine)"
 [1] "WHERE: X, Creatinine"
@@ -1532,9 +1501,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Creatinine"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Creatinine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Creatinine"
 [1] "WHERE: C36, Creatinine"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1548,10 +1519,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Creatinine"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Creatinine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Creatinine with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Creatinine"
 [1] "Eosinophils (absolute) (Eosinophils (abs))"
 [1] "WHERE: X, Eosinophils (absolute)"
@@ -1596,9 +1564,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Eosinophils (absolute)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Eosinophils (absolute): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Eosinophils (absolute)"
 [1] "WHERE: C36, Eosinophils (absolute)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1612,10 +1582,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Eosinophils (absolute)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Eosinophils (absolute): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Eosinophils (absolute) with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Eosinophils (absolute)"
 [1] "Eosinophils (percent) (Eosinophil (%))"
 [1] "WHERE: X, Eosinophils (percent)"
@@ -1691,9 +1658,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, FGF-21"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, FGF-21: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for FGF-21"
 [1] "WHERE: C36, FGF-21"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1707,38 +1676,28 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, FGF-21"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, FGF-21: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, FGF-21: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, FGF-21 with rowcount 0"
+[1] "next, since analysis_df_factor is NA for FGF-21"
 [1] "Fructosamine (Fructosamine)"
 [1] "WHERE: X, Fructosamine"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: X, Fructosamine"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR X, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "MMRM FIT FAILED FOR X, Fructosamine: contrasts can be applied only to factors with 2 or more levels"
 [1] "next, since analysis_df_factor is NA for Fructosamine"
 [1] "WHERE: C, Fructosamine"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C, Fructosamine"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "MMRM FIT FAILED FOR C, Fructosamine: contrasts can be applied only to factors with 2 or more levels"
 [1] "next, since analysis_df_factor is NA for Fructosamine"
 [1] "WHERE: A, Fructosamine"
 In Visit there are dropped visits: 49, 63.
@@ -1748,18 +1707,12 @@ To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "SKIP NO REASON OR EMPTY DATA FRAME FOR A, Fructosamine with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Fructosamine"
 [1] "WHERE: C49, Fructosamine"
-In Visit there are dropped visits: 42, 49, 63, 70.
+In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR C49, Fructosamine: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C49, Fructosamine: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR C49, Fructosamine: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C49, Fructosamine"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C49, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
-[1] "NO PLOTTABLE DATA FOR C49, Fructosamine"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR C49, Fructosamine with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Fructosamine"
 [1] "WHERE: C36, Fructosamine"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1771,12 +1724,12 @@ To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "MMRM FIT FAILED FOR C36, Fructosamine: contrasts can be applied only to factors with 2 or more levels"
 [1] "next, since analysis_df_factor is NA for Fructosamine"
 [1] "WHERE: 9, Fructosamine"
-[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Fructosamine with rowcount 0"
-[1] "WHERE: 9, Fructosamine"
 In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "MMRM FIT FAILED FOR 9, Fructosamine: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "WHERE: 9, Fructosamine"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Fructosamine with rowcount 0"
 [1] "NO PLOTTABLE DATA FOR 9, Fructosamine"
 [1] "GGT - Gamma Glutamyl Transferase (GGT)"
 [1] "WHERE: X, GGT - Gamma Glutamyl Transferase"
@@ -1839,10 +1792,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, GGT - Gamma Glutamyl Transferase"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, GGT - Gamma Glutamyl Transferase: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, GGT - Gamma Glutamyl Transferase with rowcount 0"
 [1] "next, since analysis_df_factor is NA for GGT - Gamma Glutamyl Transferase"
 [1] "Glucose (Glucose)"
 [1] "WHERE: X, Glucose"
@@ -1876,9 +1826,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Glucose"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Glucose: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Glucose: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, Glucose"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -1892,22 +1855,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Glucose"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Glucose: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Glucose: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Glucose with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Glucose"
 [1] "GM-CSF (GM-CSF)"
 [1] "WHERE: X, GM-CSF"
 In Visit there are dropped visits: 49, 63.
@@ -1985,10 +1934,6 @@ In Visit there are dropped visits: 84.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, HbA1c"
-In Visit there are dropped visits: 84.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C49, HbA1c: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
 [1] "next, since analysis_df_factor is NA for HbA1c"
 [1] "WHERE: C36, HbA1c"
 In Visit there are dropped visits: 84.
@@ -2000,6 +1945,7 @@ In Visit there are dropped visits: 84.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, HbA1c"
 [1] "WHERE: 9, HbA1c"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, HbA1c with rowcount 0"
 [1] "NO PLOTTABLE DATA FOR 9, HbA1c"
 [1] "HDL Cholesterol (HDL Cholesterol)"
 [1] "WHERE: X, HDL Cholesterol"
@@ -2033,12 +1979,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, HDL Cholesterol"
-In Visit there are dropped visits: 7, 14, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 14, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR C49, HDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR C49, HDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR C49, HDL Cholesterol: Non-finite or negative SE in LS means"
+[1] "MMRM FIT FAILED FOR C49, HDL Cholesterol: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for HDL Cholesterol"
 [1] "WHERE: C36, HDL Cholesterol"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -2052,10 +1997,7 @@ In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, HDL Cholesterol"
-In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, HDL Cholesterol: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, HDL Cholesterol with rowcount 0"
 [1] "next, since analysis_df_factor is NA for HDL Cholesterol"
 [1] "Hematocrit (Hematocrit)"
 [1] "WHERE: X, Hematocrit"
@@ -2089,9 +2031,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Hematocrit"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Hematocrit: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Hematocrit"
 [1] "WHERE: C36, Hematocrit"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2105,26 +2049,8 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Hematocrit"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Hematocrit: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Hematocrit: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Hematocrit with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Hematocrit"
 [1] "Hemoglobin (Hemoglobin)"
 [1] "WHERE: X, Hemoglobin"
 In Visit there are dropped visits: 49, 63.
@@ -2161,9 +2087,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Hemoglobin"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Hemoglobin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Hemoglobin"
 [1] "WHERE: C36, Hemoglobin"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2177,10 +2105,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Hemoglobin"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Hemoglobin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Hemoglobin with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Hemoglobin"
 [1] "HOMA_IR (HOMA_IR)"
 [1] "WHERE: X, HOMA_IR"
@@ -2214,9 +2139,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, HOMA_IR"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, HOMA_IR: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, HOMA_IR: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, HOMA_IR"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2232,11 +2159,8 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, HOMA_IR"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, HOMA_IR: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, HOMA_IR: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, HOMA_IR with rowcount 0"
+[1] "next, since analysis_df_factor is NA for HOMA_IR"
 [1] "IGF-1 (IGF-1)"
 [1] "WHERE: X, IGF-1"
 In Visit there are dropped visits: 49, 63.
@@ -2280,9 +2204,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, IGF-1"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, IGF-1: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for IGF-1"
 [1] "WHERE: C36, IGF-1"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2296,18 +2222,8 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, IGF-1"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, IGF-1: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, IGF-1: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, IGF-1 with rowcount 0"
+[1] "next, since analysis_df_factor is NA for IGF-1"
 [1] "IL-10 (IL-10)"
 [1] "WHERE: X, IL-10"
 In Visit there are dropped visits: 49, 63.
@@ -2470,6 +2386,7 @@ In Visit there are dropped visits: 7, 21, 35, 42, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, INR - International Normalized Ratio"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, INR - International Normalized Ratio with rowcount 0"
 [1] "next, since analysis_df_factor is NA for INR - International Normalized Ratio"
 [1] "Insulin (Insulin)"
 [1] "WHERE: X, Insulin"
@@ -2503,9 +2420,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Insulin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Insulin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Insulin"
 [1] "WHERE: C36, Insulin"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2519,10 +2438,7 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Insulin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Insulin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Insulin with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Insulin"
 [1] "LAR (LAR)"
 [1] "WHERE: X, LAR"
@@ -2556,9 +2472,16 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, LAR"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, LAR: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, LAR: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, LAR"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2572,10 +2495,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, LAR"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, LAR: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, LAR with rowcount 0"
 [1] "next, since analysis_df_factor is NA for LAR"
 [1] "LDH - Lactate dehydrogenase (LDH)"
 [1] "WHERE: X, LDH - Lactate dehydrogenase"
@@ -2636,10 +2556,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, LDH - Lactate dehydrogenase"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, LDH - Lactate dehydrogenase: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, LDH - Lactate dehydrogenase with rowcount 0"
 [1] "next, since analysis_df_factor is NA for LDH - Lactate dehydrogenase"
 [1] "LDL Cholesterol (LDL Cholesterol)"
 [1] "WHERE: X, LDL Cholesterol"
@@ -2673,10 +2590,10 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, LDL Cholesterol"
-In Visit there are dropped visits: 7, 14, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 14, 21, 28, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C49, LDL Cholesterol: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "MMRM FIT FAILED FOR C49, LDL Cholesterol: contrasts can be applied only to factors with 2 or more levels"
 [1] "next, since analysis_df_factor is NA for LDL Cholesterol"
 [1] "WHERE: C36, LDL Cholesterol"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
@@ -2691,14 +2608,8 @@ In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, LDL Cholesterol"
-In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, LDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, LDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, LDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, LDL Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, LDL Cholesterol: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, LDL Cholesterol with rowcount 0"
+[1] "next, since analysis_df_factor is NA for LDL Cholesterol"
 [1] "Leptin (Leptin)"
 [1] "WHERE: X, Leptin"
 In Visit there are dropped visits: 49, 63.
@@ -2742,9 +2653,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Leptin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Leptin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Leptin"
 [1] "WHERE: C36, Leptin"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2758,10 +2671,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Leptin"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Leptin: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Leptin with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Leptin"
 [1] "Lipase (Lipase)"
 [1] "WHERE: X, Lipase"
@@ -2795,9 +2705,20 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Lipase"
-In Visit there are dropped visits: 7, 49, 63.
+In Visit there are dropped visits: 7, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Lipase: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Lipase: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, Lipase"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2811,22 +2732,8 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Lipase"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Lipase: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Lipase: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Lipase with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Lipase"
 [1] "Lymphocytes (absolute) (Lymphocytes (abs))"
 [1] "WHERE: X, Lymphocytes (absolute)"
 In Visit there are dropped visits: 49, 63.
@@ -2859,9 +2766,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Lymphocytes (absolute)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Lymphocytes (absolute): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Lymphocytes (absolute)"
 [1] "WHERE: C36, Lymphocytes (absolute)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -2875,10 +2784,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Lymphocytes (absolute)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Lymphocytes (absolute): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Lymphocytes (absolute) with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Lymphocytes (absolute)"
 [1] "Lymphocytes (percent) (Lymphocytes (%))"
 [1] "WHERE: X, Lymphocytes (percent)"
@@ -2980,10 +2886,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Magnesium"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Magnesium: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Magnesium with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Magnesium"
 [1] "Monocytes (absolute) (Monocytes (abs))"
 [1] "WHERE: X, Monocytes (absolute)"
@@ -3017,9 +2920,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Monocytes (absolute)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Monocytes (absolute): Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Monocytes (absolute): Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, Monocytes (absolute)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3033,10 +2938,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Monocytes (absolute)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Monocytes (absolute): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Monocytes (absolute) with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Monocytes (absolute)"
 [1] "Monocytes (percent) ( Monocytes (%))"
 [1] "WHERE: X, Monocytes (percent)"
@@ -3127,9 +3029,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Neutrophils (absolute count)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Neutrophils (absolute count): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Neutrophils (absolute count)"
 [1] "WHERE: C36, Neutrophils (absolute count)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3143,26 +3047,8 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Neutrophils (absolute count)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Neutrophils (absolute count): Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Neutrophils (absolute count): Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Neutrophils (absolute count) with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Neutrophils (absolute count)"
 [1] "Neutrophils (percent) ( Neutrophils (%))"
 [1] "WHERE: X, Neutrophils (percent)"
 In Visit there are dropped visits: 49, 63.
@@ -3236,9 +3122,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, NLR"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, NLR: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for NLR"
 [1] "WHERE: C36, NLR"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3252,10 +3140,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, NLR"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, NLR: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, NLR with rowcount 0"
 [1] "next, since analysis_df_factor is NA for NLR"
 [1] "Platelet Count (Platelet Count)"
 [1] "WHERE: X, Platelet Count"
@@ -3289,9 +3174,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Platelet Count"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Platelet Count: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Platelet Count"
 [1] "WHERE: C36, Platelet Count"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3305,10 +3192,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Platelet Count"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Platelet Count: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Platelet Count with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Platelet Count"
 [1] "Potassium (Potassium)"
 [1] "WHERE: X, Potassium"
@@ -3342,9 +3226,10 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Potassium"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS/KR FAILED FOR C49, Potassium: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, Potassium"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3358,10 +3243,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Potassium"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Potassium: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Potassium with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Potassium"
 [1] "RBC (Erythrocytes) (RBC (Erythrocytes))"
 [1] "WHERE: X, RBC (Erythrocytes)"
@@ -3395,9 +3277,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, RBC (Erythrocytes)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, RBC (Erythrocytes): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for RBC (Erythrocytes)"
 [1] "WHERE: C36, RBC (Erythrocytes)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3411,10 +3295,7 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, RBC (Erythrocytes)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, RBC (Erythrocytes): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, RBC (Erythrocytes) with rowcount 0"
 [1] "next, since analysis_df_factor is NA for RBC (Erythrocytes)"
 [1] "sFRP-5 (sFRP-5)"
 [1] "WHERE: X, sFRP-5"
@@ -3448,9 +3329,16 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, sFRP-5"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, sFRP-5: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, sFRP-5: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, sFRP-5"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3464,18 +3352,8 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, sFRP-5"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, sFRP-5: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, sFRP-5: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, sFRP-5 with rowcount 0"
+[1] "next, since analysis_df_factor is NA for sFRP-5"
 [1] "Sodium (Sodium)"
 [1] "WHERE: X, Sodium"
 In Visit there are dropped visits: 49, 63.
@@ -3517,9 +3395,22 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Sodium"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Sodium: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Sodium: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, Sodium"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3533,10 +3424,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Sodium"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Sodium: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Sodium with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Sodium"
 [1] "Total Cholesterol (Total Cholesterol)"
 [1] "WHERE: X, Total Cholesterol"
@@ -3570,9 +3458,11 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Total Cholesterol"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Total Cholesterol: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Total Cholesterol"
 [1] "WHERE: C36, Total Cholesterol"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -3586,14 +3476,8 @@ In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Total Cholesterol"
-In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Total Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Total Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Total Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Total Cholesterol: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Total Cholesterol: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Total Cholesterol with rowcount 0"
+[1] "next, since analysis_df_factor is NA for Total Cholesterol"
 [1] "Total Protein (Total Protein)"
 [1] "WHERE: X, Total Protein"
 In Visit there are dropped visits: 49, 63.
@@ -3626,9 +3510,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Total Protein"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, Total Protein: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for Total Protein"
 [1] "WHERE: C36, Total Protein"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3642,10 +3528,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Total Protein"
-In Visit there are dropped visits: 7, 21, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Total Protein: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Total Protein with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Total Protein"
 [1] "Triglycerides (Triglycerides)"
 [1] "WHERE: X, Triglycerides"
@@ -3684,32 +3567,29 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Triglycerides"
-In Visit there are dropped visits: 7, 14, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 14, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR C49, Triglycerides: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "EMMEANS WARNING FOR C49, Triglycerides: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Triglycerides: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Triglycerides: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, Triglycerides: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, Triglycerides: Non-finite or negative SE in LS means"
+[1] "WHERE: C36, Triglycerides"
+In Visit there are dropped visits: 7, 21, 35, 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: C36, Triglycerides"
+In Visit there are dropped visits: 7, 21, 35, 49, 63.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: 9, Triglycerides"
+In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
+ Additional attributes including contrasts are lost.
+To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "WHERE: 9, Triglycerides"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Triglycerides with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Triglycerides"
-[1] "WHERE: C36, Triglycerides"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "WHERE: C36, Triglycerides"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "WHERE: 9, Triglycerides"
-In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "WHERE: 9, Triglycerides"
-In Visit there are dropped visits: 7, 14, 21, 35, 42, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, Triglycerides: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Triglycerides: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Triglycerides: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, Triglycerides: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, Triglycerides: Non-finite or negative SE in LS means"
 [1] "Uric acid (Uric acid)"
 [1] "WHERE: X, Uric acid"
 In Visit there are dropped visits: 49, 63.
@@ -3760,10 +3640,7 @@ In Visit there are dropped visits: 7, 21, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Uric acid"
-In Visit there are dropped visits: 7, 14, 21, 28, 35, 42, 49, 56, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Uric acid: contrasts can be applied only to factors with 2 or more levels"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Uric acid with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Uric acid"
 [1] "VEGF (VEGF)"
 [1] "WHERE: X, VEGF"
@@ -3797,9 +3674,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, VEGF"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, VEGF: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for VEGF"
 [1] "WHERE: C36, VEGF"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3813,18 +3692,8 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, VEGF"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, VEGF: Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, VEGF: Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, VEGF with rowcount 0"
+[1] "next, since analysis_df_factor is NA for VEGF"
 [1] "VEGF-C (VEGF-C)"
 [1] "WHERE: X, VEGF-C"
 In Visit there are dropped visits: 49, 63.
@@ -3857,9 +3726,11 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, VEGF-C"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, VEGF-C: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for VEGF-C"
 [1] "WHERE: C36, VEGF-C"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3873,10 +3744,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, VEGF-C"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, VEGF-C: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, VEGF-C with rowcount 0"
 [1] "next, since analysis_df_factor is NA for VEGF-C"
 [1] "VEGF-D (VEGF-D)"
 [1] "WHERE: X, VEGF-D"
@@ -3921,9 +3789,16 @@ In Visit there are dropped visits: 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, VEGF-D"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS WARNING FOR C49, VEGF-D: Negative variance estimate obtained!"
+[1] "EMMEANS/KR FAILED FOR C49, VEGF-D: Non-finite or negative SE in LS means"
 [1] "WHERE: C36, VEGF-D"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3937,10 +3812,7 @@ In Visit there are dropped visits: 21, 49, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, VEGF-D"
-In Visit there are dropped visits: 7, 21, 35, 49, 63, 70.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, VEGF-D: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, VEGF-D with rowcount 0"
 [1] "next, since analysis_df_factor is NA for VEGF-D"
 [1] "WBC (Leukocytes) (WBC (Leukocytes))"
 [1] "WHERE: X, WBC (Leukocytes)"
@@ -3974,9 +3846,11 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, WBC (Leukocytes)"
-In Visit there are dropped visits: 49, 63.
+In Visit there are dropped visits: 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "MMRM FIT FAILED FOR C49, WBC (Leukocytes): No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "next, since analysis_df_factor is NA for WBC (Leukocytes)"
 [1] "WHERE: C36, WBC (Leukocytes)"
 In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
@@ -3990,26 +3864,8 @@ In Visit there are dropped visits: 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, WBC (Leukocytes)"
-In Visit there are dropped visits: 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS WARNING FOR 9, WBC (Leukocytes): Negative variance estimate obtained!"
-[1] "EMMEANS/KR FAILED FOR 9, WBC (Leukocytes): Non-finite or negative SE in LS means"
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, WBC (Leukocytes) with rowcount 0"
+[1] "next, since analysis_df_factor is NA for WBC (Leukocytes)"
 [1] "Weight (Weight)"
 [1] "WHERE: X, Weight"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
@@ -4042,9 +3898,10 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: C49, Weight"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
+In Visit there are dropped visits: 7, 21, 35, 49, 56, 63, 70.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
+[1] "EMMEANS/KR FAILED FOR C49, Weight: Assertion on 'df' failed: Element 1 is not >= 2.22507e-308."
 [1] "WHERE: C36, Weight"
 In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
@@ -4058,14 +3915,9 @@ In Visit there are dropped visits: 7, 21, 35, 49, 63.
  Additional attributes including contrasts are lost.
 To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
 [1] "WHERE: 9, Weight"
-In Visit there are dropped visits: 7, 21, 35, 49, 63.
- Additional attributes including contrasts are lost.
-To avoid this behavior, make sure use `drop_visit_levels = FALSE`.
-[1] "MMRM FIT FAILED FOR 9, Weight: No optimizer led to a successful model fit. Please try to use a different covariance structure or other covariates."
+[1] "SKIP NO REASON OR EMPTY DATA FRAME FOR 9, Weight with rowcount 0"
 [1] "next, since analysis_df_factor is NA for Weight"
-Warning messages:
-1: In mmrm(formula = CFB ~ Visit + ar1(Visit | Subject), data = analysis_df_factor,  :
-  Divergence with optimizer L-BFGS-B due to problems: L-BFGS-B needs finite values of 'fn'
-2: In mmrm(formula = CFB ~ Visit + ar1(Visit | Subject), data = analysis_df_factor,  :
+Warning message:
+In mmrm(formula = CFB ~ Visit + ar1(Visit | Subject), data = analysis_df_factor,  :
   Divergence with optimizer L-BFGS-B due to problems: L-BFGS-B needs finite values of 'fn'
 [1] "Done!"
